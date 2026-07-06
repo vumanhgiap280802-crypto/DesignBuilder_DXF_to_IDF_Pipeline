@@ -1,0 +1,11 @@
+﻿construction_code,construction_name,category,layer_order,material_name,thickness_override_m,notes
+W140,IBST_W140_PL15_BR110_PL15,External Wall,1,IBST_CEMENT_MORTAR_15_.015,,Wall 140mm = 15 plaster + 110 brick + 15 plaster; Outer -> Inner
+W140,IBST_W140_PL15_BR110_PL15,External Wall,2,IBST_BRICK_CLAY_110_.11,,
+W140,IBST_W140_PL15_BR110_PL15,External Wall,3,IBST_CEMENT_MORTAR_15_.015,,
+W180,IBST_W180_PL15_BR150_PL15,External Wall,1,IBST_CEMENT_MORTAR_15_.015,,Wall 180mm = 15 plaster + 150 brick + 15 plaster; Outer -> Inner
+W180,IBST_W180_PL15_BR150_PL15,External Wall,2,IBST_BRICK_CLAY_150_.15,,
+W180,IBST_W180_PL15_BR150_PL15,External Wall,3,IBST_CEMENT_MORTAR_15_.015,,
+W250,IBST_W250_PL15_BR110_BR110_PL15,External Wall,1,IBST_CEMENT_MORTAR_15_.015,,Wall 250mm = 15 plaster + 110 brick + 110 brick + 15 plaster; Outer -> Inner
+W250,IBST_W250_PL15_BR110_BR110_PL15,External Wall,2,IBST_BRICK_CLAY_110_.11,,
+W250,IBST_W250_PL15_BR110_BR110_PL15,External Wall,3,IBST_BRICK_CLAY_110_.11,,
+W250,IBST_W250_PL15_BR110_BR110_PL15,External Wall,4,IBST_CEMENT_MORTAR_15_.015,,

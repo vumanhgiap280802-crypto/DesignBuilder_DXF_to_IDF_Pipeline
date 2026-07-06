@@ -1,0 +1,5 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+Construction,13,1,construction_name,Project external floor
+Construction,13,2,layer_1,External Rendering_.025
+Construction,13,3,layer_2,MW Stone Wool (rolls)_.1025
+Construction,13,4,layer_3,Timber Flooring_.005

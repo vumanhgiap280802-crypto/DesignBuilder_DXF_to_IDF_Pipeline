@@ -1,0 +1,101 @@
+timestamp,hook,category,surface_key,surface_label,action,status,value,message
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_source,global,DesignBuilder EnergyPlus in.idf,load_surfaces,PASS,49,C:\Users\ASUS\AppData\Local\DesignBuilder\EnergyPlus\in.idf
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_LOGIA_WALL_03,map_target,PASS,BLOCK1:APARTMENTXAXNEWXLOGI_Wall_2_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_PK_PB_WALL_09,map_target,PASS,BLOCK1:APARTMENTXAXNEWXPKXP_Wall_9_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_PK_PB_WALL_10,map_target,PASS,BLOCK1:APARTMENTXAXNEWXPKXP_Wall_2_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_PN_02_WALL_05,map_target,PASS,BLOCK1:APARTMENTXAXNEWXPNX0Q1_Wall_6_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_WC_02_WALL_03,map_target,PASS,BLOCK1:APARTMENTXAXNEWXWCX0_Wall_5_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,in_idf_mapping,global,APARTMENT_A_NEW_WC_02_WALL_04,map_target,PASS,BLOCK1:APARTMENTXAXNEWXWCX0_Wall_2_0_0,"Matched target to DesignBuilder in.idf surface by zone, area, type, and construction."
+2026-05-13T08:21:36,before_energy_idf_generation,designbuilder_api,global,global,detect,PASS,,DesignBuilder API is available.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_target,global,manifest/arguments,load_targets,PASS,APARTMENT_A_NEW_LOGIA_WALL_03;APARTMENT_A_NEW_PK_PB_WALL_09;APARTMENT_A_NEW_PK_PB_WALL_10;APARTMENT_A_NEW_PN_02_WALL_05;APARTMENT_A_NEW_WC_02_WALL_03;APARTMENT_A_NEW_WC_02_WALL_04,Targets are loaded from manifest plus --target-surface arguments.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_target,global,target_profiles,load_target_profiles,PASS,6,Profiles include target zone and calculated IDF surface area when available.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_scan,global,DesignBuilder surfaces,collect,PASS,45,Collected surfaces from active building/site hierarchy.
+2026-05-13T08:21:36,before_energy_idf_generation,zone_context,global,APARTMENT_A_NEW_LOGIA,map_context_by_floor_area,PASS,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXLOGI,DesignBuilder context mapped to source zone by matching floor area.
+2026-05-13T08:21:36,before_energy_idf_generation,zone_context,global,APARTMENT_A_NEW_PN_01,map_context_by_floor_area,PASS,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXPNX0,DesignBuilder context mapped to source zone by matching floor area.
+2026-05-13T08:21:36,before_energy_idf_generation,zone_context,global,APARTMENT_A_NEW_PN_02,map_context_by_floor_area,PASS,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXPNX0Q1,DesignBuilder context mapped to source zone by matching floor area.
+2026-05-13T08:21:36,before_energy_idf_generation,zone_context,global,APARTMENT_A_NEW_WC_02,map_context_by_floor_area,PASS,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXWCX0,DesignBuilder context mapped to source zone by matching floor area.
+2026-05-13T08:21:36,before_energy_idf_generation,zone_context,global,APARTMENT_A_NEW_WC_01,map_context_by_floor_area,PASS,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXWCX0Q1,DesignBuilder context mapped to source zone by matching floor area.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_11,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXLOGI,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_LOGIA_WALL_03; reason=unique_in_idf_surface_name; area=3.713
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_11,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_17,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXPKXP,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_PK_PB_WALL_10; reason=unique_in_idf_surface_name; area=17.144
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_17,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_24,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXPKXP,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_PK_PB_WALL_09; reason=unique_in_idf_surface_name; area=4.752
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_24,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_29,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXWCX0,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_WC_02_WALL_04; reason=unique_in_idf_surface_name; area=6.666
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_29,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_32,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXWCX0,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_WC_02_WALL_03; reason=unique_in_idf_surface_name; area=6.287
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_32,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_match,surface_39,Surface,match,MATCH_TARGET,Building > BuildingBlock > UNKNOWN | BLOCK1:APARTMENTXAXNEWXPNX0Q1,Surface selected for UI Adjacency attempt. target=APARTMENT_A_NEW_PN_02_WALL_05; reason=unique_in_idf_surface_name; area=12.771
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,ReadState:before,READ_OK,AdjacencyCondition=NotAdjacentToGround; IsInternalPartition=False; InternalPartitionType=-1,HardAttributes=WallConstr;Title;WindAngle315;AnyOpeningOutput;WindAngle90;gbXMLSurfaceType;WindAngle135;WindAngle225;gbXMLExternalConstructionName;SSEPObjectIDCInOP;SSEPObjectNameInOP;WindAngle180;Adjacency;SSEPObjectAreaInOP;WindAngle45;WindAngle0;WindAngle270
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,SetAttribute:Adjacency,WRITE_OK,3,Set Adjacency=3.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,Verify:Adjacency,VERIFY_FAIL,3,AdjacencyCondition=NotAdjacentToGround; Adjacency=3
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,SetAttribute:Adjacency,WRITE_OK,3-Adiabatic,Set Adjacency=3-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,Verify:Adjacency,VERIFY_FAIL,3-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=3-Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,SetAttribute:Adjacency,WRITE_OK,Adiabatic,Set Adjacency=Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,Verify:Adjacency,VERIFY_FAIL,Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=Adiabatic
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,SetAttribute:Adjacency,WRITE_OK,4-Adiabatic,Set Adjacency=4-Adiabatic.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,UpdateTileAttributes,PASS,,Method completed.
+2026-05-13T08:21:36,before_energy_idf_generation,surface_adjacency_ui,surface_39,Surface,Verify:Adjacency,VERIFY_FAIL,4-Adiabatic,AdjacencyCondition=NotAdjacentToGround; Adjacency=4-Adiabatic

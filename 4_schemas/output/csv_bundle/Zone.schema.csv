@@ -1,0 +1,14 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+Zone,6,1,zone_name,WNCHA:PN02
+Zone,6,2,relative_north_deg,0
+Zone,6,3,x_origin_m,0
+Zone,6,4,y_origin_m,0
+Zone,6,5,z_origin_m,0
+Zone,6,6,zone_type,1
+Zone,6,7,zone_multiplier,1
+Zone,6,8,ceiling_height_m,
+Zone,6,9,volume_m3,38.7695
+Zone,6,10,floor_area_m2,11.573
+Zone,6,11,inside_convection_algorithm,TARP
+Zone,6,12,outside_convection_algorithm,
+Zone,6,13,part_of_total_floor_area,Yes

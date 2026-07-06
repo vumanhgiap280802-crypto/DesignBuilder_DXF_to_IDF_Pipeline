@@ -1,0 +1,6 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+Site:Location,1,1,location_name,Untitled (01-01:31-12)  (01-01:31-12)
+Site:Location,1,2,latitude,21.03
+Site:Location,1,3,longitude,105.8
+Site:Location,1,4,time_zone,7
+Site:Location,1,5,elevation_m,6

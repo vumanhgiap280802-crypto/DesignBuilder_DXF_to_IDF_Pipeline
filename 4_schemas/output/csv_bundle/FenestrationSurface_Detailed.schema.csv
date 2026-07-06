@@ -1,0 +1,22 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+FenestrationSurface:Detailed,15,1,fenestration_name,WNCHA:PN02_Partition_3_0_0_0_0_0_Door
+FenestrationSurface:Detailed,15,2,surface_type,Door
+FenestrationSurface:Detailed,15,3,construction_name,Project internal door
+FenestrationSurface:Detailed,15,4,building_surface_name,WNCHA:PN02_Partition_3_0_0
+FenestrationSurface:Detailed,15,5,outside_boundary_condition_object,WNCHA:PKXPB_Partition_9_0_0_0_0_0_Door_10004
+FenestrationSurface:Detailed,15,6,view_factor_to_ground,0
+FenestrationSurface:Detailed,15,7,frame_and_divider_name,
+FenestrationSurface:Detailed,15,8,multiplier,1
+FenestrationSurface:Detailed,15,9,number_of_vertices,4
+FenestrationSurface:Detailed,15,10,v1_x,-.00241566
+FenestrationSurface:Detailed,15,11,v1_y,3.4758730756
+FenestrationSurface:Detailed,15,12,v1_z,.15
+FenestrationSurface:Detailed,15,13,v2_x,-.85241566
+FenestrationSurface:Detailed,15,14,v2_y,3.4758730756
+FenestrationSurface:Detailed,15,15,v2_z,.15
+FenestrationSurface:Detailed,15,16,v3_x,-.85241566
+FenestrationSurface:Detailed,15,17,v3_y,3.4758730756
+FenestrationSurface:Detailed,15,18,v3_z,2.2
+FenestrationSurface:Detailed,15,19,v4_x,-.00241566
+FenestrationSurface:Detailed,15,20,v4_y,3.4758730756
+FenestrationSurface:Detailed,15,21,v4_z,2.2

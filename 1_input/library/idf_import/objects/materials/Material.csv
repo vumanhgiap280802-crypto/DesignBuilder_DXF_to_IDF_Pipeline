@@ -1,0 +1,9 @@
+material_name,roughness,thickness_m,conductivity_w_per_mk,density_kg_per_m3,specific_heat_j_per_kgk,thermal_emittance,solar_absorptance,visible_absorptance
+External Rendering_.025,Rough,0.025,0.5,1300,1000,0.9,0.7,0.7
+MW Stone Wool (rolls)_.1025,Rough,0.102,0.04,30,840,0.9,0.6,0.6
+Timber Flooring_.005,Rough,0.005,0.14,650,1200,0.9,0.78,0.78
+Cast Concrete (Dense)_.1,Rough,0.100,1.4,2100,840,0.9,0.6,0.6
+Painted Oak_.035,Rough,0.035,0.19,700,2390,0.9,0.5,0.5
+IBST_BRICK_CLAY_110_.11,Rough,0.110,0.77,1700,840,0.90,0.65,0.65
+IBST_CEMENT_MORTAR_15_.015,MediumSmooth,0.015,0.93,1800,840,0.90,0.70,0.70
+IBST_BRICK_CLAY_150_.15,Rough,0.150,0.77,1700,840,0.90,0.65,0.65

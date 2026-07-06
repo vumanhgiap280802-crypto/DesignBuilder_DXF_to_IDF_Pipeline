@@ -1,0 +1,538 @@
+{
+  "source_file": "Test1_for_DB_import_DBlean_crosscheck.idf",
+  "summary": {
+    "total_objects": 105,
+    "object_type_counts": {
+      "Version": 1,
+      "Site:Location": 1,
+      "Building": 1,
+      "GlobalGeometryRules": 1,
+      "Zone": 6,
+      "Material": 12,
+      "WindowMaterial:Glazing": 3,
+      "WindowMaterial:Gas": 1,
+      "WindowProperty:FrameAndDivider": 1,
+      "Construction": 13,
+      "BuildingSurface:Detailed": 50,
+      "FenestrationSurface:Detailed": 15
+    },
+    "notes": [
+      "Lean geometry/material file for DesignBuilder/EnergyPlus import cross-check",
+      "Contains building metadata, 6 zones, 12 opaque materials, 4 glazing-related objects, 13 constructions, 50 opaque surfaces, 15 fenestration surfaces",
+      "No schedules, people, lights, equipment, HVAC, airflow network, sizing, simulation controls, or output requests found"
+    ]
+  },
+  "schema": [
+    {
+      "object_type": "Version",
+      "count": 1,
+      "fields": [
+        "version_identifier"
+      ],
+      "sample_record": {
+        "version_identifier": "9.4.0.002"
+      }
+    },
+    {
+      "object_type": "Site:Location",
+      "count": 1,
+      "fields": [
+        "location_name",
+        "latitude",
+        "longitude",
+        "time_zone",
+        "elevation_m"
+      ],
+      "sample_record": {
+        "location_name": "Untitled (01-01:31-12)  (01-01:31-12)",
+        "latitude": "21.03",
+        "longitude": "105.8",
+        "time_zone": "7",
+        "elevation_m": "6"
+      }
+    },
+    {
+      "object_type": "Building",
+      "count": 1,
+      "fields": [
+        "building_name",
+        "north_axis_deg",
+        "terrain",
+        "loads_convergence_tolerance",
+        "temperature_convergence_tolerance",
+        "solar_distribution",
+        "maximum_warmup_days",
+        "minimum_warmup_days"
+      ],
+      "sample_record": {
+        "building_name": "NOXH1",
+        "north_axis_deg": "0",
+        "terrain": "Suburbs",
+        "loads_convergence_tolerance": ".04",
+        "temperature_convergence_tolerance": ".4",
+        "solar_distribution": "FullExterior",
+        "maximum_warmup_days": "25",
+        "minimum_warmup_days": "6"
+      }
+    },
+    {
+      "object_type": "GlobalGeometryRules",
+      "count": 1,
+      "fields": [
+        "starting_vertex_position",
+        "vertex_entry_direction",
+        "coordinate_system"
+      ],
+      "sample_record": {
+        "starting_vertex_position": "LowerLeftCorner",
+        "vertex_entry_direction": "CounterClockWise",
+        "coordinate_system": "World"
+      }
+    },
+    {
+      "object_type": "Zone",
+      "count": 6,
+      "fields": [
+        "zone_name",
+        "relative_north_deg",
+        "x_origin_m",
+        "y_origin_m",
+        "z_origin_m",
+        "zone_type",
+        "zone_multiplier",
+        "ceiling_height_m",
+        "volume_m3",
+        "floor_area_m2",
+        "inside_convection_algorithm",
+        "outside_convection_algorithm",
+        "part_of_total_floor_area"
+      ],
+      "sample_record": {
+        "zone_name": "WNCHA:PN02",
+        "relative_north_deg": "0",
+        "x_origin_m": "0",
+        "y_origin_m": "0",
+        "z_origin_m": "0",
+        "zone_type": "1",
+        "zone_multiplier": "1",
+        "ceiling_height_m": "",
+        "volume_m3": "38.7695",
+        "floor_area_m2": "11.573",
+        "inside_convection_algorithm": "TARP",
+        "outside_convection_algorithm": "",
+        "part_of_total_floor_area": "Yes"
+      }
+    },
+    {
+      "object_type": "Material",
+      "count": 12,
+      "fields": [
+        "material_name",
+        "roughness",
+        "thickness_m",
+        "conductivity_w_per_mk",
+        "density_kg_per_m3",
+        "specific_heat_j_per_kgk",
+        "thermal_emittance",
+        "solar_absorptance",
+        "visible_absorptance"
+      ],
+      "sample_record": {
+        "material_name": "External Rendering_.025",
+        "roughness": "Rough",
+        "thickness_m": ".025",
+        "conductivity_w_per_mk": "0.5",
+        "density_kg_per_m3": "1300",
+        "specific_heat_j_per_kgk": "1000",
+        "thermal_emittance": "0.9",
+        "solar_absorptance": "0.7",
+        "visible_absorptance": "0.7"
+      }
+    },
+    {
+      "object_type": "WindowMaterial:Glazing",
+      "count": 3,
+      "fields": [
+        "glazing_name",
+        "optical_data_type",
+        "spectral_data_set_name",
+        "thickness_m",
+        "solar_transmittance",
+        "solar_reflectance_front",
+        "solar_reflectance_back",
+        "visible_transmittance",
+        "visible_reflectance_front",
+        "visible_reflectance_back",
+        "ir_transmittance",
+        "ir_emissivity_front",
+        "ir_emissivity_back",
+        "conductivity_w_per_mk",
+        "dirt_correction_factor"
+      ],
+      "sample_record": {
+        "glazing_name": "3",
+        "optical_data_type": "SpectralAverage",
+        "spectral_data_set_name": "",
+        "thickness_m": ".006",
+        "solar_transmittance": ".775",
+        "solar_reflectance_front": ".071",
+        "solar_reflectance_back": ".071",
+        "visible_transmittance": ".881",
+        "visible_reflectance_front": ".080",
+        "visible_reflectance_back": ".080",
+        "ir_transmittance": ".0",
+        "ir_emissivity_front": ".84",
+        "ir_emissivity_back": ".84",
+        "conductivity_w_per_mk": ".9",
+        "dirt_correction_factor": "1"
+      }
+    },
+    {
+      "object_type": "WindowMaterial:Gas",
+      "count": 1,
+      "fields": [
+        "gas_layer_name",
+        "gas_type",
+        "thickness_m"
+      ],
+      "sample_record": {
+        "gas_layer_name": "1004",
+        "gas_type": "Argon",
+        "thickness_m": ".013"
+      }
+    },
+    {
+      "object_type": "WindowProperty:FrameAndDivider",
+      "count": 1,
+      "fields": [
+        "frame_divider_name",
+        "frame_width_m",
+        "frame_outside_projection_m",
+        "frame_inside_projection_m",
+        "frame_conductance_w_per_m2k",
+        "frame_edge_to_center_glass_conductance_ratio",
+        "frame_solar_absorptance",
+        "frame_visible_absorptance",
+        "frame_thermal_emissivity",
+        "divider_type",
+        "divider_width_m",
+        "number_horizontal_dividers",
+        "number_vertical_dividers",
+        "divider_outside_projection_m",
+        "divider_inside_projection_m",
+        "divider_conductance_w_per_m2k",
+        "divider_edge_to_center_glass_conductance_ratio",
+        "divider_solar_absorptance",
+        "divider_visible_absorptance",
+        "divider_thermal_emissivity",
+        "outside_reveal_solar_absorptance",
+        "inside_sill_depth_m",
+        "inside_sill_solar_absorptance",
+        "inside_reveal_depth_m",
+        "inside_reveal_solar_absorptance"
+      ],
+      "sample_record": {
+        "frame_divider_name": "1",
+        "frame_width_m": "0.04",
+        "frame_outside_projection_m": "0.0",
+        "frame_inside_projection_m": "0.0",
+        "frame_conductance_w_per_m2k": "9.5",
+        "frame_edge_to_center_glass_conductance_ratio": "1.0",
+        "frame_solar_absorptance": "0.5",
+        "frame_visible_absorptance": "0.5",
+        "frame_thermal_emissivity": "0.9",
+        "divider_type": "DividedLite",
+        "divider_width_m": "0.020",
+        "number_horizontal_dividers": "1",
+        "number_vertical_dividers": "1",
+        "divider_outside_projection_m": "0.0",
+        "divider_inside_projection_m": "0.0",
+        "divider_conductance_w_per_m2k": "9.5",
+        "divider_edge_to_center_glass_conductance_ratio": "1.0",
+        "divider_solar_absorptance": "0.5",
+        "divider_visible_absorptance": "0.5",
+        "divider_thermal_emissivity": "0.9",
+        "outside_reveal_solar_absorptance": "0.5",
+        "inside_sill_depth_m": "0.0",
+        "inside_sill_solar_absorptance": "0.5",
+        "inside_reveal_depth_m": "0.0",
+        "inside_reveal_solar_absorptance": "0.5"
+      }
+    },
+    {
+      "object_type": "Construction",
+      "count": 13,
+      "fields": [
+        "construction_name",
+        "layer_1",
+        "layer_2",
+        "layer_3"
+      ],
+      "sample_record": {
+        "construction_name": "Project external floor",
+        "layer_1": "External Rendering_.025",
+        "layer_2": "MW Stone Wool (rolls)_.1025",
+        "layer_3": "Timber Flooring_.005"
+      },
+      "variable_length_tail": "layer_n"
+    },
+    {
+      "object_type": "BuildingSurface:Detailed",
+      "count": 50,
+      "fields": [
+        "surface_name",
+        "surface_type",
+        "construction_name",
+        "zone_name",
+        "outside_boundary_condition",
+        "outside_boundary_condition_object",
+        "sun_exposure",
+        "wind_exposure",
+        "view_factor_to_ground",
+        "number_of_vertices",
+        "v1_x",
+        "v1_y",
+        "v1_z",
+        "v2_x",
+        "v2_y",
+        "v2_z",
+        "v3_x",
+        "v3_y",
+        "v3_z",
+        "v4_x",
+        "v4_y",
+        "v4_z"
+      ],
+      "sample_record": {
+        "surface_name": "WNCHA:PN02_ExtFloor_0_0_0",
+        "surface_type": "Floor",
+        "construction_name": "Project external floor",
+        "zone_name": "WNCHA:PN02",
+        "outside_boundary_condition": "Outdoors",
+        "outside_boundary_condition_object": "",
+        "sun_exposure": "SunExposed",
+        "wind_exposure": "WindExposed",
+        "view_factor_to_ground": "AutoCalculate",
+        "number_of_vertices": "4",
+        "v1_x": ".122584344",
+        "v1_y": ".0558730756",
+        "v1_z": "0",
+        "v2_x": "-3.747415656",
+        "v2_y": ".0558730756",
+        "v2_z": "0",
+        "v3_x": "-3.747415656",
+        "v3_y": "3.4758730756",
+        "v3_z": "0",
+        "v4_x": ".122584344",
+        "v4_y": "3.4758730756",
+        "v4_z": "0"
+      }
+    },
+    {
+      "object_type": "FenestrationSurface:Detailed",
+      "count": 15,
+      "fields": [
+        "fenestration_name",
+        "surface_type",
+        "construction_name",
+        "building_surface_name",
+        "outside_boundary_condition_object",
+        "view_factor_to_ground",
+        "frame_and_divider_name",
+        "multiplier",
+        "number_of_vertices",
+        "v1_x",
+        "v1_y",
+        "v1_z",
+        "v2_x",
+        "v2_y",
+        "v2_z",
+        "v3_x",
+        "v3_y",
+        "v3_z",
+        "v4_x",
+        "v4_y",
+        "v4_z"
+      ],
+      "sample_record": {
+        "fenestration_name": "WNCHA:PN02_Partition_3_0_0_0_0_0_Door",
+        "surface_type": "Door",
+        "construction_name": "Project internal door",
+        "building_surface_name": "WNCHA:PN02_Partition_3_0_0",
+        "outside_boundary_condition_object": "WNCHA:PKXPB_Partition_9_0_0_0_0_0_Door_10004",
+        "view_factor_to_ground": "0",
+        "frame_and_divider_name": "",
+        "multiplier": "1",
+        "number_of_vertices": "4",
+        "v1_x": "-.00241566",
+        "v1_y": "3.4758730756",
+        "v1_z": ".15",
+        "v2_x": "-.85241566",
+        "v2_y": "3.4758730756",
+        "v2_z": ".15",
+        "v3_x": "-.85241566",
+        "v3_y": "3.4758730756",
+        "v3_z": "2.2",
+        "v4_x": "-.00241566",
+        "v4_y": "3.4758730756",
+        "v4_z": "2.2"
+      }
+    }
+  ],
+  "relationships": {
+    "Construction -> Material/WindowMaterial": [
+      {
+        "construction_name": "Project external floor",
+        "layers": [
+          "External Rendering_.025",
+          "MW Stone Wool (rolls)_.1025",
+          "Timber Flooring_.005"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Project internal floor_Reversed",
+        "layers": [
+          "Cast Concrete (Dense)_.1"
+        ],
+        "layer_types": [
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Partition Example - 140mm",
+        "layers": [
+          "Cement/plaster/mortar - gypsum plaster_.015",
+          "Brick_.11",
+          "Cement/plaster/mortar - gypsum plaster_.015"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Partition Example - 140mm_Rev",
+        "layers": [
+          "Cement/plaster/mortar - gypsum plaster_.015",
+          "Brick_.11",
+          "Cement/plaster/mortar - gypsum plaster_.015"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Project internal door",
+        "layers": [
+          "Painted Oak_.035"
+        ],
+        "layer_types": [
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Project internal door_Rev",
+        "layers": [
+          "Painted Oak_.035"
+        ],
+        "layer_types": [
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "250mm Example Extender Wall",
+        "layers": [
+          "Cement/plaster/mortar - cement plaster_.015",
+          "Brick_.22",
+          "Cement/plaster/mortar - cement plaster_.015"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "250mm Example Extender Wall_Rev",
+        "layers": [
+          "Cement/plaster/mortar - cement plaster_.015",
+          "Brick_.22",
+          "Cement/plaster/mortar - cement plaster_.015"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Partition Example-180mm",
+        "layers": [
+          "Cement/plaster/mortar - gypsum plaster_.015",
+          "Brick_.15",
+          "Cement/plaster/mortar - gypsum plaster_.015"
+        ],
+        "layer_types": [
+          "Material",
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Example Wall",
+        "layers": [
+          "Aerated Concrete Slab_.125",
+          "Aerated Concrete Slab_.055"
+        ],
+        "layer_types": [
+          "Material",
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Project external door",
+        "layers": [
+          "Painted Oak_.035"
+        ],
+        "layer_types": [
+          "Material"
+        ]
+      },
+      {
+        "construction_name": "Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001",
+        "layers": [
+          "44",
+          "1004",
+          "3"
+        ],
+        "layer_types": [
+          "WindowMaterial:Glazing",
+          "WindowMaterial:Gas",
+          "WindowMaterial:Glazing"
+        ]
+      },
+      {
+        "construction_name": "Perfectly Clear - 1002",
+        "layers": [
+          "100"
+        ],
+        "layer_types": [
+          "WindowMaterial:Glazing"
+        ]
+      }
+    ],
+    "BuildingSurface:Detailed -> Zone": "zone_name references Zone.zone_name",
+    "BuildingSurface:Detailed -> Construction": "construction_name references Construction.construction_name",
+    "FenestrationSurface:Detailed -> BuildingSurface:Detailed": "building_surface_name references BuildingSurface:Detailed.surface_name",
+    "FenestrationSurface:Detailed -> Construction": "construction_name references Construction.construction_name",
+    "FenestrationSurface:Detailed -> WindowProperty:FrameAndDivider": "frame_and_divider_name references WindowProperty:FrameAndDivider.frame_divider_name (blank on many records)"
+  }
+}

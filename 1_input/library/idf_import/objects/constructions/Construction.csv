@@ -1,0 +1,13 @@
+construction_name,layer_1,layer_2,layer_3,layer_4,layer_5,layer_6
+Project external floor,External Rendering_.025,MW Stone Wool (rolls)_.1025,Timber Flooring_.005,,,
+Project internal floor_Reversed,Cast Concrete (Dense)_.1,,,,,
+Project internal door,Painted Oak_.035,,,,,
+Project internal door_Rev,Painted Oak_.035,,,,,
+Project external door,Painted Oak_.035,,,,,
+Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,44,1004,3,,,
+Perfectly Clear - 1002,100,,,,,
+IBST_W250_PL15_BR110_BR110_PL15,IBST_CEMENT_MORTAR_15_.015,IBST_BRICK_CLAY_110_.11,IBST_BRICK_CLAY_110_.11,IBST_CEMENT_MORTAR_15_.015,,
+IBST_W250_PL15_BR110_BR110_PL15_Rev,IBST_CEMENT_MORTAR_15_.015,IBST_BRICK_CLAY_110_.11,IBST_BRICK_CLAY_110_.11,IBST_CEMENT_MORTAR_15_.015,,
+IBST_W140_PL15_BR110_PL15,IBST_CEMENT_MORTAR_15_.015,IBST_BRICK_CLAY_110_.11,IBST_CEMENT_MORTAR_15_.015,,,
+IBST_W140_PL15_BR110_PL15_Rev,IBST_CEMENT_MORTAR_15_.015,IBST_BRICK_CLAY_110_.11,IBST_CEMENT_MORTAR_15_.015,,,
+IBST_W180_PL15_BR150_PL15,IBST_CEMENT_MORTAR_15_.015,IBST_BRICK_CLAY_150_.15,IBST_CEMENT_MORTAR_15_.015,,,

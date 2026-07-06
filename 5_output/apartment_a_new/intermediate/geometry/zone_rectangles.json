@@ -1,0 +1,223 @@
+{
+  "geometry_mode": "dxf_inferred_s04_layer_boundary",
+  "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+  "outer_block_rect_m": [
+    1.585,
+    2.426,
+    8.8,
+    10.766
+  ],
+  "export_origin_mode": "outer_block_min_corner_to_zero",
+  "export_origin_offset_m": [
+    1.585,
+    2.426,
+    0.0
+  ],
+  "zones": [
+    {
+      "zone_key": "LOGIA",
+      "source_zone_name": "LOGIA",
+      "target_area_m2": 2.58,
+      "footprint_area_m2": 3.763,
+      "footprint_area_delta_m2": 1.183,
+      "footprint_rectangles_m": [
+        [
+          5.455,
+          9.641,
+          8.8,
+          10.766
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          3.87,
+          7.215,
+          7.215,
+          8.34
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.345,
+        "depth_m": 1.125
+      },
+      "growth_anchor_local_m": null
+    },
+    {
+      "zone_key": "PK_PB",
+      "source_zone_name": "PK + PB",
+      "target_area_m2": 20.0,
+      "footprint_area_m2": 22.049,
+      "footprint_area_delta_m2": 2.049,
+      "footprint_rectangles_m": [
+        [
+          4.325,
+          5.756,
+          8.8,
+          7.316
+        ],
+        [
+          5.455,
+          2.426,
+          6.895,
+          4.446
+        ],
+        [
+          5.455,
+          4.446,
+          8.8,
+          5.756
+        ],
+        [
+          5.455,
+          7.316,
+          8.8,
+          9.641
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          2.74,
+          3.33,
+          7.215,
+          4.89
+        ],
+        [
+          3.87,
+          0.0,
+          5.31,
+          2.02
+        ],
+        [
+          3.87,
+          2.02,
+          7.215,
+          3.33
+        ],
+        [
+          3.87,
+          4.89,
+          7.215,
+          7.215
+        ]
+      ],
+      "clear_dimensions_m": null,
+      "growth_anchor_local_m": [
+        4.977,
+        3.608
+      ]
+    },
+    {
+      "zone_key": "PN_01",
+      "source_zone_name": "PN 01",
+      "target_area_m2": 11.0,
+      "footprint_area_m2": 13.351,
+      "footprint_area_delta_m2": 2.351,
+      "footprint_rectangles_m": [
+        [
+          1.585,
+          7.316,
+          5.455,
+          10.766
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          4.89,
+          3.87,
+          8.34
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.87,
+        "depth_m": 3.45
+      },
+      "growth_anchor_local_m": null
+    },
+    {
+      "zone_key": "PN_02",
+      "source_zone_name": "PN 02",
+      "target_area_m2": 10.98,
+      "footprint_area_m2": 12.887,
+      "footprint_area_delta_m2": 1.907,
+      "footprint_rectangles_m": [
+        [
+          1.585,
+          2.426,
+          5.455,
+          5.756
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          0.0,
+          3.87,
+          3.33
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.87,
+        "depth_m": 3.33
+      },
+      "growth_anchor_local_m": null
+    },
+    {
+      "zone_key": "WC_01",
+      "source_zone_name": "WC 01",
+      "target_area_m2": 3.11,
+      "footprint_area_m2": 4.274,
+      "footprint_area_delta_m2": 1.164,
+      "footprint_rectangles_m": [
+        [
+          1.585,
+          5.756,
+          4.325,
+          7.316
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          3.33,
+          2.74,
+          4.89
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 2.74,
+        "depth_m": 1.56
+      },
+      "growth_anchor_local_m": null
+    },
+    {
+      "zone_key": "WC_02",
+      "source_zone_name": "WC 02",
+      "target_area_m2": 2.83,
+      "footprint_area_m2": 3.848,
+      "footprint_area_delta_m2": 1.018,
+      "footprint_rectangles_m": [
+        [
+          6.895,
+          2.426,
+          8.8,
+          4.446
+        ]
+      ],
+      "selected_rectangles_local_m": [
+        [
+          5.31,
+          0.0,
+          7.215,
+          2.02
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 1.905,
+        "depth_m": 2.02
+      },
+      "growth_anchor_local_m": null
+    }
+  ]
+}

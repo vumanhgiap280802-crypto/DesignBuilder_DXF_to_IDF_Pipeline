@@ -1,0 +1,22 @@
+construction_name,resolver_scope,surface_type,boundary_family,construction_group,display_name,bundle_default,auto_reverse,reverse_construction_name,layer_order,layer_item_name,layer_idf_object_type,thickness_override_m,status,notes
+Project external floor,reference,Floor,Outdoors,floor,Project external floor,TRUE,FALSE,,1,External Rendering_.025,Material,,active,Default floor from crosscheck IDF
+Project external floor,reference,Floor,Outdoors,floor,Project external floor,TRUE,FALSE,,2,MW Stone Wool (rolls)_.1025,Material,,active,Default floor from crosscheck IDF
+Project external floor,reference,Floor,Outdoors,floor,Project external floor,TRUE,FALSE,,3,Timber Flooring_.005,Material,,active,Default floor from crosscheck IDF
+Project internal floor_Reversed,reference,Floor,Surface,floor,Project internal floor reversed,TRUE,FALSE,,1,Cast Concrete (Dense)_.1,Material,,active,Default internal floor from crosscheck IDF
+Project internal door,opening,Door,Surface,door,Project internal door,TRUE,FALSE,Project internal door_Rev,1,Painted Oak_.035,Material,,active,Current interzone door
+Project internal door_Rev,opening,Door,Surface,door,Project internal door reverse,TRUE,FALSE,,1,Painted Oak_.035,Material,,active,Current reverse interzone door
+Project external door,opening,Door,Outdoors,door,Project external door,TRUE,FALSE,,1,Painted Oak_.035,Material,,extension,Exterior door reserved for later opening cases
+Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,opening,Window,Outdoors,window,Double low E tinted argon window,TRUE,FALSE,,1,44,WindowMaterial:Glazing,,active,Current default window construction
+Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,opening,Window,Outdoors,window,Double low E tinted argon window,TRUE,FALSE,,2,1004,WindowMaterial:Gas,,active,Current default window construction
+Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,opening,Window,Outdoors,window,Double low E tinted argon window,TRUE,FALSE,,3,3,WindowMaterial:Glazing,,active,Current default window construction
+Perfectly Clear - 1002,opening,GlassDoor,Outdoors,glassdoor,Perfectly clear glazed door,TRUE,FALSE,,1,100,WindowMaterial:Glazing,,active,Current default glass door construction
+IBST_W140_PL15_BR110_PL15,wall,Wall,Surface,wall,IBST 140 wall,FALSE,TRUE,IBST_W140_PL15_BR110_PL15_Rev,1,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog
+IBST_W140_PL15_BR110_PL15,wall,Wall,Surface,wall,IBST 140 wall,FALSE,TRUE,IBST_W140_PL15_BR110_PL15_Rev,2,IBST_BRICK_CLAY_110_.11,Material,,active,Legacy wall library carried into standard catalog
+IBST_W140_PL15_BR110_PL15,wall,Wall,Surface,wall,IBST 140 wall,FALSE,TRUE,IBST_W140_PL15_BR110_PL15_Rev,3,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog
+IBST_W180_PL15_BR150_PL15,wall,Wall,Outdoors,wall,IBST 180 wall,FALSE,TRUE,IBST_W180_PL15_BR150_PL15_Rev,1,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog
+IBST_W180_PL15_BR150_PL15,wall,Wall,Outdoors,wall,IBST 180 wall,FALSE,TRUE,IBST_W180_PL15_BR150_PL15_Rev,2,IBST_BRICK_CLAY_150_.15,Material,,active,Legacy wall library carried into standard catalog
+IBST_W180_PL15_BR150_PL15,wall,Wall,Outdoors,wall,IBST 180 wall,FALSE,TRUE,IBST_W180_PL15_BR150_PL15_Rev,3,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog
+IBST_W250_PL15_BR110_BR110_PL15,wall,Wall,Outdoors,wall,IBST 250 wall,FALSE,TRUE,IBST_W250_PL15_BR110_BR110_PL15_Rev,1,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog
+IBST_W250_PL15_BR110_BR110_PL15,wall,Wall,Outdoors,wall,IBST 250 wall,FALSE,TRUE,IBST_W250_PL15_BR110_BR110_PL15_Rev,2,IBST_BRICK_CLAY_110_.11,Material,,active,Legacy wall library carried into standard catalog
+IBST_W250_PL15_BR110_BR110_PL15,wall,Wall,Outdoors,wall,IBST 250 wall,FALSE,TRUE,IBST_W250_PL15_BR110_BR110_PL15_Rev,3,IBST_BRICK_CLAY_110_.11,Material,,active,Legacy wall library carried into standard catalog
+IBST_W250_PL15_BR110_BR110_PL15,wall,Wall,Outdoors,wall,IBST 250 wall,FALSE,TRUE,IBST_W250_PL15_BR110_BR110_PL15_Rev,4,IBST_CEMENT_MORTAR_15_.015,Material,,active,Legacy wall library carried into standard catalog

@@ -1,0 +1,132 @@
+{
+  "profile_name": "S04 DXF Layer Recognition",
+  "profile_version": "1.0.0",
+  "profile_source": "2_config/dxf_layer_profile_s04.json",
+  "operational_input_standard": "parser_readable_dxf_text",
+  "matched_role_counts": {
+    "adiabatic_wall": 2,
+    "dimension_fallback": 52,
+    "external_wall": 4,
+    "internal_wall": 7,
+    "opening_annotation": 30,
+    "opening_evidence": 116,
+    "room_boundary": 6,
+    "room_label": 6,
+    "structural_fallback": 2061,
+    "wall_boundary_fallback": 1515
+  },
+  "match_source_counts": {
+    "alias": 3780,
+    "canonical": 17,
+    "fuzzy": 2
+  },
+  "matched_layer_aliases": {
+    "0": {
+      "role": "structural_fallback",
+      "canonical_layer": "EM_STRUCTURAL",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Lop hoan thien": {
+      "role": "wall_boundary_fallback",
+      "canonical_layer": "EM_WALL_BOUNDARY",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Thay": {
+      "role": "wall_boundary_fallback",
+      "canonical_layer": "EM_WALL_BOUNDARY",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Door window": {
+      "role": "opening_evidence",
+      "canonical_layer": "EM_DOOR_WINDOW",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Tuong": {
+      "role": "wall_boundary_fallback",
+      "canonical_layer": "EM_WALL_BOUNDARY",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Betong": {
+      "role": "structural_fallback",
+      "canonical_layer": "EM_STRUCTURAL",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Dim": {
+      "role": "dimension_fallback",
+      "canonical_layer": "EM_DIMENSION",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - Text4": {
+      "role": "room_label",
+      "canonical_layer": "EM_ROOM_LABEL",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "TAC - CUA+LC": {
+      "role": "opening_annotation",
+      "canonical_layer": "EM_OPENING_ANNOTATION",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "EM_EXTERNAL_WALL_ARABATIC_180": {
+      "role": "adiabatic_wall",
+      "canonical_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "match_source": "fuzzy",
+      "match_confidence": "low"
+    },
+    "EM_DOOR": {
+      "role": "opening_evidence",
+      "canonical_layer": "EM_DOOR",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "EM_GLASS_DOOR": {
+      "role": "opening_evidence",
+      "canonical_layer": "EM_GLASS_DOOR",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "EM_HOLE_AS_WINDOW": {
+      "role": "opening_evidence",
+      "canonical_layer": "EM_HOLE_AS_WINDOW",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    },
+    "EM_WINDOW": {
+      "role": "opening_evidence",
+      "canonical_layer": "EM_WINDOW",
+      "match_source": "alias",
+      "match_confidence": "medium"
+    }
+  },
+  "unmatched_layer_counts": {
+    "0": 242,
+    "EM_BLOCK_BOUNDARY": 1,
+    "TAC - CUA+LC": 18,
+    "TAC - Dim": 143,
+    "TAC - Door window": 39,
+    "TAC - Lop hoan thien": 3,
+    "TAC - Text1": 2,
+    "TAC - Thay": 36,
+    "TAC - Tuong": 18
+  },
+  "rejected_layer_counts": {
+    "Defpoints": 79,
+    "TAC - Ghichu": 1,
+    "TAC - Hatch": 55,
+    "TAC - Noi that": 194,
+    "TAC - Truc": 5
+  },
+  "missing_required_roles": [],
+  "missing_recommended_roles": [
+    "apartment_boundary",
+    "partition"
+  ]
+}

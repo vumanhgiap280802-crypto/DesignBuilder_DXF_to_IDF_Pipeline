@@ -1,0 +1,1144 @@
+[
+  {
+    "opening_id": "OPENING_001",
+    "source_opening_group_id": "OPENING_001",
+    "insert_handle": "2EE7",
+    "block_name": "*U83",
+    "raw_block_name": "*U83",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      1709.604,
+      6936.335
+    ],
+    "annotation_group_anchor_xy": [
+      1984.604040629511,
+      6744.652786391481
+    ],
+    "cluster_centroid_xy": [
+      1585.061593548503,
+      6833.443113792954
+    ],
+    "annotation_owner_handle": "2EE7",
+    "annotation_owner_block_name": "*U83",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      1984.604040629511,
+      6744.652786391481
+    ],
+    "rotation_degrees": null,
+    "scale_x": -0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "600X600",
+    "width_mm": 600,
+    "height_mm": 600,
+    "sill_height_text": "+1.600",
+    "sill_height_m": 1.6,
+    "type_code": "SW",
+    "attribute_records": [
+      {
+        "handle": "2EEE",
+        "owner_handle": "2EE7",
+        "text_value": "600X600",
+        "normalized_text": "600X600",
+        "raw_text": "600X600",
+        "anchor_xy": [
+          1593.302085551649,
+          6787.369002812707
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2EEF",
+        "owner_handle": "2EE7",
+        "text_value": "+1.600",
+        "normalized_text": "+1.600",
+        "raw_text": "+1.600",
+        "anchor_xy": [
+          1507.900436420857,
+          6783.508002420124
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": true,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2EF0",
+        "owner_handle": "2EE7",
+        "text_value": "SW",
+        "normalized_text": "SW",
+        "raw_text": "SW",
+        "anchor_xy": [
+          1653.982258673003,
+          6929.452336146032
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2EE7",
+    "matched_symbol_block_name": "*U83",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      1984.604040629511,
+      6744.652786391481
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "330D",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_WINDOW",
+    "matched_opening_geometry_anchor_xy": [
+      1709.604,
+      6936.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      1584.604,
+      6636.335,
+      1834.604,
+      7236.335
+    ],
+    "matched_opening_geometry_distance": 161.547,
+    "matched_opening_geometry_type_hint": "Window",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "WC 01",
+    "nearest_zone_distance": 1307.6792420161755,
+    "nearest_zone_key": "WC_01",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Window",
+    "opening_type_normalized": "Window",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_002",
+    "source_opening_group_id": "OPENING_002",
+    "insert_handle": "2EF2",
+    "block_name": "*U83",
+    "raw_block_name": "*U83",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      1709.604,
+      4366.332
+    ],
+    "annotation_group_anchor_xy": [
+      1974.604040629511,
+      4120.501586572023
+    ],
+    "cluster_centroid_xy": [
+      1566.1555417612774,
+      4209.291913973527
+    ],
+    "annotation_owner_handle": "2EF2",
+    "annotation_owner_block_name": "*U83",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      1974.604040629511,
+      4120.501586572023
+    ],
+    "rotation_degrees": null,
+    "scale_x": -0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "1400X1235",
+    "width_mm": 1400,
+    "height_mm": 1235,
+    "sill_height_text": "+1.400",
+    "sill_height_m": 1.4,
+    "type_code": "SN",
+    "attribute_records": [
+      {
+        "handle": "2EF9",
+        "owner_handle": "2EF2",
+        "text_value": "1400X1235",
+        "normalized_text": "1400X1235",
+        "raw_text": "1400X1235",
+        "anchor_xy": [
+          1532.615569619827,
+          4163.217802993279
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2EFA",
+        "owner_handle": "2EF2",
+        "text_value": "+1.400",
+        "normalized_text": "+1.400",
+        "raw_text": "+1.400",
+        "anchor_xy": [
+          1497.900436420857,
+          4159.356802600696
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": true,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2EFB",
+        "owner_handle": "2EF2",
+        "text_value": "SN",
+        "normalized_text": "SN",
+        "raw_text": "SN",
+        "anchor_xy": [
+          1667.950619243148,
+          4305.301136326603
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2EF2",
+    "matched_symbol_block_name": "*U83",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      1974.604040629511,
+      4120.501586572023
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "330E",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_WINDOW",
+    "matched_opening_geometry_anchor_xy": [
+      1709.604,
+      4366.332
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      1584.604,
+      3666.329,
+      1834.604,
+      5066.335
+    ],
+    "matched_opening_geometry_distance": 212.695,
+    "matched_opening_geometry_type_hint": "Window",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "PN 02",
+    "nearest_zone_distance": 1830.7712445876462,
+    "nearest_zone_key": "PN_02",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Window",
+    "opening_type_normalized": "Window",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_003",
+    "source_opening_group_id": "OPENING_003",
+    "insert_handle": "2EFD",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      4904.604,
+      7316.335
+    ],
+    "annotation_group_anchor_xy": [
+      4675.329378042537,
+      7176.306082157352
+    ],
+    "cluster_centroid_xy": [
+      4748.400044410796,
+      7290.063965245254
+    ],
+    "annotation_owner_handle": "2EFD",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      4675.329378042537,
+      7176.306082157352
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "850X2200",
+    "width_mm": 850,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DN1",
+    "attribute_records": [
+      {
+        "handle": "2F04",
+        "owner_handle": "2EFD",
+        "text_value": "850X2200",
+        "normalized_text": "850X2200",
+        "raw_text": "850X2200",
+        "anchor_xy": [
+          4719.500521987096,
+          7219.022298578578
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F06",
+        "owner_handle": "2EFD",
+        "text_value": "DN1",
+        "normalized_text": "DN1",
+        "raw_text": "DN1",
+        "anchor_xy": [
+          4777.299566834496,
+          7361.105631911931
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2EFD",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      4675.329378042537,
+      7176.306082157352
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "3308",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      4904.604,
+      7316.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      4479.604,
+      7246.335,
+      5329.604,
+      7386.335
+    ],
+    "matched_opening_geometry_distance": 158.398,
+    "matched_opening_geometry_type_hint": "Door",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "PK + PB",
+    "nearest_zone_distance": 2095.7367439638024,
+    "nearest_zone_key": "PK_PB",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Door",
+    "opening_type_normalized": "Door",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_004",
+    "source_opening_group_id": "OPENING_004",
+    "insert_handle": "2F08",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      4904.604,
+      5756.335
+    ],
+    "annotation_group_anchor_xy": [
+      4662.543614790088,
+      5578.336279956147
+    ],
+    "cluster_centroid_xy": [
+      4735.614281158347,
+      5692.09416304405
+    ],
+    "annotation_owner_handle": "2F08",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      4662.543614790088,
+      5578.336279956147
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "850X2200",
+    "width_mm": 850,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DN1",
+    "attribute_records": [
+      {
+        "handle": "2F0F",
+        "owner_handle": "2F08",
+        "text_value": "850X2200",
+        "normalized_text": "850X2200",
+        "raw_text": "850X2200",
+        "anchor_xy": [
+          4706.714758734647,
+          5621.052496377374
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F11",
+        "owner_handle": "2F08",
+        "text_value": "DN1",
+        "normalized_text": "DN1",
+        "raw_text": "DN1",
+        "anchor_xy": [
+          4764.513803582047,
+          5763.135829710727
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F08",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      4662.543614790088,
+      5578.336279956147
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "3307",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      4904.604,
+      5756.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      4479.604,
+      5686.335,
+      5329.604,
+      5826.335
+    ],
+    "matched_opening_geometry_distance": 180.788,
+    "matched_opening_geometry_type_hint": "Door",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "PK + PB",
+    "nearest_zone_distance": 1680.5691000372462,
+    "nearest_zone_key": "PK_PB",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Door",
+    "opening_type_normalized": "Door",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_005",
+    "source_opening_group_id": "OPENING_005",
+    "insert_handle": "2F13",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      6894.604,
+      3941.335
+    ],
+    "annotation_group_anchor_xy": [
+      6709.615587697117,
+      3851.905930089375
+    ],
+    "cluster_centroid_xy": [
+      6770.718490465645,
+      3965.6638131772343
+    ],
+    "annotation_owner_handle": "2F13",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      6709.615587697117,
+      3851.905930089375
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "750X2200",
+    "width_mm": 750,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DWN",
+    "attribute_records": [
+      {
+        "handle": "2F1A",
+        "owner_handle": "2F13",
+        "text_value": "750X2200",
+        "normalized_text": "750X2200",
+        "raw_text": "750X2200",
+        "anchor_xy": [
+          6753.786731641676,
+          3894.622146510573
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F1C",
+        "owner_handle": "2F13",
+        "text_value": "DWN",
+        "normalized_text": "DWN",
+        "raw_text": "DWN",
+        "anchor_xy": [
+          6787.650249289614,
+          4036.705479843896
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F13",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      6709.615587697117,
+      3851.905930089375
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "483C",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      6894.604,
+      3941.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      6824.604,
+      3566.335,
+      6964.604,
+      4316.335
+    ],
+    "matched_opening_geometry_distance": 126.252,
+    "matched_opening_geometry_type_hint": "Door",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "WC 02",
+    "nearest_zone_distance": 1078.091484986316,
+    "nearest_zone_key": "WC_02",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Door",
+    "opening_type_normalized": "Door",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_006",
+    "source_opening_group_id": "OPENING_006",
+    "insert_handle": "2F21",
+    "block_name": "*U83",
+    "raw_block_name": "*U83",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      3609.822,
+      10641.335
+    ],
+    "annotation_group_anchor_xy": [
+      3334.604040629514,
+      10445.50158648485
+    ],
+    "cluster_centroid_xy": [
+      3567.842729284667,
+      10534.291913886309
+    ],
+    "annotation_owner_handle": "2F21",
+    "annotation_owner_block_name": "*U83",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      3334.604040629514,
+      10445.50158648485
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "1400X1235",
+    "width_mm": 1400,
+    "height_mm": 1235,
+    "sill_height_text": "+1.400",
+    "sill_height_m": 1.4,
+    "type_code": "SN",
+    "attribute_records": [
+      {
+        "handle": "2F28",
+        "owner_handle": "2F21",
+        "text_value": "1400X1235",
+        "normalized_text": "1400X1235",
+        "raw_text": "1400X1235",
+        "anchor_xy": [
+          3355.832866836591,
+          10488.21780290605
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F29",
+        "owner_handle": "2F21",
+        "text_value": "+1.400",
+        "normalized_text": "+1.400",
+        "raw_text": "+1.400",
+        "anchor_xy": [
+          3866.270707296258,
+          10484.3568025135
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": true,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F2A",
+        "owner_handle": "2F21",
+        "text_value": "SN",
+        "normalized_text": "SN",
+        "raw_text": "SN",
+        "anchor_xy": [
+          3481.424613721152,
+          10630.30113623938
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F21",
+    "matched_symbol_block_name": "*U83",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      3334.604040629514,
+      10445.50158648485
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "330C",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_WINDOW",
+    "matched_opening_geometry_anchor_xy": [
+      3609.822,
+      10641.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      2909.604,
+      10516.335,
+      4310.041,
+      10766.335
+    ],
+    "matched_opening_geometry_distance": 114.98,
+    "matched_opening_geometry_type_hint": "Window",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "PN 01",
+    "nearest_zone_distance": 1602.5415088302707,
+    "nearest_zone_key": "PN_01",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Window",
+    "opening_type_normalized": "Window",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_007",
+    "source_opening_group_id": "OPENING_007",
+    "insert_handle": "2F2C",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      6874.604,
+      9641.335
+    ],
+    "annotation_group_anchor_xy": [
+      6645.437373962848,
+      9445.50158657162
+    ],
+    "cluster_centroid_xy": [
+      6707.036881462367,
+      9559.259469659493
+    ],
+    "annotation_owner_handle": "2F2C",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      6645.437373962848,
+      9445.50158657162
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "2000X2200",
+    "width_mm": 2000,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DN2",
+    "attribute_records": [
+      {
+        "handle": "2F33",
+        "owner_handle": "2F2C",
+        "text_value": "2000X2200",
+        "normalized_text": "2000X2200",
+        "raw_text": "2000X2200",
+        "anchor_xy": [
+          6666.666200169925,
+          9488.217802992818
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F35",
+        "owner_handle": "2F2C",
+        "text_value": "DN2",
+        "normalized_text": "DN2",
+        "raw_text": "DN2",
+        "anchor_xy": [
+          6747.407562754808,
+          9630.30113632617
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F2C",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      6645.437373962848,
+      9445.50158657162
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "330A",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_GLASS_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      6874.604,
+      9641.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      5874.604,
+      9516.335,
+      7874.604,
+      9766.335
+    ],
+    "matched_opening_geometry_distance": 186.588,
+    "matched_opening_geometry_type_hint": "GlassDoor",
+    "matched_opening_geometry_type_conflict": true,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "LOGIA",
+    "nearest_zone_distance": 616.5731911135936,
+    "nearest_zone_key": "LOGIA",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "GlassDoor",
+    "opening_type_normalized": "GlassDoor",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_008",
+    "source_opening_group_id": "OPENING_008",
+    "insert_handle": "2F37",
+    "block_name": "*U83",
+    "raw_block_name": "*U83",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      7172.104,
+      10641.335
+    ],
+    "annotation_group_anchor_xy": [
+      6897.10404067329,
+      10445.50158652863
+    ],
+    "cluster_centroid_xy": [
+      7120.9414408672665,
+      10534.291913930116
+    ],
+    "annotation_owner_handle": "2F37",
+    "annotation_owner_block_name": "*U83",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      6897.10404067329,
+      10445.50158652863
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "3000X1250",
+    "width_mm": 3000,
+    "height_mm": null,
+    "sill_height_text": "+0.150",
+    "sill_height_m": 0.15,
+    "type_code": "LC1",
+    "attribute_records": [
+      {
+        "handle": "2F3E",
+        "owner_handle": "2F37",
+        "text_value": "3000X1250",
+        "normalized_text": "3000X1250",
+        "raw_text": "3000X1250",
+        "anchor_xy": [
+          6918.33286688025,
+          10488.21780294986
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F3F",
+        "owner_handle": "2F37",
+        "text_value": "+0.150",
+        "normalized_text": "+0.150",
+        "raw_text": "+0.150",
+        "anchor_xy": [
+          7428.770707339918,
+          10484.35680255731
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": true,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F40",
+        "owner_handle": "2F37",
+        "text_value": "LC1",
+        "normalized_text": "LC1",
+        "raw_text": "LC1",
+        "anchor_xy": [
+          7015.720748381631,
+          10630.30113628318
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F37",
+    "matched_symbol_block_name": "*U83",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      6897.10404067329,
+      10445.50158652863
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "330B",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_HOLE_AS_WINDOW",
+    "matched_opening_geometry_anchor_xy": [
+      7172.104,
+      10641.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      5634.604,
+      10516.335,
+      8709.604,
+      10766.335
+    ],
+    "matched_opening_geometry_distance": 118.642,
+    "matched_opening_geometry_type_hint": "Hole",
+    "matched_opening_geometry_type_conflict": true,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "LOGIA",
+    "nearest_zone_distance": 439.80819683130056,
+    "nearest_zone_key": "LOGIA",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Hole",
+    "opening_type_normalized": "Hole",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high",
+    "idf_import_proxy": true,
+    "idf_import_surface_type": "Window",
+    "idf_import_name_suffix": "HOLE_AS_WINDOW",
+    "idf_import_construction_name": "Perfectly Clear - 1002",
+    "idf_import_frame_and_divider_name": "",
+    "idf_import_proxy_review_reason": "hole_imported_as_window_proxy"
+  },
+  {
+    "opening_id": "OPENING_009",
+    "source_opening_group_id": "OPENING_009",
+    "insert_handle": "2F44",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      3819.604,
+      7316.335
+    ],
+    "annotation_group_anchor_xy": [
+      3601.940208828011,
+      7158.969674511794
+    ],
+    "cluster_centroid_xy": [
+      3663.0431115965393,
+      7272.727557599654
+    ],
+    "annotation_owner_handle": "2F44",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      3601.940208828011,
+      7158.969674511794
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "750X2200",
+    "width_mm": 750,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DWN",
+    "attribute_records": [
+      {
+        "handle": "2F4B",
+        "owner_handle": "2F44",
+        "text_value": "750X2200",
+        "normalized_text": "750X2200",
+        "raw_text": "750X2200",
+        "anchor_xy": [
+          3646.111352772571,
+          7201.685890932992
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F4D",
+        "owner_handle": "2F44",
+        "text_value": "DWN",
+        "normalized_text": "DWN",
+        "raw_text": "DWN",
+        "anchor_xy": [
+          3679.974870420507,
+          7343.769224266316
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F44",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      3601.940208828011,
+      7158.969674511794
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "3309",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      3819.604,
+      7316.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      3444.604,
+      7246.335,
+      4194.604,
+      7386.335
+    ],
+    "matched_opening_geometry_distance": 162.521,
+    "matched_opening_geometry_type_hint": "Door",
+    "matched_opening_geometry_type_conflict": false,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "WC 01",
+    "nearest_zone_distance": 1164.7424608041042,
+    "nearest_zone_key": "WC_01",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Door",
+    "opening_type_normalized": "Door",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  },
+  {
+    "opening_id": "OPENING_010",
+    "source_opening_group_id": "OPENING_010",
+    "insert_handle": "2F50",
+    "block_name": "*U84",
+    "raw_block_name": "*U84",
+    "source_layer": "TAC - CUA+LC",
+    "anchor_xy": [
+      6274.604,
+      2471.335
+    ],
+    "annotation_group_anchor_xy": [
+      5955.870866280341,
+      2261.619379533513
+    ],
+    "cluster_centroid_xy": [
+      6035.824227969729,
+      2375.3772626213877
+    ],
+    "annotation_owner_handle": "2F50",
+    "annotation_owner_block_name": "*U84",
+    "annotation_owner_layer": "0",
+    "annotation_anchor_xy": [
+      5955.870866280341,
+      2261.619379533513
+    ],
+    "rotation_degrees": null,
+    "scale_x": 0.3055555555555556,
+    "scale_y": 0.3055555555555556,
+    "scale_z": 0.3055555555555556,
+    "size_text": "1000X2200",
+    "width_mm": 1000,
+    "height_mm": 2200,
+    "sill_height_text": "",
+    "sill_height_m": null,
+    "type_code": "DG",
+    "attribute_records": [
+      {
+        "handle": "2F57",
+        "owner_handle": "2F50",
+        "text_value": "1000X2200",
+        "normalized_text": "1000X2200",
+        "raw_text": "1000X2200",
+        "anchor_xy": [
+          5977.099692487302,
+          2304.33559595474
+        ],
+        "selected_as_size_text": true,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": false
+      },
+      {
+        "handle": "2F59",
+        "owner_handle": "2F50",
+        "text_value": "DG",
+        "normalized_text": "DG",
+        "raw_text": "DG",
+        "anchor_xy": [
+          6094.548763452156,
+          2446.418929288035
+        ],
+        "selected_as_size_text": false,
+        "selected_as_sill_height_text": false,
+        "selected_as_type_code": true
+      }
+    ],
+    "matched_symbol_insert_handle": "2F50",
+    "matched_symbol_block_name": "*U84",
+    "matched_symbol_layer": "0",
+    "matched_symbol_anchor_xy": [
+      5955.870866280341,
+      2261.619379533513
+    ],
+    "matched_symbol_distance": 0.0,
+    "matched_symbol_block_bbox_mm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "symbol_name_resolution_method": "raw_block_name",
+    "applied_symbol_hint": null,
+    "matched_opening_geometry_handle": "3306",
+    "matched_opening_geometry_record_type": "LWPOLYLINE",
+    "matched_opening_geometry_layer": "EM_DOOR",
+    "matched_opening_geometry_anchor_xy": [
+      6274.604,
+      2471.335
+    ],
+    "matched_opening_geometry_bbox_mm": [
+      5774.604,
+      2426.335,
+      6774.604,
+      2516.335
+    ],
+    "matched_opening_geometry_distance": 257.34,
+    "matched_opening_geometry_type_hint": "Door",
+    "matched_opening_geometry_type_conflict": true,
+    "opening_detection_method": "opening_layer_nearby_text",
+    "nearest_zone_name": "WC 02",
+    "nearest_zone_distance": 1844.9881435933403,
+    "nearest_zone_key": "WC_02",
+    "candidate_idf_object": "FenestrationSurface:Detailed",
+    "candidate_fenestration_type": "Door",
+    "opening_type_normalized": "Door",
+    "mapping_confidence": "high",
+    "candidate_confidence": "high"
+  }
+]

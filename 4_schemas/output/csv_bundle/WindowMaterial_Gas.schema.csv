@@ -1,0 +1,4 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+WindowMaterial:Gas,1,1,gas_layer_name,1004
+WindowMaterial:Gas,1,2,gas_type,Argon
+WindowMaterial:Gas,1,3,thickness_m,.013

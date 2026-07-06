@@ -1,0 +1,16 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+WindowMaterial:Glazing,3,1,glazing_name,3
+WindowMaterial:Glazing,3,2,optical_data_type,SpectralAverage
+WindowMaterial:Glazing,3,3,spectral_data_set_name,
+WindowMaterial:Glazing,3,4,thickness_m,.006
+WindowMaterial:Glazing,3,5,solar_transmittance,.775
+WindowMaterial:Glazing,3,6,solar_reflectance_front,.071
+WindowMaterial:Glazing,3,7,solar_reflectance_back,.071
+WindowMaterial:Glazing,3,8,visible_transmittance,.881
+WindowMaterial:Glazing,3,9,visible_reflectance_front,.080
+WindowMaterial:Glazing,3,10,visible_reflectance_back,.080
+WindowMaterial:Glazing,3,11,ir_transmittance,.0
+WindowMaterial:Glazing,3,12,ir_emissivity_front,.84
+WindowMaterial:Glazing,3,13,ir_emissivity_back,.84
+WindowMaterial:Glazing,3,14,conductivity_w_per_mk,.9
+WindowMaterial:Glazing,3,15,dirt_correction_factor,1

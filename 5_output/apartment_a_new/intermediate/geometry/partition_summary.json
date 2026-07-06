@@ -1,0 +1,67 @@
+{
+  "geometry_mode": "dxf_inferred_s04_layer_boundary",
+  "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+  "outer_block_rect_m": [
+    1.585,
+    2.426,
+    8.8,
+    10.766
+  ],
+  "outer_record_handle": "2528",
+  "outer_record_layer": "0",
+  "zone_count": 6,
+  "zone_targets_m2": {
+    "LOGIA": 2.58,
+    "PK_PB": 20.0,
+    "PN_01": 11.0,
+    "PN_02": 10.98,
+    "WC_01": 3.11,
+    "WC_02": 2.83
+  },
+  "zone_footprint_area_m2": {
+    "LOGIA": 3.763,
+    "PK_PB": 22.049,
+    "PN_01": 13.351,
+    "PN_02": 12.887,
+    "WC_01": 4.274,
+    "WC_02": 3.848
+  },
+  "single_block_validation": {
+    "outer_block_area_m2": 60.173,
+    "allocated_area_m2": 60.173,
+    "unallocated_area_m2": 0,
+    "unallocated_cell_count": 0,
+    "zone_graph_connected": true,
+    "zone_contact_graph": {
+      "LOGIA": [
+        "PK_PB",
+        "PN_01"
+      ],
+      "PK_PB": [
+        "LOGIA",
+        "PN_01",
+        "PN_02",
+        "WC_01",
+        "WC_02"
+      ],
+      "PN_01": [
+        "LOGIA",
+        "PK_PB",
+        "WC_01"
+      ],
+      "PN_02": [
+        "PK_PB",
+        "WC_01"
+      ],
+      "WC_01": [
+        "PK_PB",
+        "PN_01",
+        "PN_02"
+      ],
+      "WC_02": [
+        "PK_PB"
+      ]
+    }
+  }
+}

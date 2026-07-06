@@ -1,0 +1,10 @@
+﻿Name,Type,Roughness,DefaultThickness_m,Conductivity_W_mK,Density_kg_m3,SpecificHeat_J_kgK,ThermalResistance_m2K_W,ThermalAbsorptance,SolarAbsorptance,VisibleAbsorptance,ForceThickness,Notes
+IBST_CEMENT_MORTAR_15_.015,,MediumSmooth,0.015,0.93,1800,840,,0.9,0.7,0.7,,
+IBST_BRICK_CLAY_110_.11,,Rough,0.11,0.77,1700,840,,0.9,0.65,0.65,,
+IBST_BRICK_CLAY_150_.15,,Rough,0.15,0.77,1700,840,,0.9,0.65,0.65,,
+STEEL_SHEET_0012,,,0.0012,50,7850,500,,,,,,Detailed material - dùng làm lớp vỏ ngoài và trong của cửa chính/cửa kỹ thuật thép
+FIRE_DOOR_CORE_045,,,0.045,0.045,120,840,,,,,,Detailed material - lõi cách nhiệt/chống cháy proxy cho cửa chính/cửa kỹ thuật
+MDF_HDF_DOOR_LEAF_035,,,0.035,0.135,800,1300,,,,,,Detailed material - đại diện cho cửa phòng ngủ/cửa thông phòng
+UPVC_DOOR_PANEL_024,,,0.024,0.17,1400,1000,,,,,,Detailed material - đại diện cho cửa WC/khu ẩm
+GLASS_TEMPERED_010,,,0.01,1,2500,750,,,,,,"Reference only for 2-Simple glazing - dùng để tham chiếu chiều dày/vật liệu cho cửa kính logia; hiệu năng nhập tại bảng Glazing bằng U-value, SHGC, VT"
+GLASS_TEMPERED_008,,,0.008,1,2500,750,,,,,,"Reference only for 2-Simple glazing - dùng để tham chiếu chiều dày/vật liệu cho cửa sổ kính; hiệu năng nhập tại bảng Glazing bằng U-value, SHGC, VT"

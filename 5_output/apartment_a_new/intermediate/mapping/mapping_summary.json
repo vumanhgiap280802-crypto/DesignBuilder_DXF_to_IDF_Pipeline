@@ -1,0 +1,51 @@
+{
+  "mapping_version": "1.2.1",
+  "mapping_purpose": "IDF prep mapping for DesignBuilder import workflow",
+  "source_extract": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+  "filter_profile": "idf-prep-layer-first",
+  "selection_bbox_xy": [
+    84.604,
+    926.335,
+    10299.604,
+    12266.335
+  ],
+  "apartment_title": null,
+  "candidate_zone_count": 6,
+  "boundary_candidate_count": 611,
+  "candidate_opening_count": 10,
+  "dimension_annotation_count": 0,
+  "unmatched_symbol_insert_count": 9,
+  "zone_confidence_counts": {
+    "high": 6
+  },
+  "opening_confidence_counts": {
+    "high": 10
+  },
+  "opening_type_counts": {
+    "Door": 5,
+    "GlassDoor": 1,
+    "Hole": 1,
+    "Window": 3
+  },
+  "opening_placement_context": {
+    "aligned_segment_count": 1571,
+    "aligned_segment_layer_counts": {
+      "EM_EXTERNAL_WALL_250": 16,
+      "EM_EXTERNAL_WALL_ARABATIC_180": 8,
+      "EM_INTERNAL_WALL_140": 28,
+      "EM_ROOM_BOUNDARY": 30,
+      "TAC - Lop hoan thien": 321,
+      "TAC - Thay": 117,
+      "TAC - Tuong": 1051
+    }
+  },
+  "dimension_confidence_counts": {},
+  "parser_warning_count": 1,
+  "fallback_usage": {
+    "selection_bbox_source": "layer_room_boundary_union",
+    "used_boundary_fallback": true,
+    "used_room_label_fallback": false
+  },
+  "retained_block_definition_count": 11
+}

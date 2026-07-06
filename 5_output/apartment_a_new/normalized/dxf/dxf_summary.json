@@ -1,0 +1,19 @@
+{
+  "available": true,
+  "dxf_path": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+  "row_count": 8344,
+  "text_record_count": 1182,
+  "point_record_count": 5458,
+  "section_counts": {
+    "ACDSDATA": 6,
+    "BLOCKS": 4520,
+    "CLASSES": 43,
+    "ENTITIES": 115,
+    "OBJECTS": 3445,
+    "ROOT": 1,
+    "TABLES": 214
+  },
+  "block_definition_count": 113,
+  "operational_input_standard": "parser_readable_dxf_text",
+  "layer_profile_source": "2_config/dxf_layer_profile_s04.json"
+}

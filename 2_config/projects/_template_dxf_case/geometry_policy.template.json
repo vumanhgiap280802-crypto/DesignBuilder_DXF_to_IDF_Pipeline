@@ -1,0 +1,24 @@
+{
+  "policy_name": "__CASE_NAME__ Geometry Policy",
+  "policy_version": "1.0.0",
+  "geometry_mode": "backup_v2_single_block",
+  "ceiling_height_m": __CEILING_HEIGHT_M__,
+  "require_single_block": true,
+  "max_unallocated_area_m2": 0.001,
+  "area_priority_mode": "remember_only",
+  "wall_reference_policy": {
+    "policy_name": "zone_boundary_wall_reference_v2",
+    "external_reference_type": "zone_boundary_outer_face",
+    "external_reference_note": "Review this note before the first production run if the cleaned DXF needs a different wall reference convention.",
+    "interzone_reference_type": "shared_zone_boundary_centerline",
+    "single_zone_reference_type": "zone_boundary_inside_face"
+  },
+  "geometry_priority_note": "Scaffolded from the generic DXF case template. Review geometry_mode, wall reference policy, and remembered targets before first production use.",
+  "baseline_backup": {
+    "archive_file": "",
+    "algorithm_name": "DXF-First V2"
+  },
+  "zone_name_aliases": {},
+  "zone_merge_groups": [],
+  "remembered_zone_targets": {}
+}

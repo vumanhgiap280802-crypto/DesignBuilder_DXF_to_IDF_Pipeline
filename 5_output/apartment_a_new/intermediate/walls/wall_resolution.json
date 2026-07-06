@@ -1,0 +1,4704 @@
+{
+  "reference_policy": {
+    "policy_name": "zone_boundary_wall_reference_v2",
+    "policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+    "external_reference_type": "zone_boundary_outer_face",
+    "interzone_reference_type": "shared_zone_boundary_centerline",
+    "single_zone_reference_type": "zone_boundary_inside_face"
+  },
+  "surface_wall_count": 33,
+  "interzone_pair_count": 11,
+  "estimated_opening_host_count": 9,
+  "estimated_opening_hosts": [
+    "LOGIA_WALL_01",
+    "LOGIA_WALL_04",
+    "PKPB_WALL_03",
+    "PKPB_WALL_05",
+    "PN01_WALL_05",
+    "PN02_WALL_04",
+    "WC01_WALL_02",
+    "WC01_WALL_04",
+    "WC02_WALL_01"
+  ],
+  "reference_construction_summary": {
+    "available": false,
+    "applied_surface_count": 0,
+    "reference_path": ""
+  },
+  "adiabatic_boundary_summary": {
+    "available": true,
+    "converted_surface_count": 6,
+    "converted_surfaces": [
+      {
+        "surface_name": "LOGIA_WALL_03",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FB",
+        "overlap_mm": 1125.0,
+        "overlap_ratio": 1.0,
+        "plane_delta_mm": 0.396
+      },
+      {
+        "surface_name": "PKPB_WALL_09",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FC",
+        "overlap_mm": 1440.0,
+        "overlap_ratio": 1.0,
+        "plane_delta_mm": 0.335
+      },
+      {
+        "surface_name": "PKPB_WALL_10",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FB",
+        "overlap_mm": 5195.0,
+        "overlap_ratio": 1.0,
+        "plane_delta_mm": 0.396
+      },
+      {
+        "surface_name": "PN02_WALL_05",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FC",
+        "overlap_mm": 3620.396,
+        "overlap_ratio": 0.936,
+        "plane_delta_mm": 0.335
+      },
+      {
+        "surface_name": "WC02_WALL_03",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FC",
+        "overlap_mm": 1814.604,
+        "overlap_ratio": 0.953,
+        "plane_delta_mm": 0.335
+      },
+      {
+        "surface_name": "WC02_WALL_04",
+        "previous_boundary_condition": "Outdoors",
+        "new_boundary_condition": "Adiabatic",
+        "source_layer": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_match_source": "fuzzy",
+        "record_handle": "32FB",
+        "overlap_mm": 2019.665,
+        "overlap_ratio": 1.0,
+        "plane_delta_mm": 0.396
+      }
+    ],
+    "skipped_surface_count": 0,
+    "skipped_surfaces": [],
+    "parser_layer_evidence_summary": {
+      "available": true,
+      "horizontal_segment_count": 799,
+      "vertical_segment_count": 772,
+      "role_counts": {
+        "adiabatic_wall": 8,
+        "external_wall": 16,
+        "partition": 28,
+        "room_boundary": 30,
+        "wall_boundary_fallback": 1489
+      },
+      "canonical_layer_counts": {
+        "EM_EXTERNAL_WALL_250": 16,
+        "EM_EXTERNAL_WALL_ARABATIC_180": 8,
+        "EM_INTERNAL_WALL_140": 28,
+        "EM_ROOM_BOUNDARY": 30,
+        "EM_WALL_BOUNDARY": 1489
+      },
+      "layer_profile_source": "2_config/dxf_layer_profile_s04.json"
+    }
+  },
+  "wall_boundary_override_summary": {
+    "available": true,
+    "applied_override_count": 1,
+    "applied_overrides": [
+      {
+        "surface_name": "PKPB_WALL_09",
+        "previous_boundary_condition": "Adiabatic",
+        "new_boundary_condition": "Outdoors",
+        "wall_role": "external_wall",
+        "reason": "lower wall door OPENING_010 must export as a non-adiabatic exterior door"
+      }
+    ]
+  },
+  "dimension_annotation_summary": {
+    "annotation_count": 0,
+    "value_counts_mm": {},
+    "repeated_values_mm": []
+  },
+  "parser_layer_evidence_summary": {
+    "available": true,
+    "horizontal_segment_count": 799,
+    "vertical_segment_count": 772,
+    "role_counts": {
+      "adiabatic_wall": 8,
+      "external_wall": 16,
+      "partition": 28,
+      "room_boundary": 30,
+      "wall_boundary_fallback": 1489
+    },
+    "canonical_layer_counts": {
+      "EM_EXTERNAL_WALL_250": 16,
+      "EM_EXTERNAL_WALL_ARABATIC_180": 8,
+      "EM_INTERNAL_WALL_140": 28,
+      "EM_ROOM_BOUNDARY": 30,
+      "EM_WALL_BOUNDARY": 1489
+    },
+    "layer_profile_source": "2_config/dxf_layer_profile_s04.json",
+    "matched_surface_count": 33
+  },
+  "collinear_resolved_group_count": 5,
+  "collinear_resolved_groups": [
+    {
+      "surface_group": [
+        "LOGIA_WALL_04"
+      ],
+      "resolved_thickness_mm": 250
+    },
+    {
+      "surface_group": [
+        "PN01_WALL_05"
+      ],
+      "resolved_thickness_mm": 250
+    },
+    {
+      "surface_group": [
+        "PN01_WALL_06"
+      ],
+      "resolved_thickness_mm": 250
+    },
+    {
+      "surface_group": [
+        "PN02_WALL_04"
+      ],
+      "resolved_thickness_mm": 250
+    },
+    {
+      "surface_group": [
+        "WC01_WALL_04"
+      ],
+      "resolved_thickness_mm": 250
+    }
+  ],
+  "wall_thickness_inference": {
+    "surface_thicknesses": {
+      "LOGIA_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "LOGIA_WALL_02": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "LOGIA_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 10.967,
+        "candidate_scores": {
+          "180": 14.834,
+          "250": 1.353
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "LOGIA_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2556.837,
+        "candidate_scores": {
+          "250": 25.568
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PKPB_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "PKPB_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PKPB_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PKPB_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "PKPB_WALL_05": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PKPB_WALL_06": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PKPB_WALL_07": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "PKPB_WALL_08": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "PKPB_WALL_09": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1424.3,
+        "candidate_scores": {
+          "180": 14.243
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "PKPB_WALL_10": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.358,
+        "candidate_scores": {
+          "180": 14.834
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "PN01_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "PN01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PN01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_05": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PN01_WALL_06": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2372.088,
+        "candidate_scores": {
+          "250": 23.721
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "WC01_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "WC01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "WC01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "WC01_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PN02_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2556.883,
+        "candidate_scores": {
+          "250": 25.569
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_05": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1387.955,
+        "candidate_scores": {
+          "180": 13.88
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "WC02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "WC02_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1413.244,
+        "candidate_scores": {
+          "180": 14.132
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_04": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.112,
+        "candidate_scores": {
+          "180": 14.831
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      }
+    },
+    "wall_first_surface_thicknesses": {
+      "LOGIA_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "LOGIA_WALL_02": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "LOGIA_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 10.967,
+        "candidate_scores": {
+          "180": 14.834,
+          "250": 1.353
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "LOGIA_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2556.837,
+        "candidate_scores": {
+          "250": 25.568
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PKPB_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "PKPB_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PKPB_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PKPB_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "PKPB_WALL_05": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PKPB_WALL_06": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PKPB_WALL_07": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "PKPB_WALL_08": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "PKPB_WALL_09": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1424.3,
+        "candidate_scores": {
+          "180": 14.243
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "PKPB_WALL_10": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.358,
+        "candidate_scores": {
+          "180": 14.834
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "PN01_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "PN01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PN01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_05": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PN01_WALL_06": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2372.088,
+        "candidate_scores": {
+          "250": 23.721
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "WC01_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "WC01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "WC01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "WC01_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PN02_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2556.883,
+        "candidate_scores": {
+          "250": 25.569
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_05": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1387.955,
+        "candidate_scores": {
+          "180": 13.88
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "WC02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "WC02_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1413.244,
+        "candidate_scores": {
+          "180": 14.132
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_04": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.112,
+        "candidate_scores": {
+          "180": 14.831
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      }
+    },
+    "parser_layer_evidence_summary": {
+      "available": true,
+      "horizontal_segment_count": 799,
+      "vertical_segment_count": 772,
+      "role_counts": {
+        "adiabatic_wall": 8,
+        "external_wall": 16,
+        "partition": 28,
+        "room_boundary": 30,
+        "wall_boundary_fallback": 1489
+      },
+      "canonical_layer_counts": {
+        "EM_EXTERNAL_WALL_250": 16,
+        "EM_EXTERNAL_WALL_ARABATIC_180": 8,
+        "EM_INTERNAL_WALL_140": 28,
+        "EM_ROOM_BOUNDARY": 30,
+        "EM_WALL_BOUNDARY": 1489
+      },
+      "layer_profile_source": "2_config/dxf_layer_profile_s04.json",
+      "matched_surface_count": 33
+    },
+    "dimension_value_counts_mm": {},
+    "repeated_dimension_values_mm": [],
+    "default_thickness_by_boundary_mm": {
+      "Outdoors": 250,
+      "Surface": 140,
+      "Adiabatic": 180
+    },
+    "matched_surface_count": 0,
+    "wall_first_matched_surface_count": 33,
+    "source_counts": {
+      "layer_canonical": 22,
+      "layer_canonical_collinear_resolved": 5,
+      "layer_fuzzy": 6
+    },
+    "collinear_resolved_group_count": 5
+  },
+  "wall_inventory_summary": {
+    "row_count": 22,
+    "boundary_condition_counts": {
+      "Adiabatic": 5,
+      "Outdoors": 6,
+      "Surface": 11
+    },
+    "wall_family_counts": {
+      "Adiabatic": 5,
+      "Exterior": 8,
+      "Partition": 9
+    },
+    "wall_type_counts": {
+      "DXF Wall 140mm Total": 9,
+      "DXF Wall 180mm Total": 6,
+      "DXF Wall 250mm Total": 7
+    },
+    "thickness_counts_mm": {
+      "140": 9,
+      "180": 6,
+      "250": 7
+    }
+  },
+  "resolved_surfaces": [
+    {
+      "surface_name": "LOGIA_WALL_01",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_01",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 5.771
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FA"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_01",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "LOGIA_WALL_01",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15_Rev",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 5.771
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FA"
+      ]
+    },
+    {
+      "surface_name": "LOGIA_WALL_02",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN01_WALL_01",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 4.746
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F9"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_01",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "LOGIA_WALL_02",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15_Rev",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 4.746
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F9"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_02",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN01_WALL_02",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.507
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FE"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_02",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_02",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.507
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FE"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_03",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN01_WALL_03",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.3
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FF"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_03",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_03",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.3
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FF"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_04",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "WC01_WALL_01",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.72
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3300"
+      ]
+    },
+    {
+      "surface_name": "WC01_WALL_01",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_04",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.72
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3300"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_05",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN02_WALL_01",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 23.782
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3301"
+      ]
+    },
+    {
+      "surface_name": "PN02_WALL_01",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_05",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 23.782
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3301"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_06",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN02_WALL_02",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.639
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3302"
+      ]
+    },
+    {
+      "surface_name": "PN02_WALL_02",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_06",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.639
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3302"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_07",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "WC02_WALL_01",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.718
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3303"
+      ]
+    },
+    {
+      "surface_name": "WC02_WALL_01",
+      "zone_name": "WC02",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_07",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 22.718
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3303"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_08",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "WC02_WALL_02",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.785
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3304"
+      ]
+    },
+    {
+      "surface_name": "WC02_WALL_02",
+      "zone_name": "WC02",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PKPB_WALL_08",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.785
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3304"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_04",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "WC01_WALL_02",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.616
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FF"
+      ]
+    },
+    {
+      "surface_name": "WC01_WALL_02",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN01_WALL_04",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.616
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FF"
+      ]
+    },
+    {
+      "surface_name": "PN02_WALL_03",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "WC01_WALL_03",
+      "construction_name": "IBST_W140_PL15_BR110_PL15",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.616
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3301"
+      ]
+    },
+    {
+      "surface_name": "WC01_WALL_03",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "paired_surface_name": "PN02_WALL_03",
+      "construction_name": "IBST_W140_PL15_BR110_PL15_Rev",
+      "wall_thickness_mm": 140,
+      "wall_thickness_inference_source": "layer_canonical",
+      "wall_role": "partition",
+      "wall_family": "Partition",
+      "wall_layer_canonical": "EM_INTERNAL_WALL_140",
+      "wall_layer_source_layers": [
+        "EM_INTERNAL_WALL_140"
+      ],
+      "candidate_scores": {
+        "140": 21.616
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "3301"
+      ]
+    },
+    {
+      "surface_name": "LOGIA_WALL_03",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Adiabatic",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 14.834,
+        "250": 1.353
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FB"
+      ]
+    },
+    {
+      "surface_name": "LOGIA_WALL_04",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical_collinear_resolved",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 25.568
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F0"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_09",
+      "zone_name": "PKPB",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 14.243
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FC"
+      ]
+    },
+    {
+      "surface_name": "PKPB_WALL_10",
+      "zone_name": "PKPB",
+      "boundary_condition": "Adiabatic",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 14.834
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FB"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_05",
+      "zone_name": "PN01",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical_collinear_resolved",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 25.571
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F0"
+      ]
+    },
+    {
+      "surface_name": "PN01_WALL_06",
+      "zone_name": "PN01",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical_collinear_resolved",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 23.721
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F1"
+      ]
+    },
+    {
+      "surface_name": "PN02_WALL_04",
+      "zone_name": "PN02",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical_collinear_resolved",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 25.569
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F1"
+      ]
+    },
+    {
+      "surface_name": "PN02_WALL_05",
+      "zone_name": "PN02",
+      "boundary_condition": "Adiabatic",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 13.88
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FC"
+      ]
+    },
+    {
+      "surface_name": "WC01_WALL_04",
+      "zone_name": "WC01",
+      "boundary_condition": "Outdoors",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W250_PL15_BR110_BR110_PL15",
+      "wall_thickness_mm": 250,
+      "wall_thickness_inference_source": "layer_canonical_collinear_resolved",
+      "wall_role": "external_wall",
+      "wall_family": "Exterior",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_250",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_250"
+      ],
+      "candidate_scores": {
+        "250": 25.571
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32F1"
+      ]
+    },
+    {
+      "surface_name": "WC02_WALL_03",
+      "zone_name": "WC02",
+      "boundary_condition": "Adiabatic",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 14.132
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FC"
+      ]
+    },
+    {
+      "surface_name": "WC02_WALL_04",
+      "zone_name": "WC02",
+      "boundary_condition": "Adiabatic",
+      "paired_surface_name": "",
+      "construction_name": "IBST_W180_PL15_BR150_PL15",
+      "wall_thickness_mm": 180,
+      "wall_thickness_inference_source": "layer_fuzzy",
+      "wall_role": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "wall_layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+      "wall_layer_source_layers": [
+        "EM_EXTERNAL_WALL_ARABATIC_180"
+      ],
+      "candidate_scores": {
+        "180": 14.831
+      },
+      "dimension_handles": [],
+      "layer_record_handles": [
+        "32FB"
+      ]
+    }
+  ],
+  "resolved_walls": [
+    {
+      "wall_id": "WALL_001",
+      "surface_names": [
+        "LOGIA_WALL_01",
+        "PKPB_WALL_01"
+      ],
+      "zone_names": [
+        "LOGIA",
+        "PKPB"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "LOGIA_WALL_01"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          8.8,
+          9.641
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "LOGIA_WALL_01",
+        "surface_name_secondary": "PKPB_WALL_01"
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "length_m": 3.345
+    },
+    {
+      "wall_id": "WALL_002",
+      "surface_names": [
+        "LOGIA_WALL_02",
+        "PN01_WALL_01"
+      ],
+      "zone_names": [
+        "LOGIA",
+        "PN01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "LOGIA_WALL_02"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          10.766
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "LOGIA_WALL_02",
+        "surface_name_secondary": "PN01_WALL_01"
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "length_m": 1.125
+    },
+    {
+      "wall_id": "WALL_003",
+      "surface_names": [
+        "LOGIA_WALL_03"
+      ],
+      "zone_names": [
+        "LOGIA"
+      ],
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east",
+        "basis_surface_name": "LOGIA_WALL_03"
+      },
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          8.8,
+          10.766
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "LOGIA_WALL_03",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          8.8,
+          10.766
+        ]
+      },
+      "length_m": 1.125
+    },
+    {
+      "wall_id": "WALL_004",
+      "surface_names": [
+        "LOGIA_WALL_04"
+      ],
+      "zone_names": [
+        "LOGIA"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north",
+        "basis_surface_name": "LOGIA_WALL_04"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          8.8,
+          10.766
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "LOGIA_WALL_04",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          8.8,
+          10.766
+        ]
+      },
+      "length_m": 3.345
+    },
+    {
+      "wall_id": "WALL_005",
+      "surface_names": [
+        "PKPB_WALL_02",
+        "PN01_WALL_02"
+      ],
+      "zone_names": [
+        "PKPB",
+        "PN01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "PKPB_WALL_02"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          5.455,
+          9.641
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PKPB_WALL_02",
+        "surface_name_secondary": "PN01_WALL_02"
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "length_m": 2.325
+    },
+    {
+      "wall_id": "WALL_006",
+      "surface_names": [
+        "PKPB_WALL_03",
+        "PN01_WALL_03"
+      ],
+      "zone_names": [
+        "PKPB",
+        "PN01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north",
+        "basis_surface_name": "PKPB_WALL_03"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          5.455,
+          7.316
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PKPB_WALL_03",
+        "surface_name_secondary": "PN01_WALL_03"
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          5.455,
+          7.316
+        ]
+      },
+      "length_m": 1.13
+    },
+    {
+      "wall_id": "WALL_007",
+      "surface_names": [
+        "PKPB_WALL_04",
+        "WC01_WALL_01"
+      ],
+      "zone_names": [
+        "PKPB",
+        "WC01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "PKPB_WALL_04"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          4.325,
+          7.316
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PKPB_WALL_04",
+        "surface_name_secondary": "WC01_WALL_01"
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "length_m": 1.56
+    },
+    {
+      "wall_id": "WALL_008",
+      "surface_names": [
+        "PKPB_WALL_05",
+        "PN02_WALL_01"
+      ],
+      "zone_names": [
+        "PKPB",
+        "PN02"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "PKPB_WALL_05"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          5.455,
+          5.756
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PKPB_WALL_05",
+        "surface_name_secondary": "PN02_WALL_01"
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "length_m": 1.13
+    },
+    {
+      "wall_id": "WALL_009",
+      "surface_names": [
+        "PKPB_WALL_06",
+        "PN02_WALL_02"
+      ],
+      "zone_names": [
+        "PKPB",
+        "PN02"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "PKPB_WALL_06"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          5.455,
+          5.756
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PKPB_WALL_06",
+        "surface_name_secondary": "PN02_WALL_02"
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "length_m": 3.33
+    },
+    {
+      "wall_id": "WALL_010",
+      "surface_names": [
+        "PKPB_WALL_07",
+        "WC02_WALL_01"
+      ],
+      "zone_names": [
+        "PKPB",
+        "WC02"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east",
+        "basis_surface_name": "PKPB_WALL_07"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          6.895,
+          4.446
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PKPB_WALL_07",
+        "surface_name_secondary": "WC02_WALL_01"
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          6.895,
+          4.446
+        ]
+      },
+      "length_m": 2.02
+    },
+    {
+      "wall_id": "WALL_011",
+      "surface_names": [
+        "PKPB_WALL_08",
+        "WC02_WALL_02"
+      ],
+      "zone_names": [
+        "PKPB",
+        "WC02"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "PKPB_WALL_08"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          8.8,
+          4.446
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PKPB_WALL_08",
+        "surface_name_secondary": "WC02_WALL_02"
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "length_m": 1.905
+    },
+    {
+      "wall_id": "WALL_012",
+      "surface_names": [
+        "PKPB_WALL_09"
+      ],
+      "zone_names": [
+        "PKPB"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "PKPB_WALL_09"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          6.895,
+          2.426
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PKPB_WALL_09",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          6.895,
+          2.426
+        ]
+      },
+      "length_m": 1.44
+    },
+    {
+      "wall_id": "WALL_013",
+      "surface_names": [
+        "PKPB_WALL_10"
+      ],
+      "zone_names": [
+        "PKPB"
+      ],
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east",
+        "basis_surface_name": "PKPB_WALL_10"
+      },
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          8.8,
+          9.641
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PKPB_WALL_10",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "length_m": 5.195
+    },
+    {
+      "wall_id": "WALL_014",
+      "surface_names": [
+        "PN01_WALL_04",
+        "WC01_WALL_02"
+      ],
+      "zone_names": [
+        "PN01",
+        "WC01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "PN01_WALL_04"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PN01_WALL_04",
+        "surface_name_secondary": "WC01_WALL_02"
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "length_m": 2.74
+    },
+    {
+      "wall_id": "WALL_015",
+      "surface_names": [
+        "PN01_WALL_05"
+      ],
+      "zone_names": [
+        "PN01"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north",
+        "basis_surface_name": "PN01_WALL_05"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          10.766
+        ],
+        "end": [
+          5.455,
+          10.766
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PN01_WALL_05",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          10.766
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "length_m": 3.87
+    },
+    {
+      "wall_id": "WALL_016",
+      "surface_names": [
+        "PN01_WALL_06"
+      ],
+      "zone_names": [
+        "PN01"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "PN01_WALL_06"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          1.585,
+          10.766
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PN01_WALL_06",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          1.585,
+          10.766
+        ]
+      },
+      "length_m": 3.45
+    },
+    {
+      "wall_id": "WALL_017",
+      "surface_names": [
+        "PN02_WALL_03",
+        "WC01_WALL_03"
+      ],
+      "zone_names": [
+        "PN02",
+        "WC01"
+      ],
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "wall_family": "Partition",
+      "thickness_mm": 140,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north",
+        "basis_surface_name": "PN02_WALL_03"
+      },
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ],
+        "basis": "shared_zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PN02_WALL_03",
+        "surface_name_secondary": "WC01_WALL_03"
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "length_m": 2.74
+    },
+    {
+      "wall_id": "WALL_018",
+      "surface_names": [
+        "PN02_WALL_04"
+      ],
+      "zone_names": [
+        "PN02"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "PN02_WALL_04"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          1.585,
+          5.756
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "PN02_WALL_04",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          1.585,
+          5.756
+        ]
+      },
+      "length_m": 3.33
+    },
+    {
+      "wall_id": "WALL_019",
+      "surface_names": [
+        "PN02_WALL_05"
+      ],
+      "zone_names": [
+        "PN02"
+      ],
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "PN02_WALL_05"
+      },
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          5.455,
+          2.426
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "PN02_WALL_05",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          5.455,
+          2.426
+        ]
+      },
+      "length_m": 3.87
+    },
+    {
+      "wall_id": "WALL_020",
+      "surface_names": [
+        "WC01_WALL_04"
+      ],
+      "zone_names": [
+        "WC01"
+      ],
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "wall_family": "Exterior",
+      "thickness_mm": 250,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west",
+        "basis_surface_name": "WC01_WALL_04"
+      },
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          1.585,
+          7.316
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "WC01_WALL_04",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          1.585,
+          7.316
+        ]
+      },
+      "length_m": 1.56
+    },
+    {
+      "wall_id": "WALL_021",
+      "surface_names": [
+        "WC02_WALL_03"
+      ],
+      "zone_names": [
+        "WC02"
+      ],
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south",
+        "basis_surface_name": "WC02_WALL_03"
+      },
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          8.8,
+          2.426
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "horizontal",
+        "surface_name_primary": "WC02_WALL_03",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          8.8,
+          2.426
+        ]
+      },
+      "length_m": 1.905
+    },
+    {
+      "wall_id": "WALL_022",
+      "surface_names": [
+        "WC02_WALL_04"
+      ],
+      "zone_names": [
+        "WC02"
+      ],
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "wall_family": "Adiabatic",
+      "thickness_mm": 180,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east",
+        "basis_surface_name": "WC02_WALL_04"
+      },
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "source_edge": {
+        "start": [
+          8.8,
+          2.426
+        ],
+        "end": [
+          8.8,
+          4.446
+        ],
+        "basis": "zone_boundary_source_edge",
+        "axis": "vertical",
+        "surface_name_primary": "WC02_WALL_04",
+        "surface_name_secondary": ""
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          2.426
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "length_m": 2.02
+    }
+  ],
+  "surface_export_geometry_by_name": {
+    "LOGIA_WALL_01": {
+      "wall_id": "WALL_001",
+      "surface_name": "LOGIA_WALL_01",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_01": {
+      "wall_id": "WALL_001",
+      "surface_name": "PKPB_WALL_01",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "LOGIA_WALL_02": {
+      "wall_id": "WALL_002",
+      "surface_name": "LOGIA_WALL_02",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_01": {
+      "wall_id": "WALL_002",
+      "surface_name": "PN01_WALL_01",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "LOGIA_WALL_03": {
+      "wall_id": "WALL_003",
+      "surface_name": "LOGIA_WALL_03",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          8.8,
+          10.766
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          9.641
+        ],
+        "end": [
+          8.8,
+          10.766
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "LOGIA_WALL_04": {
+      "wall_id": "WALL_004",
+      "surface_name": "LOGIA_WALL_04",
+      "zone_name": "LOGIA",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          10.766
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          10.766
+        ],
+        "end": [
+          5.455,
+          10.766
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_02": {
+      "wall_id": "WALL_005",
+      "surface_name": "PKPB_WALL_02",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          9.641
+        ],
+        "end": [
+          5.455,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_02": {
+      "wall_id": "WALL_005",
+      "surface_name": "PN01_WALL_02",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          5.455,
+          9.641
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_03": {
+      "wall_id": "WALL_006",
+      "surface_name": "PKPB_WALL_03",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_03": {
+      "wall_id": "WALL_006",
+      "surface_name": "PN01_WALL_03",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          5.455,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          5.455,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_04": {
+      "wall_id": "WALL_007",
+      "surface_name": "PKPB_WALL_04",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC01_WALL_01": {
+      "wall_id": "WALL_007",
+      "surface_name": "WC01_WALL_01",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_05": {
+      "wall_id": "WALL_008",
+      "surface_name": "PKPB_WALL_05",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN02_WALL_01": {
+      "wall_id": "WALL_008",
+      "surface_name": "PN02_WALL_01",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_06": {
+      "wall_id": "WALL_009",
+      "surface_name": "PKPB_WALL_06",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          5.756
+        ],
+        "end": [
+          5.455,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          5.756
+        ],
+        "end": [
+          5.455,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN02_WALL_02": {
+      "wall_id": "WALL_009",
+      "surface_name": "PN02_WALL_02",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          5.455,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_07": {
+      "wall_id": "WALL_010",
+      "surface_name": "PKPB_WALL_07",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          6.895,
+          4.446
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          6.895,
+          4.446
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC02_WALL_01": {
+      "wall_id": "WALL_010",
+      "surface_name": "WC02_WALL_01",
+      "zone_name": "WC02",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          6.895,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          6.895,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_08": {
+      "wall_id": "WALL_011",
+      "surface_name": "PKPB_WALL_08",
+      "zone_name": "PKPB",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          4.446
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC02_WALL_02": {
+      "wall_id": "WALL_011",
+      "surface_name": "WC02_WALL_02",
+      "zone_name": "WC02",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          6.895,
+          4.446
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          6.895,
+          4.446
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_09": {
+      "wall_id": "WALL_012",
+      "surface_name": "PKPB_WALL_09",
+      "zone_name": "PKPB",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          6.895,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          2.426
+        ],
+        "end": [
+          6.895,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PKPB_WALL_10": {
+      "wall_id": "WALL_013",
+      "surface_name": "PKPB_WALL_10",
+      "zone_name": "PKPB",
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          4.446
+        ],
+        "end": [
+          8.8,
+          9.641
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_04": {
+      "wall_id": "WALL_014",
+      "surface_name": "PN01_WALL_04",
+      "zone_name": "PN01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          4.325,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC01_WALL_02": {
+      "wall_id": "WALL_014",
+      "surface_name": "WC01_WALL_02",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          1.585,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          7.316
+        ],
+        "end": [
+          1.585,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_05": {
+      "wall_id": "WALL_015",
+      "surface_name": "PN01_WALL_05",
+      "zone_name": "PN01",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          1.585,
+          10.766
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          5.455,
+          10.766
+        ],
+        "end": [
+          1.585,
+          10.766
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN01_WALL_06": {
+      "wall_id": "WALL_016",
+      "surface_name": "PN01_WALL_06",
+      "zone_name": "PN01",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          10.766
+        ],
+        "end": [
+          1.585,
+          7.316
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          10.766
+        ],
+        "end": [
+          1.585,
+          7.316
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN02_WALL_03": {
+      "wall_id": "WALL_017",
+      "surface_name": "PN02_WALL_03",
+      "zone_name": "PN02",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "label": "north"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          1.585,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          4.325,
+          5.756
+        ],
+        "end": [
+          1.585,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC01_WALL_03": {
+      "wall_id": "WALL_017",
+      "surface_name": "WC01_WALL_03",
+      "zone_name": "WC01",
+      "boundary_condition": "Surface",
+      "wall_type": "partition",
+      "thickness_mm": 140,
+      "reference_type": "shared_zone_boundary_centerline",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          4.325,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN02_WALL_04": {
+      "wall_id": "WALL_018",
+      "surface_name": "PN02_WALL_04",
+      "zone_name": "PN02",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          1.585,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          5.756
+        ],
+        "end": [
+          1.585,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "PN02_WALL_05": {
+      "wall_id": "WALL_019",
+      "surface_name": "PN02_WALL_05",
+      "zone_name": "PN02",
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          5.455,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          2.426
+        ],
+        "end": [
+          5.455,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC01_WALL_04": {
+      "wall_id": "WALL_020",
+      "surface_name": "WC01_WALL_04",
+      "zone_name": "WC01",
+      "boundary_condition": "Outdoors",
+      "wall_type": "external_wall",
+      "thickness_mm": 250,
+      "reference_type": "zone_boundary_outer_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "label": "west"
+      },
+      "offset_vector_m": [
+        -0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          1.585,
+          5.756
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          1.585,
+          7.316
+        ],
+        "end": [
+          1.585,
+          5.756
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC02_WALL_03": {
+      "wall_id": "WALL_021",
+      "surface_name": "WC02_WALL_03",
+      "zone_name": "WC02",
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "label": "south"
+      },
+      "offset_vector_m": [
+        0.0,
+        -0.0
+      ],
+      "source_edge": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          8.8,
+          2.426
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          6.895,
+          2.426
+        ],
+        "end": [
+          8.8,
+          2.426
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    },
+    "WC02_WALL_04": {
+      "wall_id": "WALL_022",
+      "surface_name": "WC02_WALL_04",
+      "zone_name": "WC02",
+      "boundary_condition": "Adiabatic",
+      "wall_type": "adiabatic_wall",
+      "thickness_mm": 180,
+      "reference_type": "zone_boundary_inside_face",
+      "reference_offset_mm": 0,
+      "normal_direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "label": "east"
+      },
+      "offset_vector_m": [
+        0.0,
+        0.0
+      ],
+      "source_edge": {
+        "start": [
+          8.8,
+          2.426
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "final_export_line": {
+        "start": [
+          8.8,
+          2.426
+        ],
+        "end": [
+          8.8,
+          4.446
+        ]
+      },
+      "z_min_m": 0.0,
+      "z_max_m": 3.3
+    }
+  },
+  "qa_checks": {
+    "zone_area_preservation": {
+      "checked_zone_count": 6,
+      "preserved": true,
+      "max_area_delta_m2": 0.0,
+      "zone_footprint_area_m2_by_key": {
+        "LOGIA": 3.763,
+        "PK_PB": 22.049,
+        "PN_01": 13.351,
+        "PN_02": 12.887,
+        "WC_01": 4.274,
+        "WC_02": 3.848
+      },
+      "note": "Wall resolution updates only wall export references; zone floor polygons remain unchanged."
+    },
+    "surface_shell_closure": {
+      "tolerance_mm": 10.0,
+      "checked_surface_count": 6,
+      "skipped_surface_count": 0,
+      "passed": true,
+      "failed_surface_names": [],
+      "skipped_surface_names": [],
+      "reference_type_mismatch_surface_names": [],
+      "max_plane_gap_mm": 0.396,
+      "details_by_surface_name": {
+        "LOGIA_WALL_04": {
+          "surface_name": "LOGIA_WALL_04",
+          "status": "passed",
+          "reason": "",
+          "axis": "horizontal",
+          "outward_side": "north",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 250,
+          "source_fixed_coord_m": 10.766,
+          "expected_shell_fixed_coord_m": 10.766335,
+          "final_fixed_coord_m": 10.766,
+          "source_to_expected_mm": 0.335,
+          "final_to_expected_mm": 0.335,
+          "candidate_handles_used": [
+            "32F0"
+          ],
+          "layer_record_handles": [
+            "32F0"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_250",
+          "candidate_outer_face_fixed_coords_m": [
+            10.766335
+          ]
+        },
+        "PKPB_WALL_09": {
+          "surface_name": "PKPB_WALL_09",
+          "status": "passed",
+          "reason": "",
+          "axis": "horizontal",
+          "outward_side": "south",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 180,
+          "source_fixed_coord_m": 2.426,
+          "expected_shell_fixed_coord_m": 2.426335,
+          "final_fixed_coord_m": 2.426,
+          "source_to_expected_mm": 0.335,
+          "final_to_expected_mm": 0.335,
+          "candidate_handles_used": [
+            "32FC"
+          ],
+          "layer_record_handles": [
+            "32FC"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+          "candidate_outer_face_fixed_coords_m": [
+            2.426335
+          ]
+        },
+        "PN01_WALL_05": {
+          "surface_name": "PN01_WALL_05",
+          "status": "passed",
+          "reason": "",
+          "axis": "horizontal",
+          "outward_side": "north",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 250,
+          "source_fixed_coord_m": 10.766,
+          "expected_shell_fixed_coord_m": 10.766335,
+          "final_fixed_coord_m": 10.766,
+          "source_to_expected_mm": 0.335,
+          "final_to_expected_mm": 0.335,
+          "candidate_handles_used": [
+            "32F0"
+          ],
+          "layer_record_handles": [
+            "32F0"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_250",
+          "candidate_outer_face_fixed_coords_m": [
+            10.766335
+          ]
+        },
+        "PN01_WALL_06": {
+          "surface_name": "PN01_WALL_06",
+          "status": "passed",
+          "reason": "",
+          "axis": "vertical",
+          "outward_side": "west",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 250,
+          "source_fixed_coord_m": 1.585,
+          "expected_shell_fixed_coord_m": 1.584604,
+          "final_fixed_coord_m": 1.585,
+          "source_to_expected_mm": 0.396,
+          "final_to_expected_mm": 0.396,
+          "candidate_handles_used": [
+            "32F1"
+          ],
+          "layer_record_handles": [
+            "32F1"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_250",
+          "candidate_outer_face_fixed_coords_m": [
+            1.584604
+          ]
+        },
+        "PN02_WALL_04": {
+          "surface_name": "PN02_WALL_04",
+          "status": "passed",
+          "reason": "",
+          "axis": "vertical",
+          "outward_side": "west",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 250,
+          "source_fixed_coord_m": 1.585,
+          "expected_shell_fixed_coord_m": 1.584604,
+          "final_fixed_coord_m": 1.585,
+          "source_to_expected_mm": 0.396,
+          "final_to_expected_mm": 0.396,
+          "candidate_handles_used": [
+            "32F1"
+          ],
+          "layer_record_handles": [
+            "32F1"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_250",
+          "candidate_outer_face_fixed_coords_m": [
+            1.584604
+          ]
+        },
+        "WC01_WALL_04": {
+          "surface_name": "WC01_WALL_04",
+          "status": "passed",
+          "reason": "",
+          "axis": "vertical",
+          "outward_side": "west",
+          "policy_reference_type": "zone_boundary_outer_face",
+          "expected_reference_type": "zone_boundary_outer_face",
+          "reference_type_matches_evidence": true,
+          "wall_thickness_mm": 250,
+          "source_fixed_coord_m": 1.585,
+          "expected_shell_fixed_coord_m": 1.584604,
+          "final_fixed_coord_m": 1.585,
+          "source_to_expected_mm": 0.396,
+          "final_to_expected_mm": 0.396,
+          "candidate_handles_used": [
+            "32F1"
+          ],
+          "layer_record_handles": [
+            "32F1"
+          ],
+          "layer_canonical": "EM_EXTERNAL_WALL_250",
+          "candidate_outer_face_fixed_coords_m": [
+            1.584604
+          ]
+        }
+      }
+    },
+    "external_wall_offset_correctness": {
+      "checked_wall_count": 6,
+      "passed": true,
+      "failed_wall_ids": [],
+      "max_offset_error_mm": 0.0
+    },
+    "interzone_wall_consistency": {
+      "checked_wall_count": 11,
+      "passed": true,
+      "failed_wall_ids": []
+    }
+  }
+}

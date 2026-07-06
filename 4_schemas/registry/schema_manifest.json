@@ -1,0 +1,178 @@
+{
+  "manifest_name": "schema_manifest",
+  "schema_root": "4_schemas",
+  "manifest_version": "1.0.0",
+  "schemas": [
+    {
+      "schema_name": "apartment_a_filtered_extract_schema",
+      "path": "4_schemas/source/dxf/Apartment_A_filtered_extract_schema.json",
+      "role": "source",
+      "format": "json",
+      "related_module": "3_scripts/pipeline/apartment_a_pipeline.py::build_extract_schema",
+      "status": "active",
+      "notes": "DXF extract schema for the filtered Apartment A text extract and its normalized relational views."
+    },
+    {
+      "schema_name": "metadata_schema",
+      "path": "4_schemas/contracts/metadata_schema.json",
+      "role": "contract",
+      "format": "json",
+      "related_module": "3_scripts/context/mapping_builder.py -> 3_scripts/transformers/* -> 3_scripts/writers/bundle_writer.py",
+      "status": "active",
+      "notes": "Working standard contract for the current Apartment A metadata handoff across mapping, geometry, envelope, openings, simulation defaults, and export settings."
+    },
+    {
+      "schema_name": "material_library_schema",
+      "path": "4_schemas/contracts/material_library_schema.json",
+      "role": "contract",
+      "format": "json",
+      "related_module": "3_scripts/transformers/wall_logic.py -> 3_scripts/writers/bundle_writer.py -> 3_scripts/writers/rebuild_idf_from_bundle.py",
+      "status": "active",
+      "notes": "Working standard for external material-like library rows used by the current wall and opening bundle path, including active Material rows and provisional NoMass or AirGap references."
+    },
+    {
+      "schema_name": "construction_library_schema",
+      "path": "4_schemas/contracts/construction_library_schema.json",
+      "role": "contract",
+      "format": "json",
+      "related_module": "3_scripts/transformers/wall_logic.py -> 3_scripts/writers/bundle_writer.py -> 3_scripts/writers/rebuild_idf_from_bundle.py",
+      "status": "active",
+      "notes": "Row-based construction catalog standard that preserves the current thickness-based wall resolver and six-layer bundle output shape."
+    },
+    {
+      "schema_name": "opening_library_schema",
+      "path": "4_schemas/contracts/opening_library_schema.json",
+      "role": "contract",
+      "format": "json",
+      "related_module": "3_scripts/transformers/fenestration_builder.py -> 3_scripts/writers/bundle_writer.py -> 3_scripts/writers/rebuild_idf_from_bundle.py",
+      "status": "active",
+      "notes": "Working standard for opening resolver rules plus the current glazing, gas, and frame objects that the bundle writer and IDF rebuild path already support."
+    },
+    {
+      "schema_name": "building_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Building.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Building.csv written by bundle_writer and consumed by rebuild_idf_from_bundle."
+    },
+    {
+      "schema_name": "building_surface_detailed_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/BuildingSurface_Detailed.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for BuildingSurface_Detailed.csv written from current surface rows."
+    },
+    {
+      "schema_name": "construction_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Construction.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Construction.csv emitted by bundle_writer."
+    },
+    {
+      "schema_name": "fenestration_surface_detailed_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/FenestrationSurface_Detailed.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for FenestrationSurface_Detailed.csv written from resolved fenestration rows."
+    },
+    {
+      "schema_name": "global_geometry_rules_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/GlobalGeometryRules.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for GlobalGeometryRules.csv writer defaults."
+    },
+    {
+      "schema_name": "material_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Material.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Material.csv emitted by bundle_writer."
+    },
+    {
+      "schema_name": "site_location_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Site_Location.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Site_Location.csv writer defaults."
+    },
+    {
+      "schema_name": "version_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Version.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Version.csv writer defaults."
+    },
+    {
+      "schema_name": "window_material_gas_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/WindowMaterial_Gas.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for WindowMaterial_Gas.csv writer defaults."
+    },
+    {
+      "schema_name": "window_material_glazing_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/WindowMaterial_Glazing.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for WindowMaterial_Glazing.csv writer defaults."
+    },
+    {
+      "schema_name": "window_property_frame_and_divider_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/WindowProperty_FrameAndDivider.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for WindowProperty_FrameAndDivider.csv writer defaults."
+    },
+    {
+      "schema_name": "zone_csv_bundle_schema",
+      "path": "4_schemas/output/csv_bundle/Zone.schema.csv",
+      "role": "output_reference",
+      "format": "csv",
+      "related_module": "3_scripts/writers/bundle_writer.py::IDF_BUNDLE_TABLE_FIELDS",
+      "status": "active",
+      "notes": "Reference field order for Zone.csv written from current geometry and zone metadata."
+    },
+    {
+      "schema_name": "test1_for_db_import_dblean_crosscheck_schema",
+      "path": "4_schemas/output/idf_reference/Test1_for_DB_import_DBlean_crosscheck_schema.json",
+      "role": "output_reference",
+      "format": "json",
+      "related_module": "3_scripts/schema_tools/schema_workbench.py + 3_scripts/writers/rebuild_idf_from_bundle.py",
+      "status": "reference",
+      "notes": "Reference IDF object schema used to describe the lean cross-check import file and to seed CSV schema generation."
+    },
+    {
+      "schema_name": "schema_manifest",
+      "path": "4_schemas/registry/schema_manifest.json",
+      "role": "registry",
+      "format": "json",
+      "related_module": "4_schemas/registry/schema_manifest.json",
+      "status": "active",
+      "notes": "Registry entrypoint for locating source, contract, and output reference schemas after the role-based reorganization."
+    }
+  ]
+}

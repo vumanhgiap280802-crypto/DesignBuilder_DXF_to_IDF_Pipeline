@@ -1,0 +1,4 @@
+timestamp,hook,category,surface_key,surface_label,action,status,value,message
+2026-05-12T17:17:10,before_energy_idf_generation,designbuilder_api,global,global,detect,PASS,,DesignBuilder API is available.
+2026-05-12T17:17:10,before_energy_idf_generation,surface_target,global,manifest/arguments,load_targets,PASS,APARTMENT_A_NEW_LOGIA_WALL_03;APARTMENT_A_NEW_PK_PB_WALL_09;APARTMENT_A_NEW_PK_PB_WALL_10;APARTMENT_A_NEW_PN_02_WALL_05;APARTMENT_A_NEW_WC_02_WALL_03;APARTMENT_A_NEW_WC_02_WALL_04,Targets are loaded from manifest plus --target-surface arguments.
+2026-05-12T17:17:10,before_energy_idf_generation,surface_scan,global,DesignBuilder surfaces,collect,PASS,45,Collected surfaces from active building/site hierarchy.

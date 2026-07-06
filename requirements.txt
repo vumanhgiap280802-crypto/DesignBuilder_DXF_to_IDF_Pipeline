@@ -1,0 +1,32 @@
+# Python Dependencies for DB_IDF_Workspace
+# Usage (Python >= 3.10):
+#   pip install -r requirements.txt
+
+# === CORE DATA PROCESSING ===
+pandas>=2.0.0
+openpyxl>=3.11.0
+pyyaml>=6.0
+pydantic>=2.0
+python-dotenv>=1.0
+
+# === FILE FORMAT PARSERS ===
+ezdxf>=1.1.0
+eppy>=0.5.60
+
+# === UTILITIES ===
+rich>=13.0
+typer>=0.9.0
+click>=8.1
+pathspec>=0.11.0
+
+# === CODE QUALITY ===
+black>=23.0
+ruff>=0.1.0
+isort>=5.12
+
+# === TYPE CHECKING ===
+mypy>=1.0
+
+# === ADDITIONAL ===
+requests>=2.31
+pytz>=2023.3

@@ -1,0 +1,272 @@
+[
+  {
+    "zone_name": "LOGIA",
+    "canonical_text": "LOGIA",
+    "zone_key": "LOGIA",
+    "area_m2": 2.58,
+    "label_handle": "2EA3",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      7127.104,
+      10203.835
+    ],
+    "bbox_xy": [
+      5454.604,
+      9641.335,
+      8799.604,
+      10766.335
+    ],
+    "source_text": "LÔGIA (2,58m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2EA3"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        5454.604,
+        9641.335,
+        8799.604,
+        10766.335
+      ]
+    ],
+    "boundary_handle": "32EB",
+    "boundary_handles": [
+      "32EB"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "LOGIA"
+    ]
+  },
+  {
+    "zone_name": "PK + PB",
+    "canonical_text": "PK + PB",
+    "zone_key": "PK_PB",
+    "area_m2": 20.0,
+    "label_handle": "2E99",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      6562.104,
+      6033.835
+    ],
+    "bbox_xy": [
+      4324.604,
+      2426.335,
+      8799.604,
+      9641.335
+    ],
+    "source_text": "PK + PB (20,0m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2E99"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        4324.604,
+        2426.335,
+        8799.604,
+        9641.335
+      ]
+    ],
+    "boundary_handle": "32EF",
+    "boundary_handles": [
+      "32EF"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "PK + PB"
+    ]
+  },
+  {
+    "zone_name": "PN 01",
+    "canonical_text": "PN 01",
+    "zone_key": "PN_01",
+    "area_m2": 11.0,
+    "label_handle": "2E9B",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      3519.604,
+      9041.335
+    ],
+    "bbox_xy": [
+      1584.604,
+      7316.335,
+      5454.604,
+      10766.335
+    ],
+    "source_text": "PN 01 (11,00m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2E9B"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        1584.604,
+        7316.335,
+        5454.604,
+        10766.335
+      ]
+    ],
+    "boundary_handle": "32EA",
+    "boundary_handles": [
+      "32EA"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "PN 01"
+    ]
+  },
+  {
+    "zone_name": "PN 02",
+    "canonical_text": "PN 02",
+    "zone_key": "PN_02",
+    "area_m2": 10.98,
+    "label_handle": "2E9D",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      3519.604,
+      4091.335
+    ],
+    "bbox_xy": [
+      1584.604,
+      2426.335,
+      5454.604,
+      5756.335
+    ],
+    "source_text": "PN 02 (10,98m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2E9D"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        1584.604,
+        2426.335,
+        5454.604,
+        5756.335
+      ]
+    ],
+    "boundary_handle": "32ED",
+    "boundary_handles": [
+      "32ED"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "PN 02"
+    ]
+  },
+  {
+    "zone_name": "WC 01",
+    "canonical_text": "WC 01",
+    "zone_key": "WC_01",
+    "area_m2": 3.11,
+    "label_handle": "2E9F",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      2954.604,
+      6536.335
+    ],
+    "bbox_xy": [
+      1584.604,
+      5756.335,
+      4324.604,
+      7316.335
+    ],
+    "source_text": "WC 01 (3,11m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2E9F"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        1584.604,
+        5756.335,
+        4324.604,
+        7316.335
+      ]
+    ],
+    "boundary_handle": "32EC",
+    "boundary_handles": [
+      "32EC"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "WC 01"
+    ]
+  },
+  {
+    "zone_name": "WC 02",
+    "canonical_text": "WC 02",
+    "zone_key": "WC_02",
+    "area_m2": 2.83,
+    "label_handle": "2EA1",
+    "source_layer": "TAC - Text4",
+    "anchor_xy": [
+      7847.104,
+      3436.335
+    ],
+    "bbox_xy": [
+      6894.604,
+      2426.335,
+      8799.604,
+      4446.335
+    ],
+    "source_text": "WC 02 (2,83m2)",
+    "candidate_confidence": "high",
+    "source_candidate_count": 1,
+    "source_handles": [
+      "2EA1"
+    ],
+    "zone_detection_method": "em_room_boundary_contained_text",
+    "boundary_fragment_count": 1,
+    "boundary_fragment_bboxes_xy": [
+      [
+        6894.604,
+        2426.335,
+        8799.604,
+        4446.335
+      ]
+    ],
+    "boundary_handle": "32EE",
+    "boundary_handles": [
+      "32EE"
+    ],
+    "boundary_source_layer": "EM_ROOM_BOUNDARY",
+    "boundary_layer_role": "room_boundary",
+    "boundary_layer_canonical": "EM_ROOM_BOUNDARY",
+    "merge_opening_geometry_handles": [],
+    "contained_zone_texts": [
+      "WC 02"
+    ]
+  }
+]

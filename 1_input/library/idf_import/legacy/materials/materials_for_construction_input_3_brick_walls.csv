@@ -1,0 +1,4 @@
+Name,Type,Roughness,DefaultThickness_m,Conductivity_W_mK,Density_kg_m3,SpecificHeat_J_kgK,ThermalAbsorptance,SolarAbsorptance,VisibleAbsorptance,ForceThickness,Notes
+IBST_CEMENT_MORTAR_15_.015,Detailed,MediumSmooth,0.015,0.93,1800,840,0.90,0.70,0.70,Yes,Vua xi mang 15mm
+IBST_BRICK_CLAY_110_.11,Detailed,Rough,0.110,0.77,1700,840,0.90,0.65,0.65,Yes,Gach dat nung 110mm
+IBST_BRICK_CLAY_150_.15,Detailed,Rough,0.150,0.77,1700,840,0.90,0.65,0.65,Yes,Gach dat nung 150mm

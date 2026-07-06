@@ -1,0 +1,46 @@
+{
+  "case_id": "noxh_apartment_c_clean",
+  "case_name": "NOXH Apartment C Clean DXF",
+  "file_slug": "NOXH_Apartment_C_clean",
+  "zone_output_prefix": "",
+  "object_output_prefix": "APARTMENT_C",
+  "canonical_room_code_rules": {
+    "source_field": "candidate_zones[].zone_name",
+    "drop_prefix_before_colon": true,
+    "ascii_normalize": true,
+    "uppercase": true,
+    "replace_plus_with_underscore": true,
+    "collapse_non_alnum_to_underscore": true,
+    "aliases": {},
+    "compact_numeric_patterns": []
+  },
+  "zone_id_pattern": "{zone_output_prefix}{canonical_room_code}",
+  "surface_name_patterns": {
+    "floor": "{zone_id}_FLOOR_{seq:02d}",
+    "roof": "{zone_id}_ROOF_{seq:02d}",
+    "wall": "{zone_id}_WALL_{seq:02d}"
+  },
+  "wall_inventory_id_pattern": "WALL_{seq:03d}",
+  "opening_id_pattern": "OPENING_{seq:03d}",
+  "fenestration_name_pattern": "{zone_output_prefix_no_trailing_underscore}_{opening_id}_{surface_type_token}",
+  "paired_fenestration_suffix": "_ADJ",
+  "primary_input_patterns": {
+    "raw_cad_file": "NOXH_Apartment_C_clean.dxf",
+    "ready_text_input": "NOXH_Apartment_C_clean.dxf"
+  },
+  "primary_output_patterns": {
+    "extract_output": "{file_slug}_filtered_extract.txt",
+    "schema_output": "{file_slug}_filtered_extract_schema.json",
+    "bundle_output_dir": "{file_slug}_idf_input_bundle",
+    "rebuilt_idf_output": "{file_slug}_generated_from_bundle.idf"
+  },
+  "room_anchor_patterns": [
+    "PK.*10[,\\.]92\\s*m2",
+    "PN.*7[,\\.]95\\s*m2",
+    "WC\\s*0?1.*2[,\\.]90\\s*m2",
+    "L.*GIA.*3[,\\.]58\\s*m2"
+  ],
+  "title_anchor_patterns": [
+    "CH[\\s\\-]?C"
+  ]
+}

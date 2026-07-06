@@ -1,0 +1,36 @@
+{
+  "case_id": "CH_A_2BR_S0",
+  "geometry_project_id": "apartment_a_new",
+  "model_id": "model_CAN_HO_A",
+  "case_name": "Apartment A New DXF",
+  "config_files": {
+    "dxf_layer_profile": "2_config/dxf_layer_profile_s04.json",
+    "geometry_policy": "2_config/projects/apartment_a_new/geometry_policy.json",
+    "naming_rules": "2_config/projects/apartment_a_new/naming_rules.json"
+  },
+  "options": {
+    "padding": 2500.0
+  },
+  "intake": {
+    "parser_input_standard": "parser_readable_dxf_text",
+    "raw_cad_dir": "1_input/apartment_a_new/raw/cad",
+    "ready_text_dir": "1_input/apartment_a_new/clean/txt_dxf",
+    "source_cad_file": "1_input/apartment_a_new/raw/cad/Apartment A.dxf",
+    "source_ready_text_file": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf"
+  },
+  "paths": {
+    "case_output_root": "5_output/apartment_a_new",
+    "dxf_input": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "dxf_normalized_output_dir": "5_output/apartment_a_new/normalized/dxf",
+    "extract_output": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "schema_output": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract_schema.json",
+    "mapping_output_dir": "5_output/apartment_a_new/intermediate/mapping",
+    "geometry_output_dir": "5_output/apartment_a_new/intermediate/geometry",
+    "surface_output_dir": "5_output/apartment_a_new/intermediate/surfaces",
+    "wall_output_dir": "5_output/apartment_a_new/intermediate/walls",
+    "fenestration_output_dir": "5_output/apartment_a_new/intermediate/fenestration",
+    "bundle_output_dir": "5_output/apartment_a_new/csv/Apartment_A_New_idf_input_bundle",
+    "rebuilt_idf_output": "5_output/apartment_a_new/idf/Apartment_A_New_generated_from_bundle.idf",
+    "reports_output_dir": "5_output/apartment_a_new/reports"
+  }
+}

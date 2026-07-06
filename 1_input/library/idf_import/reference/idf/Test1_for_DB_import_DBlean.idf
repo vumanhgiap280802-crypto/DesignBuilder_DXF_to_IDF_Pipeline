@@ -1,0 +1,1263 @@
+! IDF pruned for safer DesignBuilder import
+! Source: Test1_for_DB_import.idf
+! Kept: Version, Site:Location, Building, GlobalGeometryRules, Zone,
+!       supported geometry/fenestration/shading objects, and only the referenced
+!       Construction / Material / Glazing / Gas / Frame objects.
+! Removed: simulation, schedules, loads, infiltration/ventilation, HVAC, sizing,
+!          water use, outputs, diagnostics, environmental impact/report objects.
+
+
+Version, 9.4.0.002;
+
+Site:Location,Untitled (01-01:31-12)  (01-01:31-12),  !- Location Name
+   21.03,                                         !- Latitude
+   105.8,                                         !- Longitude
+   7,                                             !- Time Zone
+   6;
+
+Building, NOXH1,                                  !- Building Name
+   0,                                             !- North Axis
+   Suburbs,                                       !- Terrain
+    .04,                                          !- Loads Convergence Tolerance
+    .4,                                           !- Temperature Convergence Tolerance
+   FullExterior,                                  !- Solar Distribution
+   25,                                            !- Maximum number of warmup days
+   6;
+
+GlobalGeometryRules, LowerLeftCorner, CounterClockWise, World;
+
+Zone, WNCHA:PN02,                                 !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    38.7695,                                      !- Zone volume
+    11.573,                                       !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Zone, WNCHA:PKXPB,                                !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    68.8868,                                      !- Zone volume
+    20.5632,                                      !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Zone, WNCHA:WC02,                                 !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    11.9871,                                      !- Zone volume
+    3.5783,                                       !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Zone, WNCHA:WC1,                                  !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    11.5119,                                      !- Zone volume
+    3.4364,                                       !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Zone, WNCHA:PN01,                                 !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    37.0346,                                      !- Zone volume
+    11.0551,                                      !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Zone, WNCHA:LOGIA,                                !- Zone Name
+   0,                                             !- Relative North (to building)
+   0,                                             !- X Origin (M)
+   0,                                             !- Y Origin (M)
+   0,                                             !- Z Origin (M)
+   1 ,                                            !- Zone Type
+   1,                                             !- Zone multiplier
+   ,                                              !- Zone ceiling height - Let EnergyPlus work it out
+    8.1442,                                       !- Zone volume
+    2.4311,                                       !- Floor Area
+   TARP,                                          !- Zone inside convection algorithm
+   ,                                              !- Zone outside convection algorithm
+   Yes;
+
+Material, External Rendering_.025,
+   Rough,                                         !- Roughness
+   .025,                                          !- Thickness {m}
+   0.5,                                           !- Conductivity {w/m-K}
+   1300,                                          !- Density {kg/m3}
+   1000,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.7,                                           !- Solar Absorptance
+   0.7;
+
+Material, MW Stone Wool (rolls)_.1025,
+   Rough,                                         !- Roughness
+   .1025,                                         !- Thickness {m}
+   0.04,                                          !- Conductivity {w/m-K}
+   30,                                            !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Timber Flooring_.005,
+   Rough,                                         !- Roughness
+   .005,                                          !- Thickness {m}
+   0.14,                                          !- Conductivity {w/m-K}
+   650,                                           !- Density {kg/m3}
+   1200,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.78,                                          !- Solar Absorptance
+   0.78;
+
+Material, Cast Concrete (Dense)_.1,
+   Rough,                                         !- Roughness
+   .1,                                            !- Thickness {m}
+   1.4,                                           !- Conductivity {w/m-K}
+   2100,                                          !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Cement/plaster/mortar - gypsum plaster_.015,
+   Rough,                                         !- Roughness
+   .015,                                          !- Thickness {m}
+   0.51,                                          !- Conductivity {w/m-K}
+   1120,                                          !- Density {kg/m3}
+   960,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Brick_.11,
+   Rough,                                         !- Roughness
+   .11,                                           !- Thickness {m}
+   0.72,                                          !- Conductivity {w/m-K}
+   1920,                                          !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Painted Oak_.035,
+   Rough,                                         !- Roughness
+   .035,                                          !- Thickness {m}
+   0.19,                                          !- Conductivity {w/m-K}
+   700,                                           !- Density {kg/m3}
+   2390,                                          !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.5,                                           !- Solar Absorptance
+   0.5;
+
+Material, Cement/plaster/mortar - cement plaster_.015,
+   Rough,                                         !- Roughness
+   .015,                                          !- Thickness {m}
+   0.72,                                          !- Conductivity {w/m-K}
+   1760,                                          !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Brick_.22,
+   Rough,                                         !- Roughness
+   .22,                                           !- Thickness {m}
+   0.72,                                          !- Conductivity {w/m-K}
+   1920,                                          !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Brick_.15,
+   Rough,                                         !- Roughness
+   .15,                                           !- Thickness {m}
+   0.72,                                          !- Conductivity {w/m-K}
+   1920,                                          !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Aerated Concrete Slab_.125,
+   Rough,                                         !- Roughness
+   .125,                                          !- Thickness {m}
+   0.16,                                          !- Conductivity {w/m-K}
+   500,                                           !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+Material, Aerated Concrete Slab_.055,
+   Rough,                                         !- Roughness
+   .055,                                          !- Thickness {m}
+   0.16,                                          !- Conductivity {w/m-K}
+   500,                                           !- Density {kg/m3}
+   840,                                           !- Specific Heat {J/kg-K}
+   0.9,                                           !- Thermal Emittance
+   0.6,                                           !- Solar Absorptance
+   0.6;
+
+WindowMaterial:Glazing,3,                         !- Generic CLEAR 6MM
+   SpectralAverage,                               !- Optical data type {SpectralAverage or Spectral}
+   ,                                              !- Name of spectral data set when Optical Data Type = Spectral
+   .006,                                          !- Thickness {m}
+   .775,                                          !- Solar transmittance at normal incidence
+   .071,                                          !- Solar reflectance at normal incidence: front side
+   .071,                                          !- Solar reflectance at normal incidence: back side
+   .881,                                          !- Visible transmittance at normal incidence
+   .080,                                          !- Visible reflectance at normal incidence: front side
+   .080,                                          !- Visible reflectance at normal incidence: back side
+   .0,                                            !- IR transmittance at normal incidence
+   .84,                                           !- IR emissivity: front side
+   .84,                                           !- IR emissivity: back side
+   .9,                                            !- Conductivity {W/m-K}
+   1;
+
+WindowMaterial:Glazing,44,                        !- Generic LoE TINT 6MM
+   SpectralAverage,                               !- Optical data type {SpectralAverage or Spectral}
+   ,                                              !- Name of spectral data set when Optical Data Type = Spectral
+   .006,                                          !- Thickness {m}
+   .360,                                          !- Solar transmittance at normal incidence
+   .093,                                          !- Solar reflectance at normal incidence: front side
+   .200,                                          !- Solar reflectance at normal incidence: back side
+   .500,                                          !- Visible transmittance at normal incidence
+   .035,                                          !- Visible reflectance at normal incidence: front side
+   .054,                                          !- Visible reflectance at normal incidence: back side
+   .0,                                            !- IR transmittance at normal incidence
+   .84,                                           !- IR emissivity: front side
+   .10,                                           !- IR emissivity: back side
+   .9,                                            !- Conductivity {W/m-K}
+   1;
+
+WindowMaterial:Glazing,100,                       !- PERFECTLY CLEAR
+   SpectralAverage,                               !- Optical data type {SpectralAverage or Spectral}
+   ,                                              !- Name of spectral data set when Optical Data Type = Spectral
+   .003,                                          !- Thickness {m}
+   .99,                                           !- Solar transmittance at normal incidence
+   .005,                                          !- Solar reflectance at normal incidence: front side
+   .005,                                          !- Solar reflectance at normal incidence: back side
+   .99,                                           !- Visible transmittance at normal incidence
+   .005,                                          !- Visible reflectance at normal incidence: front side
+   .005,                                          !- Visible reflectance at normal incidence: back side
+   .99,                                           !- IR transmittance at normal incidence
+   .005,                                          !- IR emissivity: front side
+   .005,                                          !- IR emissivity: back side
+   5,                                             !- Conductivity {W/m-K}
+   1;
+
+WindowMaterial:Gas,1004,                          !- ARGON 13MM
+   Argon,                                         !- Gas type (Air - Argon - Krypton - Xenon - SF6 - Custom)
+    .013;
+
+WindowProperty:FrameAndDivider, 1,                !- Frame/divider name
+   0.04,                                          !- Frame width
+   0.0,                                           !- Frame outside projection
+   0.0,                                           !- Frame inside projection
+   9.5,                                           !- Frame Conductance
+   1.0,                                           !- Ratio of frame-edge glass conductance to centre of glass conductance
+   0.5,                                           !- Frame Solar Absorptance
+   0.5,                                           !- Frame Visible Absorptance
+   0.9,                                           !- Frame Thermal Emissivity
+   DividedLite,                                   !- Divider Type
+   0.020,                                         !- Divider Width
+   1,                                             !- Number of Horzontal Dividers
+   1,                                             !- Number of Vertical Dividers
+   0.0,                                           !- Divider Outside Projection
+   0.0,                                           !- Divider Inside Projection
+   9.5,                                           !- Divider Conductance
+   1.0,                                           !- Ratio of divider-edge glass conductance to centre of glass conductance
+   0.5,                                           !- Divider Solar Absorptance
+   0.5,                                           !- Divider Visible Absorptance
+   0.9,                                           !- Divider Thermal Emissivity
+   0.5,                                           !- Outside Reveal Solar Absorptance
+   0.0,                                           !- Inside Sill Depth
+   0.5,                                           !- Inside Sill Solar Absorptance
+   0.0,                                           !- Inside Reveal Depth
+   0.5;
+
+Construction, Project external floor,
+   External Rendering_.025,                       !- .025m
+   MW Stone Wool (rolls)_.1025,                   !- .1025m
+   Timber Flooring_.005;
+
+Construction, Project internal floor_Reversed,
+   Cast Concrete (Dense)_.1;
+
+Construction, Partition Example - 140mm,
+   Cement/plaster/mortar - gypsum plaster_.015,   !- .015m
+   Brick_.11,                                     !- .11m
+   Cement/plaster/mortar - gypsum plaster_.015;
+
+Construction, Partition Example - 140mm_Rev,
+   Cement/plaster/mortar - gypsum plaster_.015,   !- .015m
+   Brick_.11,                                     !- .11m
+   Cement/plaster/mortar - gypsum plaster_.015;
+
+Construction, Project internal door,
+   Painted Oak_.035;
+
+Construction, Project internal door_Rev,
+   Painted Oak_.035;
+
+Construction, 250mm Example Extender Wall,
+   Cement/plaster/mortar - cement plaster_.015,   !- .015m
+   Brick_.22,                                     !- .22m
+   Cement/plaster/mortar - cement plaster_.015;
+
+Construction, 250mm Example Extender Wall_Rev,
+   Cement/plaster/mortar - cement plaster_.015,   !- .015m
+   Brick_.22,                                     !- .22m
+   Cement/plaster/mortar - cement plaster_.015;
+
+Construction, Partition Example-180mm,
+   Cement/plaster/mortar - gypsum plaster_.015,   !- .015m
+   Brick_.15,                                     !- .15m
+   Cement/plaster/mortar - gypsum plaster_.015;
+
+Construction, Example Wall,
+   Aerated Concrete Slab_.125,                    !- .125m
+   Aerated Concrete Slab_.055;
+
+Construction, Project external door,
+   Painted Oak_.035;
+
+Construction,Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,  !- Dbl LoE (e2=.1) Tint 6mm/13mm Arg - Material layer names follow:
+   44,                                            !- Generic LoE TINT 6MM
+   1004,                                          !- ARGON 13MM
+   3;
+
+Construction,Perfectly Clear - 1002,              !- Perfectly Clear - Material layer names follow:
+   100;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_ExtFloor_0_0_0,                  !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, .0558730756, 0,                !- Vertex 1
+      -3.747415656, .0558730756, 0,               !- Vertex 2
+      -3.747415656, 3.4758730756, 0,              !- Vertex 3
+       .122584344, 3.4758730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Ceiling_1_0_0,                   !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Surface, WNCHA:PN02_Ceiling_1_0_0,          !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, .0558730756, 3.5,             !- Vertex 1
+       .122584344, .0558730756, 3.5,              !- Vertex 2
+       .122584344, 3.4758730756, 3.5,             !- Vertex 3
+      -3.747415656, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Partition_2_0_0,                 !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_10_0_10001,  !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, .05587308, 0,                  !- Vertex 1
+       .122584344, 3.47587308, 0,                 !- Vertex 2
+       .122584344, 3.47587308, 3.5,               !- Vertex 3
+       .122584344, .05587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:PKXPB_Partition_10_0_10001,           !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PN02_Partition_2_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 3.47587308, 0,                 !- Vertex 1
+       .122584344, .05587308, 0,                  !- Vertex 2
+       .122584344, .05587308, 3.5,                !- Vertex 3
+       .122584344, 3.47587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Partition_3_0_0,                 !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_9_0_10002,   !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .12258434, 3.4758730756, 0,                !- Vertex 1
+      -1.00741566, 3.4758730756, 0,               !- Vertex 2
+      -1.00741566, 3.4758730756, 3.5,             !- Vertex 3
+       .12258434, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:PKXPB_Partition_9_0_10002,            !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PN02_Partition_3_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.00741566, 3.4758730756, 0,               !- Vertex 1
+       .12258434, 3.4758730756, 0,                !- Vertex 2
+       .12258434, 3.4758730756, 3.5,              !- Vertex 3
+      -1.00741566, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Partition_4_0_0,                 !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Surface, WNCHA:WC1_Partition_5_0_10004,     !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.00741566, 3.4758730756, 0,               !- Vertex 1
+      -3.74741566, 3.4758730756, 0,               !- Vertex 2
+      -3.74741566, 3.4758730756, 3.5,             !- Vertex 3
+      -1.00741566, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:WC1_Partition_5_0_10004,              !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Surface, WNCHA:PN02_Partition_4_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.74741566, 3.4758730756, 0,               !- Vertex 1
+      -1.00741566, 3.4758730756, 0,               !- Vertex 2
+      -1.00741566, 3.4758730756, 3.5,             !- Vertex 3
+      -3.74741566, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Wall_5_0_0,                      !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, 3.4758730756, 0,              !- Vertex 1
+      -3.747415656, .0558730756, 0,               !- Vertex 2
+      -3.747415656, .0558730756, 3.5,             !- Vertex 3
+      -3.747415656, 3.4758730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN02_Partition_6_0_0,                 !- Surface name
+      Wall, Partition Example-180mm,              !- Class and Construction Name
+      WNCHA:PN02,                                 !- Zone Name
+      Surface, WNCHA:PN02_Partition_6_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, .0558730756, 0,               !- Vertex 1
+       .122584344, .0558730756, 0,                !- Vertex 2
+       .122584344, .0558730756, 3.5,              !- Vertex 3
+      -3.747415656, .0558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_ExtFloor_0_0_0,                 !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, 2.1658730756, 0,              !- Vertex 1
+       1.562584344, 2.1658730756, 0,              !- Vertex 2
+       1.562584344, 7.3558730756, 0,              !- Vertex 3
+       3.557584344, 7.3558730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_ExtFloor_0_0_1,                 !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, .0558730756, 0,               !- Vertex 1
+       .122584344, .0558730756, 0,                !- Vertex 2
+       .122584344, 3.4758730756, 0,               !- Vertex 3
+       1.562584344, 3.4758730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_ExtFloor_0_0_2,                 !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 3.4758730756, 0,               !- Vertex 1
+      -1.007415656, 3.4758730756, 0,              !- Vertex 2
+      -1.007415656, 5.0358730756, 0,              !- Vertex 3
+       .122584344, 5.0358730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_ExtFloor_0_0_3,                 !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, 3.4758730756, 0,              !- Vertex 1
+       .122584344, 3.4758730756, 0,               !- Vertex 2
+       .122584344, 7.3558730756, 0,               !- Vertex 3
+       1.562584344, 7.3558730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Ceiling_1_0_0,                  !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PKXPB_Ceiling_1_0_0,         !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.007415656, 3.4758730756, 3.5,            !- Vertex 1
+       .122584344, 3.4758730756, 3.5,             !- Vertex 2
+       .122584344, 5.0358730756, 3.5,             !- Vertex 3
+      -1.007415656, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Ceiling_1_0_1,                  !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PKXPB_Ceiling_1_0_1,         !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, .0558730756, 3.5,              !- Vertex 1
+       1.562584344, .0558730756, 3.5,             !- Vertex 2
+       1.562584344, 2.1658730756, 3.5,            !- Vertex 3
+       .122584344, 2.1658730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Ceiling_1_0_2,                  !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PKXPB_Ceiling_1_0_2,         !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 2.1658730756, 3.5,             !- Vertex 1
+       3.557584344, 2.1658730756, 3.5,            !- Vertex 2
+       3.557584344, 7.3558730756, 3.5,            !- Vertex 3
+       .122584344, 7.3558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_2_0_0,                !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:WC02_Partition_4_0_10009,    !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, .05587308, 0,                 !- Vertex 1
+       1.562584344, 2.16587308, 0,                !- Vertex 2
+       1.562584344, 2.16587308, 3.5,              !- Vertex 3
+       1.562584344, .05587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:WC02_Partition_4_0_10009,             !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_2_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, 2.16587308, 0,                !- Vertex 1
+       1.562584344, .05587308, 0,                 !- Vertex 2
+       1.562584344, .05587308, 3.5,               !- Vertex 3
+       1.562584344, 2.16587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_3_0_0,                !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:WC02_Partition_3_0_10011,    !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.56258434, 2.1658730756, 0,               !- Vertex 1
+       3.55758434, 2.1658730756, 0,               !- Vertex 2
+       3.55758434, 2.1658730756, 3.5,             !- Vertex 3
+       1.56258434, 2.1658730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:WC02_Partition_3_0_10011,             !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_3_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.55758434, 2.1658730756, 0,               !- Vertex 1
+       1.56258434, 2.1658730756, 0,               !- Vertex 2
+       1.56258434, 2.1658730756, 3.5,             !- Vertex 3
+       3.55758434, 2.1658730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_4_0_0,                !- Surface name
+      Wall, Partition Example-180mm,              !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_4_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, 2.1658730756, 0,              !- Vertex 1
+       3.557584344, 7.3558730756, 0,              !- Vertex 2
+       3.557584344, 7.3558730756, 3.5,            !- Vertex 3
+       3.557584344, 2.1658730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_5_0_0,                !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:LOGIA_Partition_5_0_10013,   !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.55758434, 7.3558730756, 0,               !- Vertex 1
+       .12258434, 7.3558730756, 0,                !- Vertex 2
+       .12258434, 7.3558730756, 3.5,              !- Vertex 3
+       3.55758434, 7.3558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:LOGIA_Partition_5_0_10013,            !- Surface name
+      Wall, 250mm Example Extender Wall_Rev,      !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_5_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .12258434, 7.3558730756, 0,                !- Vertex 1
+       3.55758434, 7.3558730756, 0,               !- Vertex 2
+       3.55758434, 7.3558730756, 3.5,             !- Vertex 3
+       .12258434, 7.3558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_6_0_0,                !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PN01_Partition_2_0_10015,    !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 7.35587308, 0,                 !- Vertex 1
+       .122584344, 5.03587308, 0,                 !- Vertex 2
+       .122584344, 5.03587308, 3.5,               !- Vertex 3
+       .122584344, 7.35587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:PN01_Partition_2_0_10015,             !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_6_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 5.03587308, 0,                 !- Vertex 1
+       .122584344, 7.35587308, 0,                 !- Vertex 2
+       .122584344, 7.35587308, 3.5,               !- Vertex 3
+       .122584344, 5.03587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_7_0_0,                !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:PN01_Partition_7_0_10016,    !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .12258434, 5.0358730756, 0,                !- Vertex 1
+      -1.00741566, 5.0358730756, 0,               !- Vertex 2
+      -1.00741566, 5.0358730756, 3.5,             !- Vertex 3
+       .12258434, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:PN01_Partition_7_0_10016,             !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_7_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.00741566, 5.0358730756, 0,               !- Vertex 1
+       .12258434, 5.0358730756, 0,                !- Vertex 2
+       .12258434, 5.0358730756, 3.5,              !- Vertex 3
+      -1.00741566, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Partition_8_0_0,                !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Surface, WNCHA:WC1_Partition_2_0_10018,     !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.007415656, 5.03587308, 0,                !- Vertex 1
+      -1.007415656, 3.47587308, 0,                !- Vertex 2
+      -1.007415656, 3.47587308, 3.5,              !- Vertex 3
+      -1.007415656, 5.03587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:WC1_Partition_2_0_10018,              !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Surface, WNCHA:PKXPB_Partition_8_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.007415656, 3.47587308, 0,                !- Vertex 1
+      -1.007415656, 5.03587308, 0,                !- Vertex 2
+      -1.007415656, 5.03587308, 3.5,              !- Vertex 3
+      -1.007415656, 3.47587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PKXPB_Wall_11_0_0,                    !- Surface name
+      Wall, Example Wall,                         !- Class and Construction Name
+      WNCHA:PKXPB,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, .0558730756, 0,                !- Vertex 1
+       1.562584344, .0558730756, 0,               !- Vertex 2
+       1.562584344, .0558730756, 3.5,             !- Vertex 3
+       .122584344, .0558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC02_ExtFloor_0_0_0,                  !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, .0558730756, 0,               !- Vertex 1
+       1.562584344, .0558730756, 0,               !- Vertex 2
+       1.562584344, 2.1658730756, 0,              !- Vertex 3
+       3.557584344, 2.1658730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC02_Ceiling_1_0_0,                   !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Surface, WNCHA:WC02_Ceiling_1_0_0,          !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, .0558730756, 3.5,             !- Vertex 1
+       3.557584344, .0558730756, 3.5,             !- Vertex 2
+       3.557584344, 2.1658730756, 3.5,            !- Vertex 3
+       1.562584344, 2.1658730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC02_Partition_2_0_0,                 !- Surface name
+      Wall, Partition Example-180mm,              !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Surface, WNCHA:WC02_Partition_2_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, .0558730756, 0,               !- Vertex 1
+       3.557584344, 2.1658730756, 0,              !- Vertex 2
+       3.557584344, 2.1658730756, 3.5,            !- Vertex 3
+       3.557584344, .0558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC02_Partition_5_0_0,                 !- Surface name
+      Wall, Partition Example-180mm,              !- Class and Construction Name
+      WNCHA:WC02,                                 !- Zone Name
+      Surface, WNCHA:WC02_Partition_5_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       1.562584344, .0558730756, 0,               !- Vertex 1
+       3.557584344, .0558730756, 0,               !- Vertex 2
+       3.557584344, .0558730756, 3.5,             !- Vertex 3
+       1.562584344, .0558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC1_ExtFloor_0_0_0,                   !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.007415656, 3.4758730756, 0,              !- Vertex 1
+      -3.747415656, 3.4758730756, 0,              !- Vertex 2
+      -3.747415656, 5.0358730756, 0,              !- Vertex 3
+      -1.007415656, 5.0358730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC1_Ceiling_1_0_0,                    !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Surface, WNCHA:WC1_Ceiling_1_0_0,           !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, 3.4758730756, 3.5,            !- Vertex 1
+      -1.007415656, 3.4758730756, 3.5,            !- Vertex 2
+      -1.007415656, 5.0358730756, 3.5,            !- Vertex 3
+      -3.747415656, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC1_Partition_3_0_0,                  !- Surface name
+      Wall, Partition Example - 140mm_Rev,        !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Surface, WNCHA:PN01_Partition_6_0_10023,    !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -1.00741566, 5.0358730756, 0,               !- Vertex 1
+      -3.74741566, 5.0358730756, 0,               !- Vertex 2
+      -3.74741566, 5.0358730756, 3.5,             !- Vertex 3
+      -1.00741566, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:PN01_Partition_6_0_10023,             !- Surface name
+      Wall, Partition Example - 140mm,            !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Surface, WNCHA:WC1_Partition_3_0_0,         !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.74741566, 5.0358730756, 0,               !- Vertex 1
+      -1.00741566, 5.0358730756, 0,               !- Vertex 2
+      -1.00741566, 5.0358730756, 3.5,             !- Vertex 3
+      -3.74741566, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:WC1_Wall_4_0_0,                       !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:WC1,                                  !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, 5.0358730756, 0,              !- Vertex 1
+      -3.747415656, 3.4758730756, 0,              !- Vertex 2
+      -3.747415656, 3.4758730756, 3.5,            !- Vertex 3
+      -3.747415656, 5.0358730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN01_ExtFloor_0_0_0,                  !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 5.0358730756, 0,               !- Vertex 1
+      -3.747415656, 5.0358730756, 0,              !- Vertex 2
+      -3.747415656, 8.4858730756, 0,              !- Vertex 3
+       .122584344, 8.4858730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN01_Ceiling_1_0_0,                   !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Surface, WNCHA:PN01_Ceiling_1_0_0,          !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, 5.0358730756, 3.5,            !- Vertex 1
+       .122584344, 5.0358730756, 3.5,             !- Vertex 2
+       .122584344, 8.4858730756, 3.5,             !- Vertex 3
+      -3.747415656, 8.4858730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN01_Partition_3_0_0,                 !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Surface, WNCHA:LOGIA_Partition_4_0_10026,   !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 7.35587308, 0,                 !- Vertex 1
+       .122584344, 8.48587308, 0,                 !- Vertex 2
+       .122584344, 8.48587308, 3.5,               !- Vertex 3
+       .122584344, 7.35587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface reverse definition
+      WNCHA:LOGIA_Partition_4_0_10026,            !- Surface name
+      Wall, 250mm Example Extender Wall_Rev,      !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Surface, WNCHA:PN01_Partition_3_0_0,        !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 8.48587308, 0,                 !- Vertex 1
+       .122584344, 7.35587308, 0,                 !- Vertex 2
+       .122584344, 7.35587308, 3.5,               !- Vertex 3
+       .122584344, 8.48587308, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN01_Wall_4_0_0,                      !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 8.4858730756, 0,               !- Vertex 1
+      -3.747415656, 8.4858730756, 0,              !- Vertex 2
+      -3.747415656, 8.4858730756, 3.5,            !- Vertex 3
+       .122584344, 8.4858730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:PN01_Wall_5_0_0,                      !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:PN01,                                 !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+      -3.747415656, 8.4858730756, 0,              !- Vertex 1
+      -3.747415656, 5.0358730756, 0,              !- Vertex 2
+      -3.747415656, 5.0358730756, 3.5,            !- Vertex 3
+      -3.747415656, 8.4858730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:LOGIA_ExtFloor_0_0_0,                 !- Surface name
+      Floor, Project external floor,              !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, 7.3558730756, 0,              !- Vertex 1
+       .122584344, 7.3558730756, 0,               !- Vertex 2
+       .122584344, 8.4858730756, 0,               !- Vertex 3
+       3.557584344, 8.4858730756, 0;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:LOGIA_Ceiling_1_0_0,                  !- Surface name
+      Ceiling, Project internal floor_Reversed,   !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Surface, WNCHA:LOGIA_Ceiling_1_0_0,         !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       .122584344, 7.3558730756, 3.5,             !- Vertex 1
+       3.557584344, 7.3558730756, 3.5,            !- Vertex 2
+       3.557584344, 8.4858730756, 3.5,            !- Vertex 3
+       .122584344, 8.4858730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:LOGIA_Partition_2_0_0,                !- Surface name
+      Wall, Partition Example-180mm,              !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Surface, WNCHA:LOGIA_Partition_2_0_0,       !- Outside Face Environment
+      NoSun,                                      !- Sun Exposure
+      NoWind,                                     !- Wind Exposure
+      0,                                          !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, 7.3558730756, 0,              !- Vertex 1
+       3.557584344, 8.4858730756, 0,              !- Vertex 2
+       3.557584344, 8.4858730756, 3.5,            !- Vertex 3
+       3.557584344, 7.3558730756, 3.5;
+
+BuildingSurface:Detailed,                      !- Surface
+      WNCHA:LOGIA_Wall_3_0_0,                     !- Surface name
+      Wall, 250mm Example Extender Wall,          !- Class and Construction Name
+      WNCHA:LOGIA,                                !- Zone Name
+      Outdoors, ,                                 !- Outside Face Environment
+      SunExposed,                                 !- Sun Exposure
+      WindExposed,                                !- Wind Exposure
+      AutoCalculate,                              !- View Factor to Ground
+      4,                                          !- Number vertices
+       3.557584344, 8.4858730756, 0,              !- Vertex 1
+       .122584344, 8.4858730756, 0,               !- Vertex 2
+       .122584344, 8.4858730756, 3.5,             !- Vertex 3
+       3.557584344, 8.4858730756, 3.5;
+
+FenestrationSurface:Detailed, WNCHA:PN02_Partition_3_0_0_0_0_0_Door,  !- Door name
+         Door, Project internal door,             !- Class and Construction Name
+         WNCHA:PN02_Partition_3_0_0,              !- Base surface
+         WNCHA:PKXPB_Partition_9_0_0_0_0_0_Door_10004,  !- Corresponding other surface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -.00241566, 3.4758730756, .15,           !- Vertex 1
+         -.85241566, 3.4758730756, .15,           !- Vertex 2
+         -.85241566, 3.4758730756, 2.2,           !- Vertex 3
+         -.00241566, 3.4758730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PKXPB_Partition_9_0_0_0_0_0_Door_10004,  !- Door name - reverse definition
+         Door, Project internal door_Rev,         !- Class and Construction Name
+         WNCHA:PKXPB_Partition_9_0_10002,         !- Base surface
+         WNCHA:PN02_Partition_3_0_0_0_0_0_Door,   !- Corresponding other door subsurface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -.85241566, 3.4758730756, .15,           !- Vertex 1
+         -.00241566, 3.4758730756, .15,           !- Vertex 2
+         -.00241566, 3.4758730756, 2.2,           !- Vertex 3
+         -.85241566, 3.4758730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PN02_Wall_5_0_0_0_0_0_Win,  !- Window name
+         Window,                                  !- Class
+         Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,!- Construction Name
+         WNCHA:PN02_Wall_5_0_0,                   !- Base surface
+         ,                                        !- corresponding other window subsurface
+         AutoCalculate,                           !- View Factor to Ground
+         1,                                       !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -3.747415656, 2.74587308, 1.44,          !- Vertex 1
+         -3.747415656, 1.42587308, 1.44,          !- Vertex 2
+         -3.747415656, 1.42587308, 2.595,         !- Vertex 3
+         -3.747415656, 2.74587308, 2.595;
+
+FenestrationSurface:Detailed, WNCHA:PKXPB_Partition_2_0_0_0_0_0_Door,  !- Door name
+         Door, Project internal door,             !- Class and Construction Name
+         WNCHA:PKXPB_Partition_2_0_0,             !- Base surface
+         WNCHA:WC02_Partition_4_0_0_0_0_0_Door_10011,  !- Corresponding other surface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+          1.562584344, 1.28587308, .15,           !- Vertex 1
+          1.562584344, 2.03587308, .15,           !- Vertex 2
+          1.562584344, 2.03587308, 2.2,           !- Vertex 3
+          1.562584344, 1.28587308, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:WC02_Partition_4_0_0_0_0_0_Door_10011,  !- Door name - reverse definition
+         Door, Project internal door_Rev,         !- Class and Construction Name
+         WNCHA:WC02_Partition_4_0_10009,          !- Base surface
+         WNCHA:PKXPB_Partition_2_0_0_0_0_0_Door,  !- Corresponding other door subsurface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+          1.562584344, 2.03587308, .15,           !- Vertex 1
+          1.562584344, 1.28587308, .15,           !- Vertex 2
+          1.562584344, 1.28587308, 2.2,           !- Vertex 3
+          1.562584344, 2.03587308, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PKXPB_Partition_5_0_0_0_0_0_Win,  !- Window name
+         Window,                                  !- Class
+         Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,!- Construction Name
+         WNCHA:PKXPB_Partition_5_0_0,             !- Base surface
+         WNCHA:LOGIA_Partition_5_0_0_0_0_0_Win_10015,  !- corresponding other window subsurface
+         0,                                       !- View Factor to Ground
+         1,                                       !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+          2.80758434, 7.3558730756, .19,          !- Vertex 1
+          .88758434, 7.3558730756, .19,           !- Vertex 2
+          .88758434, 7.3558730756, 2.31,          !- Vertex 3
+          2.80758434, 7.3558730756, 2.31;
+
+FenestrationSurface:Detailed, WNCHA:LOGIA_Partition_5_0_0_0_0_0_Win_10015,  !- Window name - reverse definition
+         Window,                                  !- Class
+         Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,!- Construction Name
+         WNCHA:LOGIA_Partition_5_0_10013,         !- Base surface
+         WNCHA:PKXPB_Partition_5_0_0_0_0_0_Win,   !- Corresponding other window subsurface
+         0,                                       !- View Factor to Ground
+         1,                                       !- Frame divider name
+          1,                                      !- Multiplier
+         4,                                       !- Number vertices
+          .88758434, 7.3558730756, .19,           !- Vertex 1
+          2.80758434, 7.3558730756, .19,          !- Vertex 2
+          2.80758434, 7.3558730756, 2.31,         !- Vertex 3
+          .88758434, 7.3558730756, 2.31;
+
+FenestrationSurface:Detailed, WNCHA:PKXPB_Partition_7_0_0_0_0_0_Door,  !- Door name
+         Door, Project internal door,             !- Class and Construction Name
+         WNCHA:PKXPB_Partition_7_0_0,             !- Base surface
+         WNCHA:PN01_Partition_7_0_0_0_0_0_Door_10018,  !- Corresponding other surface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -.00241566, 5.0358730756, .15,           !- Vertex 1
+         -.85241566, 5.0358730756, .15,           !- Vertex 2
+         -.85241566, 5.0358730756, 2.2,           !- Vertex 3
+         -.00241566, 5.0358730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PN01_Partition_7_0_0_0_0_0_Door_10018,  !- Door name - reverse definition
+         Door, Project internal door_Rev,         !- Class and Construction Name
+         WNCHA:PN01_Partition_7_0_10016,          !- Base surface
+         WNCHA:PKXPB_Partition_7_0_0_0_0_0_Door,  !- Corresponding other door subsurface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -.85241566, 5.0358730756, .15,           !- Vertex 1
+         -.00241566, 5.0358730756, .15,           !- Vertex 2
+         -.00241566, 5.0358730756, 2.2,           !- Vertex 3
+         -.85241566, 5.0358730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PKXPB_Wall_11_0_0_0_0_0_Door,  !- Door name
+         Door, Project external door,             !- Class and Construction Name
+         WNCHA:PKXPB_Wall_11_0_0,                 !- Base surface
+         ,                                        !- Corresponding other surface
+         AutoCalculate,                           !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+          .44258434, .0558730756, .15,            !- Vertex 1
+          1.44258434, .0558730756, .15,           !- Vertex 2
+          1.44258434, .0558730756, 2.2,           !- Vertex 3
+          .44258434, .0558730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:WC1_Partition_3_0_0_0_0_0_Door,  !- Door name
+         Door, Project internal door,             !- Class and Construction Name
+         WNCHA:WC1_Partition_3_0_0,               !- Base surface
+         WNCHA:PN01_Partition_6_0_0_0_0_0_Door_10025,  !- Corresponding other surface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -1.13741566, 5.0358730756, .15,          !- Vertex 1
+         -1.88741566, 5.0358730756, .15,          !- Vertex 2
+         -1.88741566, 5.0358730756, 2.2,          !- Vertex 3
+         -1.13741566, 5.0358730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:PN01_Partition_6_0_0_0_0_0_Door_10025,  !- Door name - reverse definition
+         Door, Project internal door_Rev,         !- Class and Construction Name
+         WNCHA:PN01_Partition_6_0_10023,          !- Base surface
+         WNCHA:WC1_Partition_3_0_0_0_0_0_Door,    !- Corresponding other door subsurface
+         0,                                       !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -1.88741566, 5.0358730756, .15,          !- Vertex 1
+         -1.13741566, 5.0358730756, .15,          !- Vertex 2
+         -1.13741566, 5.0358730756, 2.2,          !- Vertex 3
+         -1.88741566, 5.0358730756, 2.2;
+
+FenestrationSurface:Detailed, WNCHA:WC1_Wall_4_0_0_0_0_0_Win,  !- Window name
+         Window,                                  !- Class
+         Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,!- Construction Name
+         WNCHA:WC1_Wall_4_0_0,                    !- Base surface
+         ,                                        !- corresponding other window subsurface
+         AutoCalculate,                           !- View Factor to Ground
+         1,                                       !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -3.747415656, 4.92587308, 1.64,          !- Vertex 1
+         -3.747415656, 4.40587308, 1.64,          !- Vertex 2
+         -3.747415656, 4.40587308, 2.16,          !- Vertex 3
+         -3.747415656, 4.92587308, 2.16;
+
+FenestrationSurface:Detailed, WNCHA:PN01_Wall_4_0_0_0_0_0_Win,  !- Window name
+         Window,                                  !- Class
+         Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,!- Construction Name
+         WNCHA:PN01_Wall_4_0_0,                   !- Base surface
+         ,                                        !- corresponding other window subsurface
+         AutoCalculate,                           !- View Factor to Ground
+         1,                                       !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+         -1.08043015, 8.4858730756, 1.44,         !- Vertex 1
+         -2.40043015, 8.4858730756, 1.44,         !- Vertex 2
+         -2.40043015, 8.4858730756, 2.595,        !- Vertex 3
+         -1.08043015, 8.4858730756, 2.595;
+
+FenestrationSurface:Detailed, WNCHA:LOGIA_Wall_3_0_0_0_0_0_Hole,  !- Hole name
+         Window, Perfectly Clear - 1002,          !- Class and Construction Name
+         WNCHA:LOGIA_Wall_3_0_0,                  !- Base surface
+         ,                                        !- Corresponding other surface
+         AutoCalculate,                           !- View Factor to Ground
+         ,                                        !- Frame divider name
+         1,                                       !- Multiplier
+         4,                                       !- Number vertices
+          3.37758434, 8.4858730756, .15,          !- Vertex 1
+          .24758434, 8.4858730756, .15,           !- Vertex 2
+          .24758434, 8.4858730756, 2.635,         !- Vertex 3
+          3.37758434, 8.4858730756, 2.635;

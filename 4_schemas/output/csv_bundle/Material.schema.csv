@@ -1,0 +1,10 @@
+object_type,object_count_in_reference,field_order,field_name,sample_value
+Material,12,1,material_name,External Rendering_.025
+Material,12,2,roughness,Rough
+Material,12,3,thickness_m,.025
+Material,12,4,conductivity_w_per_mk,0.5
+Material,12,5,density_kg_per_m3,1300
+Material,12,6,specific_heat_j_per_kgk,1000
+Material,12,7,thermal_emittance,0.9
+Material,12,8,solar_absorptance,0.7
+Material,12,9,visible_absorptance,0.7

@@ -1,0 +1,38 @@
+{
+  "zone_floor_profile_count": 6, 
+  "attribute_name": "Adjacency", 
+  "csv_report": "C:\\Users\\ASUS\\Desktop\\Design Builder\\Xu ly data\\DB_IDF_Workspace\\5_output\\apartment_a_new\\reports\\designbuilder_surface_adjacency_ui_apply_apartment_a_new_20260512_181233.csv", 
+  "status_counts": {
+    "VERIFY_FAIL": 24, 
+    "PASS": 33, 
+    "WRITE_OK": 24, 
+    "MATCH_TARGET": 6, 
+    "READ_OK": 6
+  }, 
+  "project_id": "apartment_a_new", 
+  "target_names": [
+    "APARTMENT_A_NEW_LOGIA_WALL_03", 
+    "APARTMENT_A_NEW_PK_PB_WALL_09", 
+    "APARTMENT_A_NEW_PK_PB_WALL_10", 
+    "APARTMENT_A_NEW_PN_02_WALL_05", 
+    "APARTMENT_A_NEW_WC_02_WALL_03", 
+    "APARTMENT_A_NEW_WC_02_WALL_04"
+  ], 
+  "allow_write": true, 
+  "matched_surface_count": 6, 
+  "verified_surface_count": 0, 
+  "value_candidates": [
+    "3", 
+    "3-Adiabatic", 
+    "Adiabatic", 
+    "4-Adiabatic"
+  ], 
+  "workspace_root": "C:\\Users\\ASUS\\Desktop\\Design Builder\\Xu ly data\\DB_IDF_Workspace", 
+  "manifest_path": "C:\\Users\\ASUS\\Desktop\\Design Builder\\Xu ly data\\DB_IDF_Workspace\\5_output\\apartment_a_new\\reports\\idf_handoff_manifest.json", 
+  "api_available": true, 
+  "target_adjacency": "4-Adiabatic", 
+  "surface_inventory_report": "C:\\Users\\ASUS\\Desktop\\Design Builder\\Xu ly data\\DB_IDF_Workspace\\5_output\\apartment_a_new\\reports\\designbuilder_surface_adjacency_ui_apply_apartment_a_new_20260512_181233_surface_inventory.csv", 
+  "created_at": "2026-05-12T18:12:33", 
+  "overall_status": "WARN", 
+  "candidate_surface_count": 33
+}

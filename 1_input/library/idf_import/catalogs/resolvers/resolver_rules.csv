@@ -1,0 +1,10 @@
+resolver_scope,surface_type,boundary_family,wall_role,context,thickness_mm,construction_name,reverse_construction_name,frame_and_divider_name,priority,status,notes
+wall,Wall,Surface,partition,current,140,IBST_W140_PL15_BR110_PL15,IBST_W140_PL15_BR110_PL15_Rev,,100,active,Current 140 mm interzone wall
+wall,Wall,Surface,partition,current,180,IBST_W180_PL15_BR150_PL15,IBST_W180_PL15_BR150_PL15_Rev,,100,active,Current 180 mm interzone wall when sample reference or collinear rule resolves to 180
+wall,Wall,Surface,partition,current,250,IBST_W250_PL15_BR110_BR110_PL15,IBST_W250_PL15_BR110_BR110_PL15_Rev,,100,active,Current 250 mm interzone or logia wall
+wall,Wall,Outdoors,exterior,current,180,IBST_W180_PL15_BR150_PL15,IBST_W180_PL15_BR150_PL15_Rev,,100,active,Current 180 mm exterior wall
+wall,Wall,Outdoors,exterior,current,250,IBST_W250_PL15_BR110_BR110_PL15,IBST_W250_PL15_BR110_BR110_PL15_Rev,,100,active,Current 250 mm exterior wall
+opening,Door,Surface,interzone,current,,Project internal door,Project internal door_Rev,,100,active,Current paired internal door
+opening,Door,Outdoors,exterior,current,,Project external door,,,80,extension,Reserved for future exterior door openings
+opening,Window,Outdoors,fenestration,current,,Dbl LoE (e2=.1) Tint 6mm/13mm Arg - 1001,,1,100,active,Current default window construction and frame
+opening,GlassDoor,Outdoors,fenestration,current,,Perfectly Clear - 1002,,1,100,active,Current default glazed door construction and frame

@@ -1,0 +1,118 @@
+{
+  "schema_name": "opening_library_schema",
+  "schema_role": "contract",
+  "standard_type": "working_standard",
+  "catalog_paths": {
+    "materials_catalog": "1_input/library/idf_import/catalogs/materials/materials_catalog.csv",
+    "resolver_rules": "1_input/library/idf_import/catalogs/resolvers/resolver_rules.csv"
+  },
+  "derived_from": {
+    "modules": [
+      "3_scripts/transformers/fenestration_builder.py::recommended_fenestration_construction_for_host",
+      "3_scripts/transformers/fenestration_builder.py::recommended_frame_and_divider_for_host",
+      "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+      "3_scripts/writers/rebuild_idf_from_bundle.py::rebuild_idf"
+    ],
+    "idf_references": [
+      "5_output/_shared/idf/Test1_for_DB_import_DBlean_crosscheck.idf",
+      "1_input/library/idf_import/reference/idf/Test1_for_DB_import_DBlean.idf"
+    ],
+    "csv_outputs_checked": [
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/FenestrationSurface_Detailed.csv",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/WindowMaterial_Glazing.csv",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/WindowMaterial_Gas.csv",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/WindowProperty_FrameAndDivider.csv"
+    ],
+    "note": "The current opening path is simpler than the wall path: fenestration resolution uses resolver_rules for construction and frame names, while technical leaf rows come from the same materials_catalog."
+  },
+  "resolver_rule_standard": {
+    "required_columns": [
+      "resolver_scope",
+      "surface_type",
+      "boundary_family",
+      "construction_name",
+      "status"
+    ],
+    "optional_columns": [
+      "reverse_construction_name",
+      "frame_and_divider_name",
+      "priority",
+      "notes"
+    ],
+    "active_scope_filter": "resolver_scope = opening"
+  },
+  "idf_objects": [
+    {
+      "object_type": "WindowMaterial:Glazing",
+      "stability": "core",
+      "status": "active",
+      "required_fields": [
+        "glazing_name",
+        "optical_data_type",
+        "thickness_m",
+        "solar_transmittance",
+        "solar_reflectance_front",
+        "solar_reflectance_back",
+        "visible_transmittance",
+        "visible_reflectance_front",
+        "visible_reflectance_back",
+        "ir_transmittance",
+        "ir_emissivity_front",
+        "ir_emissivity_back",
+        "conductivity_w_per_mk",
+        "dirt_correction_factor"
+      ],
+      "optional_fields": [
+        "spectral_data_set_name"
+      ],
+      "note": "Current writer and rebuild path already emit and consume these glazing fields."
+    },
+    {
+      "object_type": "WindowMaterial:Gas",
+      "stability": "core",
+      "status": "active",
+      "required_fields": [
+        "gas_layer_name",
+        "gas_type",
+        "thickness_m"
+      ],
+      "optional_fields": [],
+      "note": "Current writer and rebuild path emit only the simple gas layer form."
+    },
+    {
+      "object_type": "WindowProperty:FrameAndDivider",
+      "stability": "core",
+      "status": "active",
+      "required_fields": [
+        "frame_divider_name",
+        "frame_width_m"
+      ],
+      "optional_fields": [
+        "frame_outside_projection_m",
+        "frame_inside_projection_m",
+        "frame_conductance_w_per_m2k",
+        "frame_edge_to_center_glass_conductance_ratio",
+        "frame_solar_absorptance",
+        "frame_visible_absorptance",
+        "frame_thermal_emissivity",
+        "divider_type",
+        "divider_width_m",
+        "number_horizontal_dividers",
+        "number_vertical_dividers",
+        "divider_outside_projection_m",
+        "divider_inside_projection_m",
+        "divider_conductance_w_per_m2k",
+        "divider_edge_to_center_glass_conductance_ratio",
+        "divider_solar_absorptance",
+        "divider_visible_absorptance",
+        "divider_thermal_emissivity",
+        "outside_reveal_solar_absorptance",
+        "inside_sill_depth_m",
+        "inside_sill_solar_absorptance",
+        "inside_reveal_depth_m",
+        "inside_reveal_solar_absorptance"
+      ],
+      "note": "Fenestration rows currently need only frame_divider_name at resolve time, but the full current bundle schema is preserved for rebuild fidelity."
+    }
+  ]
+}

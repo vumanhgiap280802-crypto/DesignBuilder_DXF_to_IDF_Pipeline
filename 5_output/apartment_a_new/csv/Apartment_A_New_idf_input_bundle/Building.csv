@@ -1,0 +1,2 @@
+building_name,north_axis_deg,terrain,loads_convergence_tolerance,temperature_convergence_tolerance,solar_distribution,maximum_warmup_days,minimum_warmup_days
+Apartment_A_New_Building,0,Suburbs,0.04,0.4,FullExterior,25,6

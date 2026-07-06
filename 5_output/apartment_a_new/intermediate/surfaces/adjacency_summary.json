@@ -1,0 +1,805 @@
+{
+  "adjacency_pair_count": 11,
+  "adjacency_pairs": [
+    {
+      "first_zone_name": "LOGIA",
+      "second_zone_name": "PKPB",
+      "first_surface_name": "LOGIA_WALL_01",
+      "second_surface_name": "PKPB_WALL_01",
+      "axis": "horizontal",
+      "overlap_length_m": 3.345
+    },
+    {
+      "first_zone_name": "LOGIA",
+      "second_zone_name": "PN01",
+      "first_surface_name": "LOGIA_WALL_02",
+      "second_surface_name": "PN01_WALL_01",
+      "axis": "vertical",
+      "overlap_length_m": 1.125
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "PN01",
+      "first_surface_name": "PKPB_WALL_02",
+      "second_surface_name": "PN01_WALL_02",
+      "axis": "vertical",
+      "overlap_length_m": 2.325
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "PN01",
+      "first_surface_name": "PKPB_WALL_03",
+      "second_surface_name": "PN01_WALL_03",
+      "axis": "horizontal",
+      "overlap_length_m": 1.13
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "WC01",
+      "first_surface_name": "PKPB_WALL_04",
+      "second_surface_name": "WC01_WALL_01",
+      "axis": "vertical",
+      "overlap_length_m": 1.56
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "PN02",
+      "first_surface_name": "PKPB_WALL_05",
+      "second_surface_name": "PN02_WALL_01",
+      "axis": "horizontal",
+      "overlap_length_m": 1.13
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "PN02",
+      "first_surface_name": "PKPB_WALL_06",
+      "second_surface_name": "PN02_WALL_02",
+      "axis": "vertical",
+      "overlap_length_m": 3.33
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "WC02",
+      "first_surface_name": "PKPB_WALL_07",
+      "second_surface_name": "WC02_WALL_01",
+      "axis": "vertical",
+      "overlap_length_m": 2.02
+    },
+    {
+      "first_zone_name": "PKPB",
+      "second_zone_name": "WC02",
+      "first_surface_name": "PKPB_WALL_08",
+      "second_surface_name": "WC02_WALL_02",
+      "axis": "horizontal",
+      "overlap_length_m": 1.905
+    },
+    {
+      "first_zone_name": "PN01",
+      "second_zone_name": "WC01",
+      "first_surface_name": "PN01_WALL_04",
+      "second_surface_name": "WC01_WALL_02",
+      "axis": "horizontal",
+      "overlap_length_m": 2.74
+    },
+    {
+      "first_zone_name": "PN02",
+      "second_zone_name": "WC01",
+      "first_surface_name": "PN02_WALL_03",
+      "second_surface_name": "WC01_WALL_03",
+      "axis": "horizontal",
+      "overlap_length_m": 2.74
+    }
+  ],
+  "zone_internal_wall_count": {
+    "LOGIA": 2,
+    "PKPB": 8,
+    "PN01": 4,
+    "WC01": 3,
+    "PN02": 3,
+    "WC02": 2
+  },
+  "zone_external_wall_count": {
+    "LOGIA": 2,
+    "PKPB": 2,
+    "PN01": 2,
+    "PN02": 2,
+    "WC01": 1,
+    "WC02": 2
+  },
+  "zone_adiabatic_wall_count": {},
+  "wall_hosts_by_surface_name": {
+    "LOGIA_WALL_01": {
+      "surface_name": "LOGIA_WALL_01",
+      "zone_name": "LOGIA",
+      "start": [
+        5.455,
+        9.641
+      ],
+      "end": [
+        8.8,
+        9.641
+      ],
+      "length_m": 3.3450000000000006,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_01",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "LOGIA_WALL_02": {
+      "surface_name": "LOGIA_WALL_02",
+      "zone_name": "LOGIA",
+      "start": [
+        5.455,
+        10.766
+      ],
+      "end": [
+        5.455,
+        9.641
+      ],
+      "length_m": 1.125,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN01",
+      "paired_surface_name": "PN01_WALL_01",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_01": {
+      "surface_name": "PKPB_WALL_01",
+      "zone_name": "PKPB",
+      "start": [
+        8.8,
+        9.641
+      ],
+      "end": [
+        5.455,
+        9.641
+      ],
+      "length_m": 3.3450000000000006,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "LOGIA",
+      "paired_surface_name": "LOGIA_WALL_01",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": true
+    },
+    "PKPB_WALL_02": {
+      "surface_name": "PKPB_WALL_02",
+      "zone_name": "PKPB",
+      "start": [
+        5.455,
+        9.641
+      ],
+      "end": [
+        5.455,
+        7.316
+      ],
+      "length_m": 2.325,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN01",
+      "paired_surface_name": "PN01_WALL_02",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_03": {
+      "surface_name": "PKPB_WALL_03",
+      "zone_name": "PKPB",
+      "start": [
+        5.455,
+        7.316
+      ],
+      "end": [
+        4.325,
+        7.316
+      ],
+      "length_m": 1.13,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN01",
+      "paired_surface_name": "PN01_WALL_03",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_04": {
+      "surface_name": "PKPB_WALL_04",
+      "zone_name": "PKPB",
+      "start": [
+        4.325,
+        7.316
+      ],
+      "end": [
+        4.325,
+        5.756
+      ],
+      "length_m": 1.5599999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "WC01",
+      "paired_surface_name": "WC01_WALL_01",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_05": {
+      "surface_name": "PKPB_WALL_05",
+      "zone_name": "PKPB",
+      "start": [
+        4.325,
+        5.756
+      ],
+      "end": [
+        5.455,
+        5.756
+      ],
+      "length_m": 1.13,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN02",
+      "paired_surface_name": "PN02_WALL_01",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_06": {
+      "surface_name": "PKPB_WALL_06",
+      "zone_name": "PKPB",
+      "start": [
+        5.455,
+        5.756
+      ],
+      "end": [
+        5.455,
+        2.426
+      ],
+      "length_m": 3.33,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN02",
+      "paired_surface_name": "PN02_WALL_02",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_07": {
+      "surface_name": "PKPB_WALL_07",
+      "zone_name": "PKPB",
+      "start": [
+        6.895,
+        2.426
+      ],
+      "end": [
+        6.895,
+        4.446
+      ],
+      "length_m": 2.0199999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "WC02",
+      "paired_surface_name": "WC02_WALL_01",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_08": {
+      "surface_name": "PKPB_WALL_08",
+      "zone_name": "PKPB",
+      "start": [
+        6.895,
+        4.446
+      ],
+      "end": [
+        8.8,
+        4.446
+      ],
+      "length_m": 1.9050000000000011,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "WC02",
+      "paired_surface_name": "WC02_WALL_02",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "PN01_WALL_01": {
+      "surface_name": "PN01_WALL_01",
+      "zone_name": "PN01",
+      "start": [
+        5.455,
+        9.641
+      ],
+      "end": [
+        5.455,
+        10.766
+      ],
+      "length_m": 1.125,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "LOGIA",
+      "paired_surface_name": "LOGIA_WALL_02",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": true
+    },
+    "PN01_WALL_02": {
+      "surface_name": "PN01_WALL_02",
+      "zone_name": "PN01",
+      "start": [
+        5.455,
+        7.316
+      ],
+      "end": [
+        5.455,
+        9.641
+      ],
+      "length_m": 2.325,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_02",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": true
+    },
+    "PN01_WALL_03": {
+      "surface_name": "PN01_WALL_03",
+      "zone_name": "PN01",
+      "start": [
+        4.325000000000001,
+        7.316
+      ],
+      "end": [
+        5.455,
+        7.316
+      ],
+      "length_m": 1.129999999999999,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_03",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": true
+    },
+    "PN01_WALL_04": {
+      "surface_name": "PN01_WALL_04",
+      "zone_name": "PN01",
+      "start": [
+        1.585,
+        7.316
+      ],
+      "end": [
+        4.325000000000001,
+        7.316
+      ],
+      "length_m": 2.740000000000001,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "WC01",
+      "paired_surface_name": "WC01_WALL_02",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "PN02_WALL_01": {
+      "surface_name": "PN02_WALL_01",
+      "zone_name": "PN02",
+      "start": [
+        5.455,
+        5.756
+      ],
+      "end": [
+        4.325,
+        5.756
+      ],
+      "length_m": 1.13,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_05",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": true
+    },
+    "PN02_WALL_02": {
+      "surface_name": "PN02_WALL_02",
+      "zone_name": "PN02",
+      "start": [
+        5.455,
+        2.426
+      ],
+      "end": [
+        5.455,
+        5.756
+      ],
+      "length_m": 3.33,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_06",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": true
+    },
+    "PN02_WALL_03": {
+      "surface_name": "PN02_WALL_03",
+      "zone_name": "PN02",
+      "start": [
+        4.325,
+        5.756
+      ],
+      "end": [
+        1.585,
+        5.756
+      ],
+      "length_m": 2.74,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "WC01",
+      "paired_surface_name": "WC01_WALL_03",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": false
+    },
+    "WC01_WALL_01": {
+      "surface_name": "WC01_WALL_01",
+      "zone_name": "WC01",
+      "start": [
+        4.325,
+        5.756
+      ],
+      "end": [
+        4.325,
+        7.316
+      ],
+      "length_m": 1.5599999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_04",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": true
+    },
+    "WC01_WALL_02": {
+      "surface_name": "WC01_WALL_02",
+      "zone_name": "WC01",
+      "start": [
+        4.325000000000001,
+        7.316
+      ],
+      "end": [
+        1.585,
+        7.316
+      ],
+      "length_m": 2.740000000000001,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN01",
+      "paired_surface_name": "PN01_WALL_04",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": true
+    },
+    "WC01_WALL_03": {
+      "surface_name": "WC01_WALL_03",
+      "zone_name": "WC01",
+      "start": [
+        1.585,
+        5.756
+      ],
+      "end": [
+        4.325,
+        5.756
+      ],
+      "length_m": 2.74,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PN02",
+      "paired_surface_name": "PN02_WALL_03",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": true
+    },
+    "WC02_WALL_01": {
+      "surface_name": "WC02_WALL_01",
+      "zone_name": "WC02",
+      "start": [
+        6.895,
+        4.446
+      ],
+      "end": [
+        6.895,
+        2.426
+      ],
+      "length_m": 2.0199999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_07",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": true
+    },
+    "WC02_WALL_02": {
+      "surface_name": "WC02_WALL_02",
+      "zone_name": "WC02",
+      "start": [
+        8.8,
+        4.446
+      ],
+      "end": [
+        6.895,
+        4.446
+      ],
+      "length_m": 1.9050000000000011,
+      "height_m": 3.3,
+      "boundary_condition": "Surface",
+      "adjacent_zone_name": "PKPB",
+      "paired_surface_name": "PKPB_WALL_08",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": true
+    },
+    "LOGIA_WALL_03": {
+      "surface_name": "LOGIA_WALL_03",
+      "zone_name": "LOGIA",
+      "start": [
+        8.8,
+        9.641
+      ],
+      "end": [
+        8.8,
+        10.766
+      ],
+      "length_m": 1.125,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": false
+    },
+    "LOGIA_WALL_04": {
+      "surface_name": "LOGIA_WALL_04",
+      "zone_name": "LOGIA",
+      "start": [
+        8.8,
+        10.766
+      ],
+      "end": [
+        5.455,
+        10.766
+      ],
+      "length_m": 3.3450000000000006,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_09": {
+      "surface_name": "PKPB_WALL_09",
+      "zone_name": "PKPB",
+      "start": [
+        5.455,
+        2.426
+      ],
+      "end": [
+        6.895,
+        2.426
+      ],
+      "length_m": 1.4399999999999995,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "PKPB_WALL_10": {
+      "surface_name": "PKPB_WALL_10",
+      "zone_name": "PKPB",
+      "start": [
+        8.8,
+        4.446
+      ],
+      "end": [
+        8.8,
+        9.641
+      ],
+      "length_m": 5.195,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": false
+    },
+    "PN01_WALL_05": {
+      "surface_name": "PN01_WALL_05",
+      "zone_name": "PN01",
+      "start": [
+        5.455,
+        10.766
+      ],
+      "end": [
+        1.585,
+        10.766
+      ],
+      "length_m": 3.87,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "horizontal",
+      "side": "north",
+      "construction_reverse": false
+    },
+    "PN01_WALL_06": {
+      "surface_name": "PN01_WALL_06",
+      "zone_name": "PN01",
+      "start": [
+        1.585,
+        10.766
+      ],
+      "end": [
+        1.585,
+        7.316
+      ],
+      "length_m": 3.45,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PN02_WALL_04": {
+      "surface_name": "PN02_WALL_04",
+      "zone_name": "PN02",
+      "start": [
+        1.585,
+        5.756
+      ],
+      "end": [
+        1.585,
+        2.426
+      ],
+      "length_m": 3.33,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "PN02_WALL_05": {
+      "surface_name": "PN02_WALL_05",
+      "zone_name": "PN02",
+      "start": [
+        1.585,
+        2.426
+      ],
+      "end": [
+        5.455,
+        2.426
+      ],
+      "length_m": 3.87,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "WC01_WALL_04": {
+      "surface_name": "WC01_WALL_04",
+      "zone_name": "WC01",
+      "start": [
+        1.585,
+        7.316
+      ],
+      "end": [
+        1.585,
+        5.756
+      ],
+      "length_m": 1.5599999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "west",
+      "construction_reverse": false
+    },
+    "WC02_WALL_03": {
+      "surface_name": "WC02_WALL_03",
+      "zone_name": "WC02",
+      "start": [
+        6.895,
+        2.426
+      ],
+      "end": [
+        8.8,
+        2.426
+      ],
+      "length_m": 1.9050000000000011,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "horizontal",
+      "side": "south",
+      "construction_reverse": false
+    },
+    "WC02_WALL_04": {
+      "surface_name": "WC02_WALL_04",
+      "zone_name": "WC02",
+      "start": [
+        8.8,
+        2.426
+      ],
+      "end": [
+        8.8,
+        4.446
+      ],
+      "length_m": 2.0199999999999996,
+      "height_m": 3.3,
+      "boundary_condition": "Outdoors",
+      "adjacent_zone_name": "",
+      "paired_surface_name": "",
+      "axis": "vertical",
+      "side": "east",
+      "construction_reverse": false
+    }
+  },
+  "surface_geometry_source": "zone_polygons_m_by_key",
+  "geometry_mode": "dxf_inferred_s04_layer_boundary",
+  "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "outer_block_rect_m": [
+    1.585,
+    2.426,
+    8.8,
+    10.766
+  ],
+  "zone_key_by_name": {
+    "LOGIA": "LOGIA",
+    "PKPB": "PK_PB",
+    "PN01": "PN_01",
+    "PN02": "PN_02",
+    "WC01": "WC_01",
+    "WC02": "WC_02"
+  },
+  "zone_heights_by_name": {
+    "LOGIA": 3.3,
+    "PKPB": 3.3,
+    "PN01": 3.3,
+    "PN02": 3.3,
+    "WC01": 3.3,
+    "WC02": 3.3
+  },
+  "surface_summary": {
+    "surface_row_count": 45,
+    "surface_type_counts": {
+      "Floor": 6,
+      "Roof": 6,
+      "Wall": 33
+    }
+  }
+}

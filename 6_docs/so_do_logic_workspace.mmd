@@ -1,0 +1,95 @@
+﻿flowchart LR
+  %% So do logic va duong di data cua DB_IDF_Workspace.
+  %% Rut gon de preview Mermaid de doc, it duong cheo va it node bi chen nhau.
+
+  classDef input fill:#EAF4FF,stroke:#2F6FA3,color:#12324A
+  classDef config fill:#FFF5DC,stroke:#A97416,color:#3C2B05
+  classDef script fill:#F0EDFF,stroke:#6D5FB3,color:#231F45
+  classDef data fill:#EAF8EF,stroke:#3F8D55,color:#13351C
+  classDef final fill:#FFECEC,stroke:#B64C4C,color:#4A1616
+  classDef support fill:#F4F4F4,stroke:#777,color:#222
+
+  subgraph A["1. Nguồn dữ liệu"]
+    direction TB
+    RAW["CAD / IDF gốc<br/>1_input/[project_id]/raw"]:::input
+    CLEAN["DXF text đã chốt<br/>1_input/[project_id]/clean/txt_dxf"]:::input
+    LIB["Thư viện IDF dùng chung<br/>1_input/library/idf_import"]:::input
+  end
+
+  subgraph B["2. Cấu hình và kiểm soát"]
+    direction TB
+    DEFAULT["Project mặc định<br/>2_config/default_project.json"]:::config
+    CASE["Cấu hình project<br/>2_config/projects/[project_id]"]:::config
+    LAYER["Luật layer DXF<br/>2_config/dxf_layer_profile_s04.json"]:::config
+    SCHEMA["Schema / contract<br/>4_schemas"]:::config
+    GUARD["Kiểm tra đường dẫn<br/>workspace_guard + path_resolver"]:::support
+  end
+
+  subgraph C["3. Pipeline xử lý"]
+    direction TB
+    RUN["Chạy pipeline<br/>run_case_pipeline.py"]:::script
+    PARSE["Parse và lọc DXF<br/>dxf_raw_parser.py"]:::script
+    MAP["Tạo mapping<br/>mapping_builder.py"]:::script
+    GEO["Suy luận hình học<br/>geometry_inference.py"]:::script
+    SURF["Tạo bề mặt<br/>surface_builder.py"]:::script
+    WALL["Xử lý tường<br/>wall_logic.py"]:::script
+    FEN["Xử lý cửa / kính<br/>fenestration_builder.py"]:::script
+    BUNDLE["Lập CSV bundle<br/>bundle_writer.py"]:::script
+    REBUILD["Rebuild IDF<br/>rebuild_idf_from_bundle.py"]:::script
+  end
+
+  subgraph D["4. Data sinh ra theo từng bước"]
+    direction TB
+    NORM["5_output/[project_id]/normalized/dxf<br/>extract, rows, profile, schema"]:::data
+    MAPOUT["5_output/[project_id]/intermediate/mapping<br/>mapping_payload, candidates"]:::data
+    GEOOUT["5_output/[project_id]/intermediate/geometry<br/>geometry_payload, zone_rectangles"]:::data
+    SURFOUT["5_output/[project_id]/intermediate/surfaces<br/>surface_rows, adjacency_summary"]:::data
+    WALLOUT["5_output/[project_id]/intermediate/walls<br/>wall_inventory, wall_resolution"]:::data
+    FENOUT["5_output/[project_id]/intermediate/fenestration<br/>fenestration_rows, host_mapping"]:::data
+    CSV["5_output/[project_id]/csv/[bundle]<br/>CSV import IDF"]:::final
+    MANIFEST["5_output/[project_id]/intermediate/[bundle]<br/>bundle_manifest, Wall_Inventory, wall_positions"]:::data
+    IDF["5_output/[project_id]/idf<br/>IDF cuối cùng"]:::final
+  end
+
+  subgraph E["5. Ngoài luồng chính"]
+    direction TB
+    TOOLS["Tạo / migrate project<br/>3_scripts/tools"]:::support
+    REPORT["Báo cáo / QA<br/>5_output/[project_id]/reports<br/>hoặc 5_output/report"]:::data
+    SHARED["Artifact dùng chung<br/>5_output/_shared"]:::support
+    ARCHIVE["Legacy / backup<br/>7_archive, backup"]:::support
+  end
+
+  RAW --> CLEAN
+  CLEAN --> RUN
+  RUN --> PARSE
+  PARSE --> NORM
+  NORM --> MAP
+  MAP --> MAPOUT
+  MAPOUT --> GEO
+  GEO --> GEOOUT
+  GEOOUT --> SURF
+  SURF --> SURFOUT
+  SURFOUT --> WALL
+  WALL --> WALLOUT
+  WALLOUT --> FEN
+  MAPOUT --> FEN
+  FEN --> FENOUT
+  FENOUT --> BUNDLE
+  BUNDLE --> CSV
+  BUNDLE --> MANIFEST
+  CSV --> REBUILD
+  WALLOUT --> REBUILD
+  REBUILD --> IDF
+
+  DEFAULT -. chọn project nếu thiếu tham số .-> RUN
+  CASE -. đường dẫn input / output .-> RUN
+  LAYER -. phân loại layer .-> PARSE
+  SCHEMA -. kiểm tra cấu trúc data .-> BUNDLE
+  GUARD -. chặn đọc / ghi sai chỗ .-> RUN
+  LIB -. vật liệu / cấu tạo / kính .-> BUNDLE
+  SHARED -. template tham chiếu .-> BUNDLE
+  TOOLS -. scaffold project .-> RAW
+  TOOLS -. tạo config .-> CASE
+  ARCHIVE -. fallback legacy có kiểm soát .-> GUARD
+  CSV -. kiểm tra .-> REPORT
+  IDF -. kiểm tra .-> REPORT

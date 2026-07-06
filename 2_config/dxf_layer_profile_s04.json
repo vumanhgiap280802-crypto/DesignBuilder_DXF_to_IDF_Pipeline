@@ -1,0 +1,527 @@
+{
+  "profile_name": "S04 DXF Layer Recognition",
+  "profile_version": "1.0.0",
+  "operational_input_standard": "parser_readable_dxf_text",
+  "primary_priority_order": [
+    "apartment_boundary",
+    "room_boundary",
+    "room_label",
+    "opening_evidence",
+    "opening_annotation",
+    "external_wall",
+    "adiabatic_wall",
+    "internal_wall",
+    "partition",
+    "wall_boundary_fallback",
+    "dimension_fallback",
+    "title_fallback",
+    "structural_fallback"
+  ],
+  "required_roles": [
+    "room_boundary",
+    "room_label",
+    "opening_evidence"
+  ],
+  "recommended_roles": [
+    "apartment_boundary",
+    "external_wall",
+    "adiabatic_wall",
+    "internal_wall",
+    "partition"
+  ],
+  "boundary_roles": [
+    "apartment_boundary",
+    "room_boundary",
+    "external_wall",
+    "adiabatic_wall",
+    "internal_wall",
+    "partition",
+    "wall_boundary_fallback",
+    "structural_fallback"
+  ],
+  "room_label_roles": [
+    "room_label",
+    "title_fallback"
+  ],
+  "opening_roles": [
+    "opening_evidence",
+    "opening_annotation"
+  ],
+  "opening_import_proxies": {
+    "Hole": {
+      "idf_surface_type": "Window",
+      "name_suffix": "HOLE_AS_WINDOW",
+      "construction_name": "Perfectly Clear - 1002",
+      "frame_and_divider_name": "",
+      "review_reason": "hole_imported_as_window_proxy"
+    }
+  },
+  "auxiliary_roles": [
+    "dimension_fallback",
+    "title_fallback",
+    "structural_fallback"
+  ],
+  "layer_roles": {
+    "apartment_boundary": {
+      "priority": 100,
+      "kind": "primary",
+      "canonical_layers": [
+        "EM_APARTMENT_BOUNDARY"
+      ],
+      "alias_layers": [
+        "APARTMENT_BOUNDARY",
+        "EM APARTMENT BOUNDARY"
+      ],
+      "fuzzy_tokens": [
+        [
+          "APARTMENT",
+          "BOUNDARY"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE"
+      ]
+    },
+    "room_boundary": {
+      "priority": 95,
+      "kind": "primary",
+      "canonical_layers": [
+        "EM_ROOM_BOUNDARY"
+      ],
+      "alias_layers": [
+        "ROOM_BOUNDARY",
+        "EM ROOM BOUNDARY"
+      ],
+      "fuzzy_tokens": [
+        [
+          "ROOM",
+          "BOUNDARY"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE"
+      ]
+    },
+    "room_label": {
+      "priority": 90,
+      "kind": "primary",
+      "canonical_layers": [
+        "EM_ROOM_LABEL"
+      ],
+      "alias_layers": [
+        "ROOM_LABEL",
+        "EM ROOM LABEL",
+        "TAC - Text4"
+      ],
+      "fuzzy_tokens": [
+        [
+          "ROOM",
+          "LABEL"
+        ]
+      ],
+      "record_types": [
+        "MTEXT",
+        "TEXT",
+        "ATTRIB"
+      ]
+    },
+    "opening_evidence": {
+      "priority": 88,
+      "kind": "primary",
+      "canonical_layers": [
+        "EM_DOOR_WINDOW"
+      ],
+      "alias_layers": [
+        "EM DOOR WINDOW",
+        "EM_DOOR",
+        "EM_HOLE",
+        "EM_HOLE_AS_WINDOW",
+        "EM_WINDOW",
+        "EM_GLASS_DOOR",
+        "TAC - Door window"
+      ],
+      "fuzzy_tokens": [
+        [
+          "GLASS",
+          "DOOR"
+        ],
+        [
+          "WINDOW"
+        ],
+        [
+          "DOOR"
+        ],
+        [
+          "DOOR",
+          "WINDOW"
+        ],
+        [
+          "HOLE"
+        ]
+      ],
+      "record_types": [
+        "INSERT",
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "MTEXT",
+        "TEXT",
+        "ATTRIB"
+      ]
+    },
+    "opening_annotation": {
+      "priority": 84,
+      "kind": "supporting",
+      "canonical_layers": [
+        "EM_OPENING_ANNOTATION"
+      ],
+      "alias_layers": [
+        "OPENING_ANNOTATION",
+        "TAC - CUA+LC"
+      ],
+      "fuzzy_tokens": [
+        [
+          "OPENING",
+          "ANNOTATION"
+        ],
+        [
+          "CUA",
+          "LC"
+        ]
+      ],
+      "record_types": [
+        "INSERT",
+        "MTEXT",
+        "TEXT",
+        "ATTRIB"
+      ]
+    },
+    "external_wall": {
+      "priority": 82,
+      "kind": "supporting",
+      "canonical_layers": [
+        "EM_EXTERNAL_WALL_250",
+        "EM_EXTERNAL_WALL_180"
+      ],
+      "alias_layers": [
+        "EXTERNAL_WALL_250",
+        "EXTERNAL_WALL_180"
+      ],
+      "fuzzy_tokens": [
+        [
+          "EXTERNAL",
+          "WALL"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE"
+      ]
+    },
+    "adiabatic_wall": {
+      "priority": 83,
+      "kind": "supporting",
+      "canonical_layers": [
+        "EM_ADIABATIC_WALL_250",
+        "EM_ADIABATIC_WALL_180",
+        "EM_ADIABATIC_WALL_140"
+      ],
+      "alias_layers": [
+        "ADIABATIC_WALL_250",
+        "ADIABATIC_WALL_180",
+        "ADIABATIC_WALL_140",
+        "ADIABATIC WALL",
+        "ADiabatic",
+        "ADIBATIC_WALL",
+        "ARABATIC_WALL",
+        "ARABATIC WALL"
+      ],
+      "fuzzy_tokens": [
+        [
+          "ADIABATIC",
+          "WALL"
+        ],
+        [
+          "ADIABATIC"
+        ],
+        [
+          "ARABATIC",
+          "WALL"
+        ],
+        [
+          "ARABATIC"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE"
+      ]
+    },
+    "internal_wall": {
+      "priority": 81,
+      "kind": "supporting",
+      "canonical_layers": [
+        "EM_INTERNAL_WALL_180",
+        "EM_INTERNAL_WALL_140"
+      ],
+      "alias_layers": [
+        "INTERNAL_WALL_180",
+        "INTERNAL_WALL_140"
+      ],
+      "fuzzy_tokens": [
+        [
+          "INTERNAL",
+          "WALL"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE"
+      ]
+    },
+    "partition": {
+      "priority": 80,
+      "kind": "supporting",
+      "canonical_layers": [
+        "EM_PARTITION_140"
+      ],
+      "alias_layers": [
+        "PARTITION_140"
+      ],
+      "fuzzy_tokens": [
+        [
+          "PARTITION"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE"
+      ]
+    },
+    "wall_boundary_fallback": {
+      "priority": 55,
+      "kind": "fallback",
+      "canonical_layers": [
+        "EM_WALL_BOUNDARY"
+      ],
+      "alias_layers": [
+        "TAC - Lop hoan thien",
+        "TAC - Tuong",
+        "TAC - Thay",
+        "WALL"
+      ],
+      "fuzzy_tokens": [
+        [
+          "FINISH"
+        ],
+        [
+          "TUONG"
+        ],
+        [
+          "WALL"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE"
+      ]
+    },
+    "dimension_fallback": {
+      "priority": 40,
+      "kind": "fallback",
+      "canonical_layers": [
+        "EM_DIMENSION"
+      ],
+      "alias_layers": [
+        "TAC - Dim",
+        "DIMENSION"
+      ],
+      "fuzzy_tokens": [
+        [
+          "DIM"
+        ]
+      ],
+      "record_types": [
+        "DIMENSION",
+        "MTEXT",
+        "TEXT"
+      ]
+    },
+    "title_fallback": {
+      "priority": 35,
+      "kind": "fallback",
+      "canonical_layers": [
+        "EM_TITLE"
+      ],
+      "alias_layers": [
+        "TAC - Text2",
+        "TAC - Text4",
+        "TITLE"
+      ],
+      "fuzzy_tokens": [
+        [
+          "TITLE"
+        ]
+      ],
+      "record_types": [
+        "MTEXT",
+        "TEXT",
+        "ATTRIB"
+      ]
+    },
+    "structural_fallback": {
+      "priority": 30,
+      "kind": "fallback",
+      "canonical_layers": [
+        "EM_STRUCTURAL"
+      ],
+      "alias_layers": [
+        "TAC - Betong",
+        "0"
+      ],
+      "fuzzy_tokens": [
+        [
+          "BETONG"
+        ],
+        [
+          "STRUCTURAL"
+        ]
+      ],
+      "record_types": [
+        "LWPOLYLINE",
+        "POLYLINE",
+        "LINE",
+        "ARC",
+        "CIRCLE",
+        "ELLIPSE",
+        "SPLINE",
+        "INSERT"
+      ]
+    }
+  },
+  "rejected_roles": {
+    "hatch": {
+      "alias_layers": [
+        "TAC - Hatch"
+      ],
+      "fuzzy_tokens": [
+        [
+          "HATCH"
+        ]
+      ]
+    },
+    "furniture": {
+      "alias_layers": [
+        "TAC - Noi that"
+      ],
+      "fuzzy_tokens": [
+        [
+          "NOI",
+          "THAT"
+        ],
+        [
+          "FURNITURE"
+        ]
+      ]
+    },
+    "notes": {
+      "alias_layers": [
+        "TAC - Ghichu"
+      ],
+      "fuzzy_tokens": [
+        [
+          "GHI",
+          "CHU"
+        ],
+        [
+          "NOTE"
+        ]
+      ]
+    },
+    "title_block": {
+      "alias_layers": [
+        "ASUS"
+      ],
+      "fuzzy_tokens": [
+        [
+          "TITLE",
+          "BLOCK"
+        ]
+      ]
+    },
+    "landscape": {
+      "alias_layers": [
+        "TAC - Cayxanh"
+      ],
+      "fuzzy_tokens": [
+        [
+          "CAY",
+          "XANH"
+        ],
+        [
+          "LANDSCAPE"
+        ]
+      ]
+    },
+    "symbol_misc": {
+      "alias_layers": [
+        "TAC - Ky hieu"
+      ],
+      "fuzzy_tokens": [
+        [
+          "KY",
+          "HIEU"
+        ],
+        [
+          "SYMBOL"
+        ]
+      ]
+    },
+    "grid_axis": {
+      "alias_layers": [
+        "TAC - Truc",
+        "Defpoints"
+      ],
+      "fuzzy_tokens": [
+        [
+          "TRUC"
+        ],
+        [
+          "GRID"
+        ],
+        [
+          "DEFPOINTS"
+        ]
+      ]
+    }
+  }
+}

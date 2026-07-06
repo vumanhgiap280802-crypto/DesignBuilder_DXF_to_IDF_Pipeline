@@ -1,0 +1,30 @@
+{
+  "shared_library_root": "1_input/library",
+  "idf_import": {
+    "catalogs": {
+      "construction_catalog": "1_input/library/idf_import/catalogs/constructions/constructions_catalog.csv",
+      "materials_catalog": "1_input/library/idf_import/catalogs/materials/materials_catalog.csv",
+      "resolver_rules": "1_input/library/idf_import/catalogs/resolvers/resolver_rules.csv"
+    },
+    "objects": {
+      "construction_csv": "1_input/library/idf_import/objects/constructions/Construction.csv",
+      "material_csv": "1_input/library/idf_import/objects/materials/Material.csv",
+      "material_nomass_csv": "1_input/library/idf_import/objects/materials/Material_NoMass.csv",
+      "material_airgap_csv": "1_input/library/idf_import/objects/materials/Material_AirGap.csv",
+      "glazing_csv": "1_input/library/idf_import/objects/fenestration/WindowMaterial_Glazing.csv",
+      "gas_csv": "1_input/library/idf_import/objects/fenestration/WindowMaterial_Gas.csv",
+      "frame_csv": "1_input/library/idf_import/objects/fenestration/WindowProperty_FrameAndDivider.csv"
+    },
+    "legacy_inputs": {
+      "wall_construction_input_csv": "1_input/library/idf_import/legacy/walls/construction_input_3_brick_walls.csv",
+      "wall_material_input_csv": "1_input/library/idf_import/legacy/materials/materials_for_construction_input_3_brick_walls.csv"
+    },
+    "reference_files": {
+      "sample_construction_idf": "1_input/library/idf_import/reference/idf/New sample construction.idf",
+      "sample_construction_xml": "1_input/library/idf_import/reference/idf/New sample construction.xml",
+      "sample_db_import_idf": "1_input/library/idf_import/reference/idf/Test1_for_DB_import.idf",
+      "sample_dblean_idf": "1_input/library/idf_import/reference/idf/Test1_for_DB_import_DBlean.idf",
+      "shared_crosscheck_idf": "5_output/_shared/idf/Test1_for_DB_import_DBlean_crosscheck.idf"
+    }
+  }
+}

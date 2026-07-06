@@ -1,0 +1,1094 @@
+{
+  "schema_name": "metadata_schema",
+  "schema_role": "contract",
+  "standard_type": "working_standard",
+  "derived_from_pipeline": {
+    "case_config": "2_config/projects/noxh_apartment_a_clean/pipeline_case.json",
+    "entrypoints": [
+      "3_scripts/pipeline/run_case_pipeline.py::main",
+      "3_scripts/pipeline/apartment_a_pipeline.py::run_pipeline"
+    ],
+    "modules_read": [
+      "3_scripts/parsers/dxf_raw_parser.py",
+      "3_scripts/context/mapping_builder.py",
+      "3_scripts/transformers/geometry_inference.py",
+      "3_scripts/transformers/surface_builder.py",
+      "3_scripts/transformers/wall_logic.py",
+      "3_scripts/transformers/fenestration_builder.py",
+      "3_scripts/writers/bundle_writer.py",
+      "3_scripts/writers/rebuild_idf_from_bundle.py"
+    ],
+    "outputs_checked": [
+      "5_output/noxh_apartment_a_clean/intermediate/mapping/mapping_payload.json",
+      "5_output/noxh_apartment_a_clean/intermediate/geometry/geometry_payload.json",
+      "5_output/noxh_apartment_a_clean/intermediate/surfaces/surface_rows.json",
+      "5_output/noxh_apartment_a_clean/intermediate/walls/wall_inventory.json",
+      "5_output/noxh_apartment_a_clean/intermediate/fenestration/fenestration_rows.json",
+      "5_output/noxh_apartment_a_clean/intermediate/NOXH_Apartment_A_clean_idf_input_bundle/bundle_manifest.json",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/Zone.csv",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/BuildingSurface_Detailed.csv",
+      "5_output/noxh_apartment_a_clean/csv/NOXH_Apartment_A_clean_idf_input_bundle/FenestrationSurface_Detailed.csv"
+    ],
+    "note": "This contract is inferred from the Apartment A flow and current observed outputs. It is not a theoretical target schema."
+  },
+  "classification_rules": {
+    "core": "Field is actively consumed by a downstream module in the current Apartment A flow, or is a writer default required to emit the current CSV bundle and rebuilt IDF.",
+    "extension": "Field exists in current artifacts for QA, traceability, review, or future scaling, but the current end-to-end flow does not depend on it as a hard contract.",
+    "provisional": "Field naming or behavior exists now but should not be frozen as a stable multi-case contract yet."
+  },
+  "groups": {
+    "project": {
+      "fields": [
+        {
+          "field_name": "zone_output_prefix",
+          "group": "project",
+          "type": "string",
+          "required": true,
+          "default": "APARTMENT_A_",
+          "enum": [
+            "APARTMENT_A_"
+          ],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/pipeline/run_case_pipeline.py::main",
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed in naming_rules.json. Current writers still hardcode the same APARTMENT_A prefix family, so this value must stay aligned with the current pipeline."
+        },
+        {
+          "field_name": "geometry_policy_mode",
+          "group": "project",
+          "type": "string",
+          "required": true,
+          "default": "backup_v2_single_block",
+          "enum": [
+            "backup_v2_single_block"
+          ],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed in geometry_policy.json and used to lock the current Apartment A geometry algorithm branch."
+        },
+        {
+          "field_name": "require_single_block",
+          "group": "project",
+          "type": "boolean",
+          "required": true,
+          "default": true,
+          "enum": [],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Current geometry validation fails the run if the inferred zone partition stops being a single connected block."
+        },
+        {
+          "field_name": "max_unallocated_area_m2",
+          "group": "project",
+          "type": "number",
+          "required": true,
+          "default": 0.001,
+          "enum": [],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Tolerance used by geometry_inference when validating the single-block partition."
+        },
+        {
+          "field_name": "area_priority_mode",
+          "group": "project",
+          "type": "string",
+          "required": true,
+          "default": "remember_only",
+          "enum": [
+            "remember_only"
+          ],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Current Apartment A flow records target room areas for reference but does not enforce strict area matching because remember_only is active."
+        },
+        {
+          "field_name": "case_id",
+          "group": "project",
+          "type": "string",
+          "required": true,
+          "default": "apartment_a",
+          "enum": [],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/pipeline/run_case_pipeline.py::main"
+          ],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "Used for case reporting and config routing only. The current Apartment A business logic does not branch on it."
+        },
+        {
+          "field_name": "case_name",
+          "group": "project",
+          "type": "string",
+          "required": true,
+          "default": "Apartment A",
+          "enum": [],
+          "source_of_truth": "config",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/pipeline/run_case_pipeline.py::main"
+          ],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "Human-readable label from pipeline_case.json. Not used as a downstream semantic contract."
+        }
+      ]
+    },
+    "floor": {
+      "fields": [
+        {
+          "field_name": "default_zone_height_m",
+          "group": "floor",
+          "type": "number",
+          "required": true,
+          "default": 3.0,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Materialized as geometry_payload.zone_height_m_by_key[*] and then exported to Zone.csv.ceiling_height_m. Current flow hardcodes 3.0 m for all zones."
+        },
+        {
+          "field_name": "base_floor_elevation_m",
+          "group": "floor",
+          "type": "number",
+          "required": true,
+          "default": 0.0,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Current bundle writer fixes Zone.csv z_origin_m to 0.0 for the single-floor Apartment A case."
+        },
+        {
+          "field_name": "level_index",
+          "group": "floor",
+          "type": "integer",
+          "required": false,
+          "default": 0,
+          "enum": [],
+          "source_of_truth": "manual",
+          "produced_by": null,
+          "consumed_by": [],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "No explicit floor index exists in current artifacts. Apartment A is treated as a single level."
+        }
+      ]
+    },
+    "zone": {
+      "fields": [
+        {
+          "field_name": "source_zone_name",
+          "group": "zone",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/context/mapping_builder.py::build_mapping_payload",
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+            "3_scripts/writers/bundle_writer.py::build_zone_name_map"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_zones[].zone_name, extracted from room label text in the DXF source."
+        },
+        {
+          "field_name": "zone_key",
+          "group": "zone",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::canonical_zone_key",
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+            "3_scripts/writers/bundle_writer.py::build_zone_name_map"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Canonical room token derived from the source zone name. Used to reconcile geometry, naming, and bundle rows."
+        },
+        {
+          "field_name": "target_area_m2",
+          "group": "zone",
+          "type": "number",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_zones[].area_m2 and copied into geometry_payload.zone_target_area_by_key."
+        },
+        {
+          "field_name": "anchor_xy_mm",
+          "group": "zone",
+          "type": "array[number]",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+            "3_scripts/transformers/fenestration_builder.py::build_zone_anchor_xy_by_csv",
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_zones[].anchor_xy in DXF millimeters."
+        },
+        {
+          "field_name": "zone_output_name",
+          "group": "zone",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/transformers/surface_builder.py::build_surface_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as geometry_payload.zone_output_name_by_key[*]. Current Apartment A flow expects APARTMENT_A_<zone_key> style names."
+        },
+        {
+          "field_name": "footprint_rectangles_m",
+          "group": "zone",
+          "type": "array[array[number]]",
+          "required": true,
+          "default": [],
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed in geometry_payload.zone_rectangles_m_by_key and zone_geometry_by_key[*].footprint_rectangles_m."
+        },
+        {
+          "field_name": "label_handle",
+          "group": "zone",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_zones[].label_handle. Kept for traceability and QA manifests."
+        },
+        {
+          "field_name": "bbox_xy_mm",
+          "group": "zone",
+          "type": "array[number]",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "Observed as mapping_payload.candidate_zones[].bbox_xy. Present for QA only; no current downstream module depends on it."
+        },
+        {
+          "field_name": "zone_candidate_confidence",
+          "group": "zone",
+          "type": "string",
+          "required": false,
+          "default": "high",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::confidence_for_zone_candidate",
+          "consumed_by": [],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "Current flow emits this value for review, but it is not a hard contract for geometry or bundle generation."
+        }
+      ]
+    },
+    "envelope": {
+      "fields": [
+        {
+          "field_name": "outer_block_rect_m",
+          "group": "envelope",
+          "type": "array[number]",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_zone_rows_and_manifest"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "World-space apartment outer boundary used for export translation, surface boundary classification, and manifest QA."
+        },
+        {
+          "field_name": "surface_name",
+          "group": "envelope",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+          "consumed_by": [
+            "3_scripts/transformers/wall_logic.py::build_wall_artifacts",
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as surface_rows[].surface_name and then mirrored into BuildingSurface_Detailed.csv."
+        },
+        {
+          "field_name": "surface_type",
+          "group": "envelope",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [
+            "Floor",
+            "Roof",
+            "Wall"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+          "consumed_by": [
+            "3_scripts/transformers/wall_logic.py::build_wall_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Current flow only emits Floor, Roof, and Wall surface types."
+        },
+        {
+          "field_name": "outside_boundary_condition",
+          "group": "envelope",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [
+            "Ground",
+            "Outdoors",
+            "Surface",
+            "Adiabatic"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+          "consumed_by": [
+            "3_scripts/transformers/wall_logic.py::build_wall_artifacts",
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Drives interzone pairing, wall family assignment, fenestration hosting, and final IDF boundary writing."
+        },
+        {
+          "field_name": "outside_boundary_condition_object",
+          "group": "envelope",
+          "type": "string",
+          "required": true,
+          "default": "",
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/surface_builder.py::build_surface_artifacts",
+          "consumed_by": [
+            "3_scripts/transformers/wall_logic.py::build_wall_artifacts",
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Required for paired Surface adjacencies and for rebuilding linked interzone surfaces."
+        },
+        {
+          "field_name": "surface_construction_name",
+          "group": "envelope",
+          "type": "string",
+          "required": true,
+          "default": "",
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/surface_builder.py::build_surface_artifacts + 3_scripts/transformers/wall_logic.py::build_wall_artifacts",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Floor and roof rows receive seed constructions in surface_builder; wall rows are finalized in wall_logic before bundle export."
+        },
+        {
+          "field_name": "wall_total_thickness_mm",
+          "group": "envelope",
+          "type": "integer",
+          "required": false,
+          "default": 0,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/wall_logic.py::build_wall_inventory_rows",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_zone_wall_thickness_counts",
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Observed as wall_inventory[].total_thickness_mm. Useful for QA and host metadata, but not a minimal contract for final bundle writing."
+        },
+        {
+          "field_name": "physical_wall_id",
+          "group": "envelope",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/wall_logic.py::build_wall_inventory_rows",
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Observed as wall_inventory[].physical_wall_id and carried into opening_host_mapping for QA."
+        },
+        {
+          "field_name": "wall_orientation_cardinal",
+          "group": "envelope",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [
+            "East-West",
+            "North-South"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/wall_logic.py::wall_orientation_cardinal",
+          "consumed_by": [],
+          "stability": "extension",
+          "status": "active",
+          "note": "Observed as wall_inventory[].orientation_cardinal. Current flow emits East-West or North-South for QA and manual review only."
+        }
+      ]
+    },
+    "opening": {
+      "fields": [
+        {
+          "field_name": "opening_id",
+          "group": "opening",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::build_mapping_payload",
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Sequential opening identifier observed as mapping_payload.candidate_openings[].opening_id."
+        },
+        {
+          "field_name": "nearest_zone_name",
+          "group": "opening",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::nearest_zone",
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Zone assignment used by fenestration_builder to select candidate host walls."
+        },
+        {
+          "field_name": "fenestration_type",
+          "group": "opening",
+          "type": "string",
+          "required": true,
+          "default": "NeedsReview",
+          "enum": [
+            "Window",
+            "Door",
+            "GlassDoor",
+            "NeedsReview",
+            "WindowOrDoorNeedsReview"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::build_mapping_payload",
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_openings[].candidate_fenestration_type after DXF text parsing and opening-layer classification."
+        },
+        {
+          "field_name": "opening_width_mm",
+          "group": "opening",
+          "type": "number",
+          "required": true,
+          "default": 1000.0,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_openings[].width_mm from TAC - CUA+LC annotation parsing."
+        },
+        {
+          "field_name": "opening_height_mm",
+          "group": "opening",
+          "type": "number",
+          "required": true,
+          "default": 2100.0,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_openings[].height_mm from TAC - CUA+LC annotation parsing."
+        },
+        {
+          "field_name": "sill_height_m",
+          "group": "opening",
+          "type": "number",
+          "required": true,
+          "default": 0.0,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as mapping_payload.candidate_openings[].sill_height_m. Used when placing fenestration vertices on host walls."
+        },
+        {
+          "field_name": "host_surface_name",
+          "group": "opening",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as opening_host_mapping[].building_surface_name and fenestration_rows[].building_surface_name for resolved openings."
+        },
+        {
+          "field_name": "fenestration_name",
+          "group": "opening",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts",
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Resolved fenestration object name exported to FenestrationSurface_Detailed.csv."
+        },
+        {
+          "field_name": "type_code",
+          "group": "opening",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "dxf",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/context/mapping_builder.py::classify_opening_type"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Raw opening type token from TAC - CUA+LC text. Used upstream for classification, but not carried as a strict downstream contract."
+        },
+        {
+          "field_name": "mapping_confidence",
+          "group": "opening",
+          "type": "string",
+          "required": false,
+          "default": "low",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::build_mapping_payload",
+          "consumed_by": [
+            "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts"
+          ],
+          "stability": "extension",
+          "status": "provisional",
+          "note": "Current downstream use is limited to review flags; the pipeline does not block final CSV generation on this field alone."
+        },
+        {
+          "field_name": "matched_symbol_insert_handle",
+          "group": "opening",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/context/mapping_builder.py::build_mapping_payload",
+          "consumed_by": [],
+          "stability": "extension",
+          "status": "active",
+          "note": "DXF insert evidence handle for symbol matching. Kept for traceability only."
+        },
+        {
+          "field_name": "paired_fenestration_name",
+          "group": "opening",
+          "type": "string",
+          "required": false,
+          "default": "",
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/fenestration_builder.py::build_fenestration_artifacts",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Only emitted for resolved interzone openings that generate a paired adjacent fenestration row."
+        }
+      ]
+    },
+    "simulation": {
+      "fields": [
+        {
+          "field_name": "idf_version",
+          "group": "simulation",
+          "type": "string",
+          "required": true,
+          "default": "9.4.0.002",
+          "enum": [
+            "9.4.0.002"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Version.csv.version_identifier. Current writer hardcodes this bundle export version."
+        },
+        {
+          "field_name": "site_location_name",
+          "group": "simulation",
+          "type": "string",
+          "required": true,
+          "default": "Untitled (01-01:31-12)  (01-01:31-12)",
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Site_Location.csv.location_name. Current flow uses a writer default, not case-configured site metadata."
+        },
+        {
+          "field_name": "site_latitude",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 21.03,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Site_Location.csv.latitude."
+        },
+        {
+          "field_name": "site_longitude",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 105.8,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Site_Location.csv.longitude."
+        },
+        {
+          "field_name": "site_time_zone",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 7.0,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Site_Location.csv.time_zone."
+        },
+        {
+          "field_name": "site_elevation_m",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 6.0,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Site_Location.csv.elevation_m."
+        },
+        {
+          "field_name": "building_name",
+          "group": "simulation",
+          "type": "string",
+          "required": true,
+          "default": "Apartment_A_Building",
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.building_name. Current value is writer-set, not case-configured."
+        },
+        {
+          "field_name": "north_axis_deg",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 0.0,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.north_axis_deg."
+        },
+        {
+          "field_name": "terrain",
+          "group": "simulation",
+          "type": "string",
+          "required": true,
+          "default": "Suburbs",
+          "enum": [
+            "Suburbs"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.terrain."
+        },
+        {
+          "field_name": "loads_convergence_tolerance",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 0.04,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.loads_convergence_tolerance."
+        },
+        {
+          "field_name": "temperature_convergence_tolerance",
+          "group": "simulation",
+          "type": "number",
+          "required": true,
+          "default": 0.4,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.temperature_convergence_tolerance."
+        },
+        {
+          "field_name": "solar_distribution",
+          "group": "simulation",
+          "type": "string",
+          "required": true,
+          "default": "FullExterior",
+          "enum": [
+            "FullExterior"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.solar_distribution."
+        },
+        {
+          "field_name": "maximum_warmup_days",
+          "group": "simulation",
+          "type": "integer",
+          "required": true,
+          "default": 25,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.maximum_warmup_days."
+        },
+        {
+          "field_name": "minimum_warmup_days",
+          "group": "simulation",
+          "type": "integer",
+          "required": true,
+          "default": 6,
+          "enum": [],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as Building.csv.minimum_warmup_days."
+        }
+      ]
+    },
+    "export": {
+      "fields": [
+        {
+          "field_name": "starting_vertex_position",
+          "group": "export",
+          "type": "string",
+          "required": true,
+          "default": "LowerLeftCorner",
+          "enum": [
+            "LowerLeftCorner"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as GlobalGeometryRules.csv.starting_vertex_position."
+        },
+        {
+          "field_name": "vertex_entry_direction",
+          "group": "export",
+          "type": "string",
+          "required": true,
+          "default": "CounterClockWise",
+          "enum": [
+            "CounterClockWise"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as GlobalGeometryRules.csv.vertex_entry_direction."
+        },
+        {
+          "field_name": "coordinate_system",
+          "group": "export",
+          "type": "string",
+          "required": true,
+          "default": "Relative",
+          "enum": [
+            "Relative"
+          ],
+          "source_of_truth": "writer",
+          "produced_by": null,
+          "consumed_by": [
+            "3_scripts/writers/rebuild_idf_from_bundle.py::build_idf_from_bundle"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as GlobalGeometryRules.csv.coordinate_system. Current bundle writer exports Relative coordinates."
+        },
+        {
+          "field_name": "export_origin_mode",
+          "group": "export",
+          "type": "string",
+          "required": true,
+          "default": "outer_block_min_corner_to_zero",
+          "enum": [
+            "outer_block_min_corner_to_zero"
+          ],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Controls the translation from world-space geometry to bundle-relative coordinates."
+        },
+        {
+          "field_name": "export_origin_offset_m",
+          "group": "export",
+          "type": "array[number]",
+          "required": true,
+          "default": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts"
+          ],
+          "stability": "core",
+          "status": "active",
+          "note": "Observed as geometry_payload.export_origin_offset_m and used to translate zone, surface, wall, and opening coordinates before writing CSV output."
+        },
+        {
+          "field_name": "export_origin_reference",
+          "group": "export",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "enum": [],
+          "source_of_truth": "derived",
+          "produced_by": "3_scripts/transformers/geometry_inference.py::infer_apartment_a_geometry",
+          "consumed_by": [
+            "3_scripts/writers/bundle_writer.py::build_bundle_artifacts"
+          ],
+          "stability": "extension",
+          "status": "active",
+          "note": "Descriptive QA string written into geometry payload and bundle manifest. Helpful for review, but not required for geometry math."
+        }
+      ]
+    }
+  }
+}

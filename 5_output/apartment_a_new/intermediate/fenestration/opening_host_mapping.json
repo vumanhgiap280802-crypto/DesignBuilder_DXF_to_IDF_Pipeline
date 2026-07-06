@@ -1,0 +1,749 @@
+[
+  {
+    "opening_id": "OPENING_001",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_001_WINDOW",
+    "paired_fenestration_name": "",
+    "source_type_code": "SW",
+    "candidate_fenestration_type": "Window",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Window",
+    "idf_name_suffix": "",
+    "construction_name": "C_G_WINDOW_TEMP_008",
+    "nearest_zone_name": "WC 01",
+    "nearest_zone_csv_name": "WC01",
+    "size_text": "600X600",
+    "width_mm": 600,
+    "height_mm": 600,
+    "sill_height_m": 1.6,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2EE7",
+    "host_boundary_condition": "Outdoors",
+    "host_adjacent_zone_name": "",
+    "host_wall_physical_id": "WALL_020",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 250,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      0.0,
+      4.51
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "WC01_WALL_04",
+    "fenestration_vertices_m": {
+      "v1": [
+        0.0,
+        4.77,
+        1.64
+      ],
+      "v2": [
+        0.0,
+        4.77,
+        2.16
+      ],
+      "v3": [
+        0.0,
+        4.25,
+        2.16
+      ],
+      "v4": [
+        0.0,
+        4.25,
+        1.64
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "WC01"
+    ],
+    "host_selection_preferred_boundary_condition": "Outdoors",
+    "host_selection_candidate_surface_names": [
+      "WC01_WALL_04"
+    ],
+    "frame_width_m": 0.04,
+    "opening_total_width_m": 0.6,
+    "opening_glazing_width_m": 0.52,
+    "opening_total_height_m": 0.6,
+    "opening_glazing_height_m": 0.52,
+    "opening_total_bottom_z_m": 1.6
+  },
+  {
+    "opening_id": "OPENING_002",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_002_WINDOW",
+    "paired_fenestration_name": "",
+    "source_type_code": "SN",
+    "candidate_fenestration_type": "Window",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Window",
+    "idf_name_suffix": "",
+    "construction_name": "C_G_WINDOW_TEMP_008",
+    "nearest_zone_name": "PN 02",
+    "nearest_zone_csv_name": "PN02",
+    "size_text": "1400X1235",
+    "width_mm": 1400,
+    "height_mm": 1235,
+    "sill_height_m": 1.4,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2EF2",
+    "host_boundary_condition": "Outdoors",
+    "host_adjacent_zone_name": "",
+    "host_wall_physical_id": "WALL_018",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 250,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      0.0,
+      1.94
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "PN02_WALL_04",
+    "fenestration_vertices_m": {
+      "v1": [
+        0.0,
+        2.6,
+        1.44
+      ],
+      "v2": [
+        0.0,
+        2.6,
+        2.595
+      ],
+      "v3": [
+        0.0,
+        1.28,
+        2.595
+      ],
+      "v4": [
+        0.0,
+        1.28,
+        1.44
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PN02"
+    ],
+    "host_selection_preferred_boundary_condition": "Outdoors",
+    "host_selection_candidate_surface_names": [
+      "PN02_WALL_04"
+    ],
+    "frame_width_m": 0.04,
+    "opening_total_width_m": 1.4,
+    "opening_glazing_width_m": 1.32,
+    "opening_total_height_m": 1.235,
+    "opening_glazing_height_m": 1.155,
+    "opening_total_bottom_z_m": 1.4
+  },
+  {
+    "opening_id": "OPENING_003",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_003_DOOR",
+    "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_003_DOOR_ADJ",
+    "source_type_code": "DN1",
+    "candidate_fenestration_type": "Door",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Door",
+    "idf_name_suffix": "",
+    "construction_name": "D_BEDROOM_MDF_035",
+    "nearest_zone_name": "PK + PB",
+    "nearest_zone_csv_name": "PKPB",
+    "size_text": "850X2200",
+    "width_mm": 850,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2EFD",
+    "host_boundary_condition": "Surface",
+    "host_adjacent_zone_name": "PN01",
+    "host_wall_physical_id": "WALL_006",
+    "host_wall_family": "Partition",
+    "host_wall_total_thickness_mm": 140,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      3.32,
+      4.89
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "PKPB_WALL_03",
+    "fenestration_vertices_m": {
+      "v1": [
+        3.745,
+        4.89,
+        0.0
+      ],
+      "v2": [
+        3.745,
+        4.89,
+        2.2
+      ],
+      "v3": [
+        2.895,
+        4.89,
+        2.2
+      ],
+      "v4": [
+        2.895,
+        4.89,
+        0.0
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PKPB"
+    ],
+    "host_selection_preferred_boundary_condition": "Surface",
+    "host_selection_candidate_surface_names": [
+      "PKPB_WALL_03",
+      "PN01_WALL_03"
+    ],
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 0.85,
+    "opening_glazing_width_m": 0.85,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.2,
+    "opening_total_bottom_z_m": 0.0
+  },
+  {
+    "opening_id": "OPENING_004",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_004_DOOR",
+    "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_004_DOOR_ADJ",
+    "source_type_code": "DN1",
+    "candidate_fenestration_type": "Door",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Door",
+    "idf_name_suffix": "",
+    "construction_name": "D_BEDROOM_MDF_035",
+    "nearest_zone_name": "PK + PB",
+    "nearest_zone_csv_name": "PKPB",
+    "size_text": "850X2200",
+    "width_mm": 850,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F08",
+    "host_boundary_condition": "Surface",
+    "host_adjacent_zone_name": "PN02",
+    "host_wall_physical_id": "WALL_008",
+    "host_wall_family": "Partition",
+    "host_wall_total_thickness_mm": 140,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      3.32,
+      3.33
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "PKPB_WALL_05",
+    "fenestration_vertices_m": {
+      "v1": [
+        2.895,
+        3.33,
+        0.0
+      ],
+      "v2": [
+        2.895,
+        3.33,
+        2.2
+      ],
+      "v3": [
+        3.745,
+        3.33,
+        2.2
+      ],
+      "v4": [
+        3.745,
+        3.33,
+        0.0
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PN02"
+    ],
+    "host_selection_preferred_boundary_condition": "Surface",
+    "host_selection_candidate_surface_names": [
+      "PKPB_WALL_05",
+      "PN02_WALL_01"
+    ],
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 0.85,
+    "opening_glazing_width_m": 0.85,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.2,
+    "opening_total_bottom_z_m": 0.0
+  },
+  {
+    "opening_id": "OPENING_005",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_005_DOOR",
+    "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_005_DOOR_ADJ",
+    "source_type_code": "DWN",
+    "candidate_fenestration_type": "Door",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Door",
+    "idf_name_suffix": "",
+    "construction_name": "D_WC_UPVC_024",
+    "nearest_zone_name": "WC 02",
+    "nearest_zone_csv_name": "WC02",
+    "size_text": "750X2200",
+    "width_mm": 750,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F13",
+    "host_boundary_condition": "Surface",
+    "host_adjacent_zone_name": "PKPB",
+    "host_wall_physical_id": "WALL_010",
+    "host_wall_family": "Partition",
+    "host_wall_total_thickness_mm": 140,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      5.31,
+      1.515
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "WC02_WALL_01",
+    "fenestration_vertices_m": {
+      "v1": [
+        5.31,
+        1.89,
+        0.0
+      ],
+      "v2": [
+        5.31,
+        1.89,
+        2.2
+      ],
+      "v3": [
+        5.31,
+        1.14,
+        2.2
+      ],
+      "v4": [
+        5.31,
+        1.14,
+        0.0
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PKPB"
+    ],
+    "host_selection_preferred_boundary_condition": "Surface",
+    "host_selection_candidate_surface_names": [
+      "WC02_WALL_01",
+      "PKPB_WALL_07"
+    ],
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 0.75,
+    "opening_glazing_width_m": 0.75,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.2,
+    "opening_total_bottom_z_m": 0.0
+  },
+  {
+    "opening_id": "OPENING_006",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_006_WINDOW",
+    "paired_fenestration_name": "",
+    "source_type_code": "SN",
+    "candidate_fenestration_type": "Window",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Window",
+    "idf_name_suffix": "",
+    "construction_name": "C_G_WINDOW_TEMP_008",
+    "nearest_zone_name": "PN 01",
+    "nearest_zone_csv_name": "PN01",
+    "size_text": "1400X1235",
+    "width_mm": 1400,
+    "height_mm": 1235,
+    "sill_height_m": 1.4,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F21",
+    "host_boundary_condition": "Outdoors",
+    "host_adjacent_zone_name": "",
+    "host_wall_physical_id": "WALL_015",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 250,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      2.025,
+      8.34
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "PN01_WALL_05",
+    "fenestration_vertices_m": {
+      "v1": [
+        2.685,
+        8.34,
+        1.44
+      ],
+      "v2": [
+        2.685,
+        8.34,
+        2.595
+      ],
+      "v3": [
+        1.365,
+        8.34,
+        2.595
+      ],
+      "v4": [
+        1.365,
+        8.34,
+        1.44
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PN01"
+    ],
+    "host_selection_preferred_boundary_condition": "Outdoors",
+    "host_selection_candidate_surface_names": [
+      "PN01_WALL_05"
+    ],
+    "frame_width_m": 0.04,
+    "opening_total_width_m": 1.4,
+    "opening_glazing_width_m": 1.32,
+    "opening_total_height_m": 1.235,
+    "opening_glazing_height_m": 1.155,
+    "opening_total_bottom_z_m": 1.4
+  },
+  {
+    "opening_id": "OPENING_007",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_007_GLASSDOOR",
+    "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_007_GLASSDOOR_ADJ",
+    "source_type_code": "DN2",
+    "candidate_fenestration_type": "GlassDoor",
+    "idf_import_proxy": false,
+    "idf_surface_type": "GlassDoor",
+    "idf_name_suffix": "",
+    "construction_name": "C_G_LOGIA_TEMP_010",
+    "nearest_zone_name": "LOGIA",
+    "nearest_zone_csv_name": "LOGIA",
+    "size_text": "2000X2200",
+    "width_mm": 2000,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F2C",
+    "host_boundary_condition": "Surface",
+    "host_adjacent_zone_name": "PKPB",
+    "host_wall_physical_id": "WALL_001",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 250,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      5.29,
+      7.215
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "LOGIA_WALL_01",
+    "fenestration_vertices_m": {
+      "v1": [
+        4.33,
+        7.215,
+        0.04
+      ],
+      "v2": [
+        4.33,
+        7.215,
+        2.16
+      ],
+      "v3": [
+        6.25,
+        7.215,
+        2.16
+      ],
+      "v4": [
+        6.25,
+        7.215,
+        0.04
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "PKPB"
+    ],
+    "host_selection_preferred_boundary_condition": "Outdoors",
+    "host_selection_candidate_surface_names": [
+      "LOGIA_WALL_01",
+      "PKPB_WALL_01"
+    ],
+    "frame_width_m": 0.04,
+    "opening_total_width_m": 2.0,
+    "opening_glazing_width_m": 1.92,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.12,
+    "opening_total_bottom_z_m": 0.0
+  },
+  {
+    "opening_id": "OPENING_008",
+    "resolution_status": "resolved",
+    "needs_review": true,
+    "review_reasons": [
+      "hole_imported_as_window_proxy"
+    ],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_008_HOLE_AS_WINDOW",
+    "paired_fenestration_name": "",
+    "source_type_code": "LC1",
+    "candidate_fenestration_type": "Hole",
+    "idf_import_proxy": true,
+    "idf_surface_type": "Window",
+    "idf_name_suffix": "HOLE_AS_WINDOW",
+    "construction_name": "Perfectly Clear - 1002",
+    "nearest_zone_name": "LOGIA",
+    "nearest_zone_csv_name": "LOGIA",
+    "size_text": "3000X1250",
+    "width_mm": 3000,
+    "height_mm": 3150,
+    "sill_height_m": 0.15,
+    "size_resolution_method": "size_text_reparse_override_width_only_hole_no_height",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F37",
+    "host_boundary_condition": "Outdoors",
+    "host_adjacent_zone_name": "",
+    "host_wall_physical_id": "WALL_004",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 250,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      5.587,
+      8.34
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "LOGIA_WALL_04",
+    "fenestration_vertices_m": {
+      "v1": [
+        7.087,
+        8.34,
+        0.15
+      ],
+      "v2": [
+        7.087,
+        8.34,
+        3.3
+      ],
+      "v3": [
+        4.087,
+        8.34,
+        3.3
+      ],
+      "v4": [
+        4.087,
+        8.34,
+        0.15
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "LOGIA"
+    ],
+    "host_selection_preferred_boundary_condition": "Outdoors",
+    "host_selection_candidate_surface_names": [
+      "LOGIA_WALL_04"
+    ],
+    "hole_height_rule": "touch_ceiling",
+    "hole_top_z_m": 3.3,
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 3.0,
+    "opening_glazing_width_m": 3.0,
+    "opening_total_height_m": 3.15,
+    "opening_glazing_height_m": 3.15,
+    "opening_total_bottom_z_m": 0.15
+  },
+  {
+    "opening_id": "OPENING_009",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_009_DOOR",
+    "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_009_DOOR_ADJ",
+    "source_type_code": "DWN",
+    "candidate_fenestration_type": "Door",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Door",
+    "idf_name_suffix": "",
+    "construction_name": "D_WC_UPVC_024",
+    "nearest_zone_name": "WC 01",
+    "nearest_zone_csv_name": "WC01",
+    "size_text": "750X2200",
+    "width_mm": 750,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F44",
+    "host_boundary_condition": "Surface",
+    "host_adjacent_zone_name": "PN01",
+    "host_wall_physical_id": "WALL_014",
+    "host_wall_family": "Partition",
+    "host_wall_total_thickness_mm": 140,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      2.235,
+      4.89
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "WC01_WALL_02",
+    "fenestration_vertices_m": {
+      "v1": [
+        2.61,
+        4.89,
+        0.0
+      ],
+      "v2": [
+        2.61,
+        4.89,
+        2.2
+      ],
+      "v3": [
+        1.86,
+        4.89,
+        2.2
+      ],
+      "v4": [
+        1.86,
+        4.89,
+        0.0
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [
+      "WC01"
+    ],
+    "host_selection_preferred_boundary_condition": "Surface",
+    "host_selection_candidate_surface_names": [
+      "WC01_WALL_02",
+      "PN01_WALL_04"
+    ],
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 0.75,
+    "opening_glazing_width_m": 0.75,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.2,
+    "opening_total_bottom_z_m": 0.0
+  },
+  {
+    "opening_id": "OPENING_010",
+    "resolution_status": "resolved",
+    "needs_review": false,
+    "review_reasons": [],
+    "unresolved_reason": "",
+    "fenestration_name": "APARTMENT_A_NEW_OPENING_010_DOOR",
+    "paired_fenestration_name": "",
+    "source_type_code": "DG",
+    "candidate_fenestration_type": "Door",
+    "idf_import_proxy": false,
+    "idf_surface_type": "Door",
+    "idf_name_suffix": "",
+    "construction_name": "D_MAIN_STEEL_0474",
+    "nearest_zone_name": "WC 02",
+    "nearest_zone_csv_name": "WC02",
+    "size_text": "1000X2200",
+    "width_mm": 1000,
+    "height_mm": 2200,
+    "sill_height_m": null,
+    "size_resolution_method": "size_text",
+    "mapping_confidence": "high",
+    "matched_symbol_insert_handle": "2F50",
+    "host_boundary_condition": "Outdoors",
+    "host_adjacent_zone_name": "",
+    "host_wall_physical_id": "WALL_012",
+    "host_wall_family": "Exterior",
+    "host_wall_total_thickness_mm": 180,
+    "geometry_mode": "dxf_inferred_s04_layer_boundary",
+    "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+    "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+    "placement_anchor_xy_m": [
+      4.69,
+      0.0
+    ],
+    "placement_anchor_source": "opening_layer_geometry",
+    "building_surface_name": "PKPB_WALL_09",
+    "fenestration_vertices_m": {
+      "v1": [
+        4.19,
+        0.0,
+        0.0
+      ],
+      "v2": [
+        4.19,
+        0.0,
+        2.2
+      ],
+      "v3": [
+        5.19,
+        0.0,
+        2.2
+      ],
+      "v4": [
+        5.19,
+        0.0,
+        0.0
+      ]
+    },
+    "host_selection_anchor_source": "opening_geometry",
+    "host_selection_containing_zones": [],
+    "host_selection_preferred_boundary_condition": "Surface",
+    "host_selection_candidate_surface_names": [
+      "PKPB_WALL_09"
+    ],
+    "frame_width_m": 0.0,
+    "opening_total_width_m": 1.0,
+    "opening_glazing_width_m": 1.0,
+    "opening_total_height_m": 2.2,
+    "opening_glazing_height_m": 2.2,
+    "opening_total_bottom_z_m": 0.0
+  }
+]

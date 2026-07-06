@@ -1,0 +1,62 @@
+# Python caches/build outputs
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Editors and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local environment and logs
+.env
+.env.local
+.env.*.local
+prompt.txt
+logs/
+*.log
+*.tmp
+*.bak
+*.backup
+*.old
+*.cache
+.cache/
+
+# Local backups and historical archives
+backup/
+7_archive/
+
+# Data upload policy:
+# Keep only Apartment A sample inputs/outputs plus shared input library.
+1_input/*
+!1_input/apartment_a_new/
+!1_input/apartment_a_new/**
+!1_input/Envelope_apartment_A/
+!1_input/Envelope_apartment_A/**
+!1_input/library/
+!1_input/library/**
+
+5_output/*
+!5_output/apartment_a_new/
+!5_output/apartment_a_new/**
