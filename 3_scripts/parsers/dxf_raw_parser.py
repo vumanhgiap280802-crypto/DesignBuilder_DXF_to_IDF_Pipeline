@@ -19,6 +19,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError
+from utils.common import workspace_path
 from utils import path_resolver
 
 
@@ -440,13 +441,6 @@ def record_anchor_xy(record: Record) -> tuple[float, float] | None:
     if record.points:
         return record.points[0][0], record.points[0][1]
     return None
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
 
 
 def load_dxf_lines(dxf_path: Path | str) -> list[str]:

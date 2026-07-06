@@ -9,11 +9,9 @@ and does not build final CSV/IDF outputs.
 from __future__ import annotations
 
 import argparse
-import json
 import math
 import re
 import sys
-import unicodedata
 from collections import deque
 from itertools import combinations
 from pathlib import Path
@@ -26,6 +24,7 @@ from parsers.dxf_raw_parser import Record, numeric_group_code_value  # noqa: E40
 from schema_tools.schema_workbench import parse_dxf_extract_file  # noqa: E402
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils import path_resolver  # noqa: E402
+from utils.common import ascii_token, load_json_object, normalize_rect, workspace_path  # noqa: E402
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -34,13 +33,6 @@ DEFAULT_MAPPING_PAYLOAD = Path("5_output") / "<project_id>" / "intermediate" / "
 DEFAULT_POLICY_PATH = ROOT / "2_config" / "apartment_a_geometry_policy.json"
 DEFAULT_OUTPUT_DIR = Path("5_output") / "<project_id>" / "intermediate" / "geometry"
 DEFAULT_ZONE_OUTPUT_PREFIX = "APARTMENT_A_"
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
 
 
 def normalize_relative_path(value: str) -> str:
@@ -56,26 +48,6 @@ def _resolve_default_mapping_payload(project_id: str) -> Path:
 
 def _resolve_default_output_dir(project_id: str) -> Path:
     return path_resolver.resolve_output_file(project_id, "intermediate/geometry")
-
-
-def load_json_object(path: Path | str) -> dict[str, object]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON object: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, dict):
-        raise WorkspaceRuleError(f"JSON root must be an object: {workspace_path(resolved_path)}")
-    return payload
-
-
-def ascii_token(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
-    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
-    ascii_text = ascii_text.replace("+", "_")
-    ascii_text = re.sub(r"[^A-Za-z0-9]+", "_", ascii_text)
-    ascii_text = re.sub(r"_+", "_", ascii_text).strip("_")
-    return ascii_text.upper() or "UNNAMED"
 
 
 def canonical_zone_key(text: str) -> str:
@@ -154,11 +126,6 @@ def zone_merge_target_names(geometry_policy: dict[str, object]) -> dict[str, str
         target_zone_name = str(group.get("target_zone_name", "") or "").strip()
         target_names[target_zone_key] = target_zone_name or default_source_zone_name(target_zone_key)
     return target_names
-
-
-def normalize_rect(rect: tuple[float, float, float, float]) -> tuple[float, float, float, float]:
-    x1, y1, x2, y2 = rect
-    return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
 
 
 def interval_overlap_length(a_start: float, a_end: float, b_start: float, b_end: float) -> float:

@@ -34,6 +34,7 @@ from parsers.dxf_raw_parser import (
     DEFAULT_DXF_OUTPUT_DIR,
     BlockDefinition,
     Record,
+    build_block_definitions,
     classify_record_layer,
     first_group_code_value,
     parse_dxf_file,
@@ -74,6 +75,7 @@ from writers.rebuild_idf_from_bundle import (
 )
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError
 from utils import path_resolver
+from utils.common import workspace_path
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -172,37 +174,6 @@ def configure_anchor_patterns(
     global ROOM_PATTERNS, TITLE_PATTERNS
     ROOM_PATTERNS = compile_text_patterns(room_pattern_texts)
     TITLE_PATTERNS = compile_text_patterns(title_pattern_texts)
-
-ROOM_PATTERNS = [
-    re.compile(r"PK\s*\+\s*PB", re.IGNORECASE),
-    re.compile(r"PN\s*0?1", re.IGNORECASE),
-    re.compile(r"PN\s*0?2", re.IGNORECASE),
-    re.compile(r"WC\s*0?1", re.IGNORECASE),
-    re.compile(r"WC\s*0?2", re.IGNORECASE),
-    re.compile(r"L[Ã”O]GIA", re.IGNORECASE),
-]
-
-TITLE_PATTERNS = [
-    re.compile(r"CH[\s\-]?A", re.IGNORECASE),
-    re.compile(r"CÄ‚N\s+Há»˜", re.IGNORECASE),
-    re.compile(r"CAN\s+HO", re.IGNORECASE),
-]
-
-# Reassign the pattern sets using ASCII-safe variants so matching is stable
-# even if the source file is viewed or edited under a legacy code page.
-ROOM_PATTERNS = [
-    re.compile(r"PK\s*\+\s*PB", re.IGNORECASE),
-    re.compile(r"PN\s*0?1", re.IGNORECASE),
-    re.compile(r"PN\s*0?2", re.IGNORECASE),
-    re.compile(r"WC\s*0?1", re.IGNORECASE),
-    re.compile(r"WC\s*0?2", re.IGNORECASE),
-    re.compile(r"LOGIA", re.IGNORECASE),
-]
-
-TITLE_PATTERNS = [
-    re.compile(r"CH[\s\-]?A", re.IGNORECASE),
-    re.compile(r"CAN\s+HO", re.IGNORECASE),
-]
 
 configure_anchor_patterns()
 
@@ -712,29 +683,6 @@ def intersects(record_bbox: tuple[float, float, float, float] | None, selection_
     )
 
 
-def build_block_definitions(records: list[Record]) -> dict[str, BlockDefinition]:
-    block_defs: dict[str, BlockDefinition] = {}
-    current_records: list[Record] = []
-    current_name = ""
-
-    for record in records:
-        if record.section != "BLOCKS":
-            continue
-        if record.record_type == "BLOCK":
-            current_records = [record]
-            current_name = record.block_name
-            continue
-        if current_records:
-            current_records.append(record)
-            if record.record_type == "ENDBLK":
-                if current_name:
-                    block_defs[current_name] = BlockDefinition(name=current_name, records=current_records.copy())
-                current_records = []
-                current_name = ""
-
-    return block_defs
-
-
 def collect_block_names_from_records(records: list[Record]) -> set[str]:
     return {record.block_name for record in records if record.record_type == "INSERT" and record.block_name}
 
@@ -1076,10 +1024,6 @@ def render_output(
     lines.append("# END FILTERED RECORDS")
     lines.append("")
     return "\n".join(lines)
-
-
-def workspace_path(path: Path) -> str:
-    return path.relative_to(ROOT).as_posix()
 
 
 def counter_to_sorted_dict(counter: Counter[str]) -> dict[str, int]:

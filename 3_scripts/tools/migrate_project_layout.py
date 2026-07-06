@@ -17,6 +17,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils import path_resolver  # noqa: E402
+from utils.common import workspace_path  # noqa: E402
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 
 
@@ -33,13 +34,6 @@ class MigrationOperation:
     source: Path
     destination: Path
     reason: str
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
 
 
 def load_project_case_config(project_id: str) -> dict[str, Any]:

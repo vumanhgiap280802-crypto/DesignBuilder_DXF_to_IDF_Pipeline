@@ -16,6 +16,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
+from utils.common import workspace_path  # noqa: E402
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -42,14 +43,6 @@ class ScaffoldContext:
     ceiling_height_m: float
     set_default: bool
     dry_run: bool
-
-
-def workspace_path(path: Path | str) -> str:
-    resolved = Path(path).resolve()
-    try:
-        return str(resolved.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(resolved).replace("\\", "/")
 
 
 def validate_project_id(project_id: str) -> str:

@@ -26,6 +26,7 @@ from pipeline.apartment_a_pipeline import (
     run_pipeline,
 )
 from utils import path_resolver
+from utils.common import designbuilder_adiabatic_construction_name
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError
 
 
@@ -59,13 +60,6 @@ def sha256_file(path: Path) -> str:
 def read_csv_dicts(path: Path) -> list[dict[str, str]]:
     with path.open("r", newline="", encoding="utf-8-sig") as handle:
         return list(csv.DictReader(handle))
-
-
-def designbuilder_adiabatic_construction_name(construction_name: str) -> str:
-    suffix = "_AdiabaticHalf"
-    if construction_name.endswith(suffix):
-        return construction_name[: -len(suffix)]
-    return construction_name
 
 
 def collect_adiabatic_wall_targets(bundle_output_dir: Path) -> list[dict[str, str]]:

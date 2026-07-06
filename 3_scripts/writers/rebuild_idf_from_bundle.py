@@ -17,6 +17,7 @@ if __package__ in {None, ""}:
 
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError
 from utils import path_resolver
+from utils.common import designbuilder_adiabatic_construction_name
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -25,7 +26,6 @@ ROOT = GUARD.root
 DEFAULT_BUNDLE_INPUT_DIR = Path("5_output") / "<project_id>" / "csv" / "<bundle_dir>"
 DEFAULT_IDF_OUTPUT = Path("5_output") / "<project_id>" / "idf" / "<project_id>_generated_from_bundle.idf"
 REQUIRED_BUNDLE_FILES = ("Version.csv",)
-ADIABATIC_HALF_CONSTRUCTION_SUFFIX = "_AdiabaticHalf"
 
 
 def _resolve_single_bundle_dir(csv_root: Path, *, project_id: str) -> Path:
@@ -175,12 +175,6 @@ def collect_surface_vertices(row: dict[str, str], num_vertices: str) -> list[tup
         if vx and vy and vz:
             vertices.append((vx, vy, vz))
     return vertices
-
-
-def designbuilder_adiabatic_construction_name(construction_name: str) -> str:
-    if construction_name.endswith(ADIABATIC_HALF_CONSTRUCTION_SUFFIX):
-        return construction_name[: -len(ADIABATIC_HALF_CONSTRUCTION_SUFFIX)]
-    return construction_name
 
 
 def build_building_surface_detailed_lines(

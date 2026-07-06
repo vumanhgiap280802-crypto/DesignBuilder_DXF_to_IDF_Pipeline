@@ -11,7 +11,6 @@ surfaces, does not resolve final wall thickness, and does not build IDF bundles.
 from __future__ import annotations
 
 import argparse
-import json
 import math
 import re
 import sys
@@ -36,6 +35,14 @@ from transformers.wall_logic import (  # noqa: E402
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils.envelope_library import envelope_construction_for_opening  # noqa: E402
 from utils import path_resolver  # noqa: E402
+from utils.common import (  # noqa: E402
+    ascii_token,
+    load_json_list,
+    load_json_object,
+    normalize_rect,
+    parse_optional_float_text,
+    workspace_path,
+)
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -60,37 +67,6 @@ ADIABATIC_OPENING_EXPORT_EXCEPTIONS = (
     },
 )
 OPENING_SIZE_PATTERN = re.compile(r"\b(\d{2,4})\s*[Xx×*]\s*(\d{2,4})\b")
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
-
-
-def load_json_object(path: Path | str) -> dict[str, object]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON object: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, dict):
-        raise WorkspaceRuleError(f"JSON root must be an object: {workspace_path(resolved_path)}")
-    return payload
-
-
-def load_json_list(path: Path | str) -> list[dict[str, object]]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON list: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, list):
-        raise WorkspaceRuleError(f"JSON root must be a list: {workspace_path(resolved_path)}")
-    if not all(isinstance(item, dict) for item in payload):
-        raise WorkspaceRuleError(f"JSON list must contain objects only: {workspace_path(resolved_path)}")
-    return [dict(item) for item in payload]
 
 
 def _resolve_default_project_inputs(project_id: str) -> dict[str, Path]:
@@ -118,15 +94,6 @@ def counter_to_sorted_dict(counter: Counter[Any]) -> dict[str, int]:
     return dict(sorted((str(key), int(value)) for key, value in counter.items()))
 
 
-def ascii_token(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
-    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
-    ascii_text = ascii_text.replace("+", "_")
-    ascii_text = re.sub(r"[^A-Za-z0-9]+", "_", ascii_text)
-    ascii_text = re.sub(r"_+", "_", ascii_text).strip("_")
-    return ascii_text.upper() or "UNNAMED"
-
-
 def allowed_adiabatic_opening_export_reason(
     *,
     geometry_upstream_source: str,
@@ -146,18 +113,6 @@ def allowed_adiabatic_opening_export_reason(
             continue
         return str(rule["reason"])
     return ""
-
-
-def parse_optional_float_text(value: object) -> float | None:
-    if value is None:
-        return None
-    cleaned = str(value).strip()
-    if not cleaned:
-        return None
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None
 
 
 def normalize_opening_text(value: str) -> str:
@@ -231,11 +186,6 @@ def resolve_frame_width_m(frame_and_divider_name: str) -> float:
     if frame_width_m is None or frame_width_m <= 0.0:
         return 0.0
     return float(frame_width_m)
-
-
-def normalize_rect(rect: tuple[float, float, float, float]) -> tuple[float, float, float, float]:
-    x1, y1, x2, y2 = rect
-    return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
 
 
 def point_in_rectangle(point_xy_m: tuple[float, float], rectangle: tuple[float, float, float, float]) -> bool:

@@ -13,10 +13,8 @@ from __future__ import annotations
 import argparse
 import csv
 import io
-import json
 import math
 import sys
-import unicodedata
 import warnings
 from collections import Counter
 from pathlib import Path
@@ -35,6 +33,13 @@ from transformers.wall_logic import (  # noqa: E402
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils.envelope_library import SIMPLE_GLAZING_FIELDS, apply_envelope_to_bundle_tables  # noqa: E402
 from utils import path_resolver  # noqa: E402
+from utils.common import (  # noqa: E402
+    ascii_token,
+    line_points_from_payload,
+    load_json_list,
+    load_json_object,
+    workspace_path,
+)
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -287,14 +292,6 @@ SAMPLE_CONSTRUCTION_ROWS = [
 ]
 
 
-def workspace_path(path: Path | str) -> str:
-    resolved = Path(path)
-    try:
-        return str(resolved.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(resolved).replace("\\", "/")
-
-
 def _resolve_required_bundle_inputs(project_id: str) -> dict[str, Path]:
     resolved = {
         "mapping_payload": path_resolver.resolve_output_file_for_read(project_id, "intermediate/mapping", "mapping_payload.json"),
@@ -346,30 +343,6 @@ def _infer_project_id_from_output_dir(output_dir: Path) -> str:
     )
 
 
-def load_json_object(path: Path | str) -> dict[str, object]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON object: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, dict):
-        raise WorkspaceRuleError(f"JSON root must be an object: {workspace_path(resolved_path)}")
-    return payload
-
-
-def load_json_list(path: Path | str) -> list[dict[str, object]]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON list: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, list):
-        raise WorkspaceRuleError(f"JSON root must be a list: {workspace_path(resolved_path)}")
-    if not all(isinstance(item, dict) for item in payload):
-        raise WorkspaceRuleError(f"JSON list must contain objects only: {workspace_path(resolved_path)}")
-    return [dict(item) for item in payload]
-
-
 def render_csv_text(fieldnames: list[str], rows: list[dict[str, object]]) -> str:
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=fieldnames, extrasaction="ignore", lineterminator="\n")
@@ -377,15 +350,6 @@ def render_csv_text(fieldnames: list[str], rows: list[dict[str, object]]) -> str
     for row in rows:
         writer.writerow({key: "" if row.get(key) is None else row.get(key) for key in fieldnames})
     return buffer.getvalue()
-
-
-def ascii_token(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
-    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
-    ascii_text = ascii_text.replace("+", "_")
-    ascii_text = re.sub(r"[^A-Za-z0-9]+", "_", ascii_text)
-    ascii_text = re.sub(r"_+", "_", ascii_text).strip("_")
-    return ascii_text.upper() or "UNNAMED"
 
 
 def canonical_zone_key(text: str) -> str:
@@ -961,22 +925,6 @@ def vertex_row_plane_metadata(row: dict[str, object], *, tolerance_m: float = 1e
     if (x_max - x_min) <= tolerance_m and (y_max - y_min) > tolerance_m:
         return {"axis": "vertical", "fixed_coord": round((x_min + x_max) / 2.0, 6)}
     return None
-
-
-def line_points_from_payload(payload: dict[str, object]) -> tuple[tuple[float, float], tuple[float, float]] | None:
-    start_values = payload.get("start")
-    end_values = payload.get("end")
-    if not isinstance(start_values, list) or len(start_values) < 2:
-        return None
-    if not isinstance(end_values, list) or len(end_values) < 2:
-        return None
-    try:
-        return (
-            (float(start_values[0]), float(start_values[1])),
-            (float(end_values[0]), float(end_values[1])),
-        )
-    except (TypeError, ValueError):
-        return None
 
 
 def shift_vertex_row_xy(

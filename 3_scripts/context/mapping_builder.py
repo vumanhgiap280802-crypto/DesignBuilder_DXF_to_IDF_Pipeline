@@ -32,6 +32,7 @@ from parsers.dxf_raw_parser import (  # noqa: E402
 from schema_tools.schema_workbench import parse_dxf_extract_file  # noqa: E402
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils import path_resolver  # noqa: E402
+from utils.common import ascii_token, workspace_path  # noqa: E402
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -115,13 +116,6 @@ OPENING_PLACEMENT_SEGMENT_LAYERS = {
 }
 
 OPENING_GEOMETRY_MATCH_DISTANCE_MM = 1200.0
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
 
 
 def normalize_relative_path(value: str) -> str:
@@ -486,15 +480,6 @@ def confidence_for_dimension_annotation(value_mm: int | None, anchor_xy: list[fl
     if value_mm is not None:
         return "medium"
     return "low"
-
-
-def ascii_token(text: str) -> str:
-    normalized = unicodedata.normalize("NFKD", text or "")
-    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
-    ascii_text = ascii_text.replace("+", "_")
-    ascii_text = re.sub(r"[^A-Za-z0-9]+", "_", ascii_text)
-    ascii_text = re.sub(r"_+", "_", ascii_text).strip("_")
-    return ascii_text.upper() or "UNNAMED"
 
 
 def canonical_zone_key(text: str) -> str:

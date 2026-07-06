@@ -11,7 +11,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import json
 import math
 import re
 import sys
@@ -32,6 +31,13 @@ from parsers.dxf_raw_parser import (  # noqa: E402
 )
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils import library_paths, path_resolver  # noqa: E402
+from utils.common import (  # noqa: E402
+    line_points_from_payload,
+    load_json_list,
+    load_json_object,
+    parse_optional_float_text,
+    workspace_path,
+)
 
 
 GUARD = WorkspaceGuard(__file__)
@@ -114,13 +120,6 @@ ZERO_OFFSET_WALL_REFERENCE_TYPES = {
 _INPUT_WALL_LIBRARY: dict[str, object] | None = None
 
 
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
-
-
 def _resolve_project_wall_inputs(project_id: str) -> dict[str, Path]:
     resolved = {
         "geometry_payload": path_resolver.resolve_output_file_for_read(project_id, "intermediate/geometry", "geometry_payload.json"),
@@ -147,30 +146,6 @@ def _resolve_default_wall_reference_idf(project_id: str) -> Path | None:
     if resolved is not None:
         return resolved
     return None
-
-
-def load_json_object(path: Path | str) -> dict[str, object]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON object: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, dict):
-        raise WorkspaceRuleError(f"JSON root must be an object: {workspace_path(resolved_path)}")
-    return payload
-
-
-def load_json_list(path: Path | str) -> list[dict[str, object]]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON list: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, list):
-        raise WorkspaceRuleError(f"JSON root must be a list: {workspace_path(resolved_path)}")
-    if not all(isinstance(item, dict) for item in payload):
-        raise WorkspaceRuleError(f"JSON list must contain objects only: {workspace_path(resolved_path)}")
-    return [dict(item) for item in payload]
 
 
 def counter_to_sorted_dict(counter: Counter[Any]) -> dict[str, int]:
@@ -272,18 +247,6 @@ def wall_family_from_role(
     if role == "partition" or str(boundary_condition or "").strip() == "Surface":
         return "Partition"
     return "Other"
-
-
-def parse_optional_float_text(value: object) -> float | None:
-    if value is None:
-        return None
-    cleaned = str(value).strip()
-    if not cleaned:
-        return None
-    try:
-        return float(cleaned)
-    except ValueError:
-        return None
 
 
 def parse_optional_int_text(value: object) -> int | None:
@@ -3202,22 +3165,6 @@ def build_line_payload(
         "start": [round(float(start_xy_m[0]), 3), round(float(start_xy_m[1]), 3)],
         "end": [round(float(end_xy_m[0]), 3), round(float(end_xy_m[1]), 3)],
     }
-
-
-def line_points_from_payload(payload: dict[str, object]) -> tuple[tuple[float, float], tuple[float, float]] | None:
-    start_values = payload.get("start")
-    end_values = payload.get("end")
-    if not isinstance(start_values, list) or len(start_values) < 2:
-        return None
-    if not isinstance(end_values, list) or len(end_values) < 2:
-        return None
-    try:
-        return (
-            (float(start_values[0]), float(start_values[1])),
-            (float(end_values[0]), float(end_values[1])),
-        )
-    except (TypeError, ValueError):
-        return None
 
 
 def line_fixed_coord_m(payload: dict[str, object]) -> float | None:

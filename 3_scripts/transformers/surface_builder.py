@@ -9,7 +9,6 @@ DXF, does not infer geometry, and does not build final CSV/IDF bundles.
 from __future__ import annotations
 
 import argparse
-import json
 import math
 import sys
 from collections import Counter
@@ -20,19 +19,13 @@ if __package__ in {None, ""}:
 
 from workspace_rules.workspace_guard import WorkspaceGuard, WorkspaceRuleError  # noqa: E402
 from utils import path_resolver  # noqa: E402
+from utils.common import load_json_object, normalize_rect, workspace_path  # noqa: E402
 
 
 GUARD = WorkspaceGuard(__file__)
 ROOT = GUARD.root
 DEFAULT_GEOMETRY_PAYLOAD = Path("5_output") / "<project_id>" / "intermediate" / "geometry" / "geometry_payload.json"
 DEFAULT_OUTPUT_DIR = Path("5_output") / "<project_id>" / "intermediate" / "surfaces"
-
-
-def workspace_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT)).replace("\\", "/")
-    except ValueError:
-        return str(path).replace("\\", "/")
 
 
 def _resolve_default_geometry_payload(project_id: str) -> Path:
@@ -44,22 +37,6 @@ def _resolve_default_geometry_payload(project_id: str) -> Path:
 
 def _resolve_default_output_dir(project_id: str) -> Path:
     return path_resolver.resolve_output_file(project_id, "intermediate/surfaces")
-
-
-def load_json_object(path: Path | str) -> dict[str, object]:
-    resolved_path = GUARD.assert_read_path(path)
-    try:
-        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise WorkspaceRuleError(f"Invalid JSON object: {workspace_path(resolved_path)}") from exc
-    if not isinstance(payload, dict):
-        raise WorkspaceRuleError(f"JSON root must be an object: {workspace_path(resolved_path)}")
-    return payload
-
-
-def normalize_rect(rect: tuple[float, float, float, float]) -> tuple[float, float, float, float]:
-    x1, y1, x2, y2 = rect
-    return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
 
 
 def wall_vertex_payload(
