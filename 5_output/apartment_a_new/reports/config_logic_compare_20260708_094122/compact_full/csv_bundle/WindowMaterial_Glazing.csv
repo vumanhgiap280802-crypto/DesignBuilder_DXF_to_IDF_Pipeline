@@ -1,0 +1,4 @@
+glazing_name,optical_data_type,spectral_data_set_name,thickness_m,solar_transmittance,solar_reflectance_front,solar_reflectance_back,visible_transmittance,visible_reflectance_front,visible_reflectance_back,ir_transmittance,ir_emissivity_front,ir_emissivity_back,conductivity_w_per_mk,dirt_correction_factor
+3,SpectralAverage,,.006,.775,.071,.071,.881,.080,.080,.0,.84,.84,.9,1
+44,SpectralAverage,,.006,.360,.093,.200,.500,.035,.054,.0,.84,.10,.9,1
+100,SpectralAverage,,.003,.99,.005,.005,.99,.005,.005,.99,.005,.005,5,1

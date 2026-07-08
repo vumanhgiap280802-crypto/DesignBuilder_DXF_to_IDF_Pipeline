@@ -1,0 +1,5404 @@
+{
+  "bundle_version": "1.0.0",
+  "bundle_purpose": "CSV data-entry bundle for Apartment A IDF authoring",
+  "source_mapping_version": "1.2.1",
+  "source_extract": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+  "geometry_mode": "dxf_inferred_s04_layer_boundary",
+  "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+  "geometry_template_source": null,
+  "geometry_policy": {
+    "policy_version": "1.0.0",
+    "geometry_mode": "backup_v2_single_block",
+    "ceiling_height_m": 3.3,
+    "require_single_block": true,
+    "max_unallocated_area_m2": 0.001,
+    "area_priority_mode": "remember_only",
+    "wall_reference_policy": {
+      "policy_name": "zone_boundary_wall_reference_v2",
+      "external_reference_type": "zone_boundary_outer_face",
+      "external_reference_note": "Review this note before the first production run if the cleaned DXF needs a different wall reference convention.",
+      "interzone_reference_type": "shared_zone_boundary_centerline",
+      "single_zone_reference_type": "zone_boundary_inside_face"
+    },
+    "geometry_priority_note": "Scaffolded from the generic DXF case template. Review geometry_mode, wall reference policy, and remembered targets before first production use.",
+    "baseline_backup": {
+      "archive_file": "",
+      "algorithm_name": "DXF-First V2"
+    },
+    "policy_name": "Apartment A New DXF Geometry Policy",
+    "zone_name_aliases": {},
+    "zone_merge_groups": [],
+    "remembered_zone_targets": {},
+    "wall_boundary_overrides": [
+      {
+        "surface_name": "PKPB_WALL_09",
+        "outside_boundary_condition": "Outdoors",
+        "wall_role": "external_wall",
+        "reason": "lower wall door OPENING_010 must export as a non-adiabatic exterior door"
+      }
+    ],
+    "ceiling_height_source": "human_input"
+  },
+  "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+  "geometry_output_paths": {
+    "geometry_payload": "5_output/apartment_a_new/intermediate/geometry/geometry_payload.json",
+    "zone_rectangles": "5_output/apartment_a_new/intermediate/geometry/zone_rectangles.json",
+    "partition_summary": "5_output/apartment_a_new/intermediate/geometry/partition_summary.json"
+  },
+  "surface_output_paths": {
+    "surface_rows": "5_output/apartment_a_new/intermediate/surfaces/surface_rows.json",
+    "adjacency_summary": "5_output/apartment_a_new/intermediate/surfaces/adjacency_summary.json"
+  },
+  "wall_output_paths": {
+    "wall_inventory": "5_output/apartment_a_new/intermediate/walls/wall_inventory.json",
+    "wall_resolution": "5_output/apartment_a_new/intermediate/walls/wall_resolution.json"
+  },
+  "fenestration_output_paths": {
+    "fenestration_rows": "5_output/apartment_a_new/intermediate/fenestration/fenestration_rows.json",
+    "opening_host_mapping": "5_output/apartment_a_new/intermediate/fenestration/opening_host_mapping.json"
+  },
+  "single_block_validation": {
+    "outer_block_area_m2": 60.173,
+    "allocated_area_m2": 60.173,
+    "unallocated_area_m2": 0,
+    "unallocated_cell_count": 0,
+    "zone_graph_connected": true,
+    "zone_contact_graph": {
+      "LOGIA": [
+        "PK_PB",
+        "PN_01"
+      ],
+      "PK_PB": [
+        "LOGIA",
+        "PN_01",
+        "PN_02",
+        "WC_01",
+        "WC_02"
+      ],
+      "PN_01": [
+        "LOGIA",
+        "PK_PB",
+        "WC_01"
+      ],
+      "PN_02": [
+        "PK_PB",
+        "WC_01"
+      ],
+      "WC_01": [
+        "PK_PB",
+        "PN_01",
+        "PN_02"
+      ],
+      "WC_02": [
+        "PK_PB"
+      ]
+    }
+  },
+  "sample_geometry_qa": {
+    "geometry_source": "5_output/_shared/idf/Test1_for_DB_import_DBlean_crosscheck.idf",
+    "sample_zone_count": 6,
+    "sample_building_surface_count": 50,
+    "sample_fenestration_count": 15,
+    "dxf_zone_count": 6,
+    "dxf_building_surface_count": 45,
+    "dxf_fenestration_count": 15
+  },
+  "adjacency_pair_count": 11,
+  "wall_thickness_inference": {
+    "surface_thicknesses": {
+      "LOGIA_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "LOGIA_WALL_02": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "LOGIA_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 10.967,
+        "candidate_scores": {
+          "180": 14.834,
+          "250": 1.353
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "LOGIA_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2556.837,
+        "candidate_scores": {
+          "250": 25.568
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PKPB_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "PKPB_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PKPB_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PKPB_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "PKPB_WALL_05": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PKPB_WALL_06": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PKPB_WALL_07": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "PKPB_WALL_08": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "PKPB_WALL_09": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1424.3,
+        "candidate_scores": {
+          "180": 14.243
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "PKPB_WALL_10": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.358,
+        "candidate_scores": {
+          "180": 14.834
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "PN01_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "PN01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PN01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_05": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PN01_WALL_06": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2372.088,
+        "candidate_scores": {
+          "250": 23.721
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "WC01_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "WC01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "WC01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "WC01_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PN02_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical_collinear_resolved",
+        "confidence_ratio": 2556.883,
+        "candidate_scores": {
+          "250": 25.569
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_05": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1387.955,
+        "candidate_scores": {
+          "180": 13.88
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "WC02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "WC02_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1413.244,
+        "candidate_scores": {
+          "180": 14.132
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_04": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.112,
+        "candidate_scores": {
+          "180": 14.831
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      }
+    },
+    "wall_first_surface_thicknesses": {
+      "LOGIA_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "LOGIA_WALL_02": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "LOGIA_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 10.967,
+        "candidate_scores": {
+          "180": 14.834,
+          "250": 1.353
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "LOGIA_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2556.837,
+        "candidate_scores": {
+          "250": 25.568
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PKPB_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 577.137,
+        "candidate_scores": {
+          "250": 5.771
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32FA"
+        ]
+      },
+      "PKPB_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PKPB_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PKPB_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "PKPB_WALL_05": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PKPB_WALL_06": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PKPB_WALL_07": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "PKPB_WALL_08": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "PKPB_WALL_09": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1424.3,
+        "candidate_scores": {
+          "180": 14.243
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "PKPB_WALL_10": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.358,
+        "candidate_scores": {
+          "180": 14.834
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      },
+      "PN01_WALL_01": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 474.595,
+        "candidate_scores": {
+          "250": 4.746
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F9"
+        ]
+      },
+      "PN01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2250.682,
+        "candidate_scores": {
+          "140": 22.507
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FE"
+        ]
+      },
+      "PN01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2230.044,
+        "candidate_scores": {
+          "140": 22.3
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_04": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "PN01_WALL_05": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F0"
+        ]
+      },
+      "PN01_WALL_06": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2372.088,
+        "candidate_scores": {
+          "250": 23.721
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "WC01_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.997,
+        "candidate_scores": {
+          "140": 22.72
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3300"
+        ]
+      },
+      "WC01_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "32FF"
+        ]
+      },
+      "WC01_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "WC01_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2557.14,
+        "candidate_scores": {
+          "250": 25.571
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2378.2,
+        "candidate_scores": {
+          "140": 23.782
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2263.932,
+        "candidate_scores": {
+          "140": 22.639
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3302"
+        ]
+      },
+      "PN02_WALL_03": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2161.555,
+        "candidate_scores": {
+          "140": 21.616
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3301"
+        ]
+      },
+      "PN02_WALL_04": {
+        "wall_thickness_mm": 250,
+        "source": "layer_canonical",
+        "confidence_ratio": 2556.883,
+        "candidate_scores": {
+          "250": 25.569
+        },
+        "dimension_handles": [],
+        "wall_role": "external_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_250",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_250"
+        ],
+        "layer_record_handles": [
+          "32F1"
+        ]
+      },
+      "PN02_WALL_05": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1387.955,
+        "candidate_scores": {
+          "180": 13.88
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_01": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2271.846,
+        "candidate_scores": {
+          "140": 22.718
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3303"
+        ]
+      },
+      "WC02_WALL_02": {
+        "wall_thickness_mm": 140,
+        "source": "layer_canonical",
+        "confidence_ratio": 2178.456,
+        "candidate_scores": {
+          "140": 21.785
+        },
+        "dimension_handles": [],
+        "wall_role": "partition",
+        "layer_canonical": "EM_INTERNAL_WALL_140",
+        "layer_source_layers": [
+          "EM_INTERNAL_WALL_140"
+        ],
+        "layer_record_handles": [
+          "3304"
+        ]
+      },
+      "WC02_WALL_03": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1413.244,
+        "candidate_scores": {
+          "180": 14.132
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FC"
+        ]
+      },
+      "WC02_WALL_04": {
+        "wall_thickness_mm": 180,
+        "source": "layer_fuzzy",
+        "confidence_ratio": 1483.112,
+        "candidate_scores": {
+          "180": 14.831
+        },
+        "dimension_handles": [],
+        "wall_role": "adiabatic_wall",
+        "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+        "layer_source_layers": [
+          "EM_EXTERNAL_WALL_ARABATIC_180"
+        ],
+        "layer_record_handles": [
+          "32FB"
+        ]
+      }
+    },
+    "parser_layer_evidence_summary": {
+      "available": true,
+      "horizontal_segment_count": 799,
+      "vertical_segment_count": 772,
+      "role_counts": {
+        "adiabatic_wall": 8,
+        "external_wall": 16,
+        "partition": 28,
+        "room_boundary": 30,
+        "wall_boundary_fallback": 1489
+      },
+      "canonical_layer_counts": {
+        "EM_EXTERNAL_WALL_250": 16,
+        "EM_EXTERNAL_WALL_ARABATIC_180": 8,
+        "EM_INTERNAL_WALL_140": 28,
+        "EM_ROOM_BOUNDARY": 30,
+        "EM_WALL_BOUNDARY": 1489
+      },
+      "layer_profile_source": "2_config/dxf_layer_profile_s04.json",
+      "matched_surface_count": 33
+    },
+    "dimension_value_counts_mm": {},
+    "repeated_dimension_values_mm": [],
+    "default_thickness_by_boundary_mm": {
+      "Outdoors": 250,
+      "Surface": 140,
+      "Adiabatic": 180
+    },
+    "matched_surface_count": 0,
+    "wall_first_matched_surface_count": 33,
+    "source_counts": {
+      "layer_canonical": 22,
+      "layer_canonical_collinear_resolved": 5,
+      "layer_fuzzy": 6
+    },
+    "collinear_resolved_group_count": 5
+  },
+  "prefilled_counts": {
+    "zone_rows": 6,
+    "building_surface_rows": 45,
+    "fenestration_rows": 15,
+    "wall_inventory_rows": 22,
+    "construction_rows": 18,
+    "material_rows": 14,
+    "glazing_rows": 3,
+    "gas_rows": 1,
+    "frame_rows": 1,
+    "simple_glazing_rows": 2
+  },
+  "building_surface_summary": {
+    "building_surface_row_count": 45,
+    "floor_row_count": 6,
+    "roof_row_count": 6,
+    "wall_face_row_count": 33,
+    "interzone_wall_face_row_count": 22,
+    "interzone_unique_surface_count": 11,
+    "duplicate_interzone_wall_faces_removed": 11,
+    "exterior_wall_face_row_count": 6,
+    "adiabatic_wall_face_row_count": 5,
+    "other_wall_face_row_count": 0,
+    "unique_physical_wall_surface_count": 22,
+    "unique_physical_building_surface_count": 34,
+    "other_surface_row_count": 0
+  },
+  "wall_inventory_summary": {
+    "row_count": 22,
+    "boundary_condition_counts": {
+      "Adiabatic": 5,
+      "Outdoors": 6,
+      "Surface": 11
+    },
+    "wall_family_counts": {
+      "Adiabatic": 5,
+      "Exterior": 8,
+      "Partition": 9
+    },
+    "wall_type_counts": {
+      "DXF Wall 140mm Total": 9,
+      "DXF Wall 180mm Total": 6,
+      "DXF Wall 250mm Total": 7
+    },
+    "thickness_counts_mm": {
+      "140": 9,
+      "180": 6,
+      "250": 7
+    }
+  },
+  "exterior_wall_alignment_summary": {
+    "available": true,
+    "reference_policy": {
+      "policy_name": "zone_boundary_wall_reference_v2",
+      "policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "external_reference_type": "zone_boundary_outer_face",
+      "interzone_reference_type": "shared_zone_boundary_centerline",
+      "single_zone_reference_type": "zone_boundary_inside_face"
+    },
+    "resolved_wall_count": 22,
+    "applied_surface_count": 33,
+    "shifted_surface_count": 0,
+    "max_shift_m": 0.0,
+    "surface_offsets_by_name": {
+      "LOGIA_WALL_01": {
+        "wall_id": "WALL_001",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        }
+      },
+      "PKPB_WALL_01": {
+        "wall_id": "WALL_001",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "LOGIA_WALL_02": {
+        "wall_id": "WALL_002",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "PN01_WALL_01": {
+        "wall_id": "WALL_002",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        }
+      },
+      "LOGIA_WALL_03": {
+        "wall_id": "WALL_003",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            8.8,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            8.8,
+            10.766
+          ]
+        }
+      },
+      "LOGIA_WALL_04": {
+        "wall_id": "WALL_004",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            10.766
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            10.766
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        }
+      },
+      "PKPB_WALL_02": {
+        "wall_id": "WALL_005",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_02": {
+        "wall_id": "WALL_005",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "PKPB_WALL_03": {
+        "wall_id": "WALL_006",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_03": {
+        "wall_id": "WALL_006",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        }
+      },
+      "PKPB_WALL_04": {
+        "wall_id": "WALL_007",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "WC01_WALL_01": {
+        "wall_id": "WALL_007",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "PKPB_WALL_05": {
+        "wall_id": "WALL_008",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        }
+      },
+      "PN02_WALL_01": {
+        "wall_id": "WALL_008",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "PKPB_WALL_06": {
+        "wall_id": "WALL_009",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        }
+      },
+      "PN02_WALL_02": {
+        "wall_id": "WALL_009",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        }
+      },
+      "PKPB_WALL_07": {
+        "wall_id": "WALL_010",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        }
+      },
+      "WC02_WALL_01": {
+        "wall_id": "WALL_010",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        }
+      },
+      "PKPB_WALL_08": {
+        "wall_id": "WALL_011",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        }
+      },
+      "WC02_WALL_02": {
+        "wall_id": "WALL_011",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        }
+      },
+      "PKPB_WALL_09": {
+        "wall_id": "WALL_012",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        }
+      },
+      "PKPB_WALL_10": {
+        "wall_id": "WALL_013",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        }
+      },
+      "PN01_WALL_04": {
+        "wall_id": "WALL_014",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "WC01_WALL_02": {
+        "wall_id": "WALL_014",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_05": {
+        "wall_id": "WALL_015",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            1.585,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            1.585,
+            10.766
+          ]
+        }
+      },
+      "PN01_WALL_06": {
+        "wall_id": "WALL_016",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            10.766
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            10.766
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        }
+      },
+      "PN02_WALL_03": {
+        "wall_id": "WALL_017",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        }
+      },
+      "WC01_WALL_03": {
+        "wall_id": "WALL_017",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "PN02_WALL_04": {
+        "wall_id": "WALL_018",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            1.585,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            1.585,
+            2.426
+          ]
+        }
+      },
+      "PN02_WALL_05": {
+        "wall_id": "WALL_019",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            2.426
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            2.426
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        }
+      },
+      "WC01_WALL_04": {
+        "wall_id": "WALL_020",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        }
+      },
+      "WC02_WALL_03": {
+        "wall_id": "WALL_021",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            8.8,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            8.8,
+            2.426
+          ]
+        }
+      },
+      "WC02_WALL_04": {
+        "wall_id": "WALL_022",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            2.426
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            2.426
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        }
+      }
+    },
+    "qa_checks": {
+      "zone_area_preservation": {
+        "checked_zone_count": 6,
+        "passed": true,
+        "max_area_delta_m2": 0.0,
+        "zone_area_delta_m2_by_name": {
+          "LOGIA": 0.0,
+          "PKPB": 0.0,
+          "PN01": 0.0,
+          "PN02": 0.0,
+          "WC01": 0.0,
+          "WC02": 0.0
+        }
+      },
+      "surface_shell_closure": {
+        "tolerance_mm": 10.0,
+        "checked_surface_count": 6,
+        "skipped_surface_count": 0,
+        "passed": true,
+        "failed_surface_names": [],
+        "skipped_surface_names": [],
+        "reference_type_mismatch_surface_names": [],
+        "max_plane_gap_mm": 0.396,
+        "details_by_surface_name": {
+          "LOGIA_WALL_04": {
+            "surface_name": "LOGIA_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "north",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 10.766,
+            "expected_shell_fixed_coord_m": 10.766335,
+            "final_fixed_coord_m": 10.766,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32F0"
+            ],
+            "layer_record_handles": [
+              "32F0"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              10.766335
+            ]
+          },
+          "PKPB_WALL_09": {
+            "surface_name": "PKPB_WALL_09",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "south",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 180,
+            "source_fixed_coord_m": 2.426,
+            "expected_shell_fixed_coord_m": 2.426335,
+            "final_fixed_coord_m": 2.426,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32FC"
+            ],
+            "layer_record_handles": [
+              "32FC"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+            "candidate_outer_face_fixed_coords_m": [
+              2.426335
+            ]
+          },
+          "PN01_WALL_05": {
+            "surface_name": "PN01_WALL_05",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "north",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 10.766,
+            "expected_shell_fixed_coord_m": 10.766335,
+            "final_fixed_coord_m": 10.766,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32F0"
+            ],
+            "layer_record_handles": [
+              "32F0"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              10.766335
+            ]
+          },
+          "PN01_WALL_06": {
+            "surface_name": "PN01_WALL_06",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          },
+          "PN02_WALL_04": {
+            "surface_name": "PN02_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          },
+          "WC01_WALL_04": {
+            "surface_name": "WC01_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          }
+        }
+      },
+      "external_wall_offset_correctness": {
+        "checked_wall_count": 6,
+        "passed": true,
+        "failed_wall_ids": [],
+        "max_offset_error_mm": 0.0
+      },
+      "interzone_wall_consistency": {
+        "checked_wall_count": 11,
+        "passed": true,
+        "failed_wall_ids": []
+      },
+      "opening_host_alignment": {
+        "checked_fenestration_count": 15,
+        "passed": true,
+        "failed_fenestration_names": [],
+        "max_plane_delta_mm": 0.0
+      }
+    }
+  },
+  "wall_export_geometry_summary": {
+    "available": true,
+    "reference_policy": {
+      "policy_name": "zone_boundary_wall_reference_v2",
+      "policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "external_reference_type": "zone_boundary_outer_face",
+      "interzone_reference_type": "shared_zone_boundary_centerline",
+      "single_zone_reference_type": "zone_boundary_inside_face"
+    },
+    "resolved_wall_count": 22,
+    "applied_surface_count": 33,
+    "shifted_surface_count": 0,
+    "max_shift_m": 0.0,
+    "surface_offsets_by_name": {
+      "LOGIA_WALL_01": {
+        "wall_id": "WALL_001",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        }
+      },
+      "PKPB_WALL_01": {
+        "wall_id": "WALL_001",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "LOGIA_WALL_02": {
+        "wall_id": "WALL_002",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "PN01_WALL_01": {
+        "wall_id": "WALL_002",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        }
+      },
+      "LOGIA_WALL_03": {
+        "wall_id": "WALL_003",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            8.8,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            9.641
+          ],
+          "end": [
+            8.8,
+            10.766
+          ]
+        }
+      },
+      "LOGIA_WALL_04": {
+        "wall_id": "WALL_004",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            10.766
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            10.766
+          ],
+          "end": [
+            5.455,
+            10.766
+          ]
+        }
+      },
+      "PKPB_WALL_02": {
+        "wall_id": "WALL_005",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            9.641
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_02": {
+        "wall_id": "WALL_005",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            5.455,
+            9.641
+          ]
+        }
+      },
+      "PKPB_WALL_03": {
+        "wall_id": "WALL_006",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_03": {
+        "wall_id": "WALL_006",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            5.455,
+            7.316
+          ]
+        }
+      },
+      "PKPB_WALL_04": {
+        "wall_id": "WALL_007",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "WC01_WALL_01": {
+        "wall_id": "WALL_007",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "PKPB_WALL_05": {
+        "wall_id": "WALL_008",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        }
+      },
+      "PN02_WALL_01": {
+        "wall_id": "WALL_008",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "PKPB_WALL_06": {
+        "wall_id": "WALL_009",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            5.756
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        }
+      },
+      "PN02_WALL_02": {
+        "wall_id": "WALL_009",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            5.455,
+            5.756
+          ]
+        }
+      },
+      "PKPB_WALL_07": {
+        "wall_id": "WALL_010",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        }
+      },
+      "WC02_WALL_01": {
+        "wall_id": "WALL_010",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        }
+      },
+      "PKPB_WALL_08": {
+        "wall_id": "WALL_011",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            4.446
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        }
+      },
+      "WC02_WALL_02": {
+        "wall_id": "WALL_011",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            6.895,
+            4.446
+          ]
+        }
+      },
+      "PKPB_WALL_09": {
+        "wall_id": "WALL_012",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            2.426
+          ],
+          "end": [
+            6.895,
+            2.426
+          ]
+        }
+      },
+      "PKPB_WALL_10": {
+        "wall_id": "WALL_013",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            4.446
+          ],
+          "end": [
+            8.8,
+            9.641
+          ]
+        }
+      },
+      "PN01_WALL_04": {
+        "wall_id": "WALL_014",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            4.325,
+            7.316
+          ]
+        }
+      },
+      "WC01_WALL_02": {
+        "wall_id": "WALL_014",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            7.316
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        }
+      },
+      "PN01_WALL_05": {
+        "wall_id": "WALL_015",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            1.585,
+            10.766
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            5.455,
+            10.766
+          ],
+          "end": [
+            1.585,
+            10.766
+          ]
+        }
+      },
+      "PN01_WALL_06": {
+        "wall_id": "WALL_016",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            10.766
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            10.766
+          ],
+          "end": [
+            1.585,
+            7.316
+          ]
+        }
+      },
+      "PN02_WALL_03": {
+        "wall_id": "WALL_017",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            4.325,
+            5.756
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        }
+      },
+      "WC01_WALL_03": {
+        "wall_id": "WALL_017",
+        "reference_type": "shared_zone_boundary_centerline",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            4.325,
+            5.756
+          ]
+        }
+      },
+      "PN02_WALL_04": {
+        "wall_id": "WALL_018",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            1.585,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            5.756
+          ],
+          "end": [
+            1.585,
+            2.426
+          ]
+        }
+      },
+      "PN02_WALL_05": {
+        "wall_id": "WALL_019",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            2.426
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            2.426
+          ],
+          "end": [
+            5.455,
+            2.426
+          ]
+        }
+      },
+      "WC01_WALL_04": {
+        "wall_id": "WALL_020",
+        "reference_type": "zone_boundary_outer_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            1.585,
+            7.316
+          ],
+          "end": [
+            1.585,
+            5.756
+          ]
+        }
+      },
+      "WC02_WALL_03": {
+        "wall_id": "WALL_021",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            8.8,
+            2.426
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            6.895,
+            2.426
+          ],
+          "end": [
+            8.8,
+            2.426
+          ]
+        }
+      },
+      "WC02_WALL_04": {
+        "wall_id": "WALL_022",
+        "reference_type": "zone_boundary_inside_face",
+        "delta_x_m": 0.0,
+        "delta_y_m": 0.0,
+        "source_edge": {
+          "start": [
+            8.8,
+            2.426
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        },
+        "final_export_line": {
+          "start": [
+            8.8,
+            2.426
+          ],
+          "end": [
+            8.8,
+            4.446
+          ]
+        }
+      }
+    },
+    "qa_checks": {
+      "zone_area_preservation": {
+        "checked_zone_count": 6,
+        "passed": true,
+        "max_area_delta_m2": 0.0,
+        "zone_area_delta_m2_by_name": {
+          "LOGIA": 0.0,
+          "PKPB": 0.0,
+          "PN01": 0.0,
+          "PN02": 0.0,
+          "WC01": 0.0,
+          "WC02": 0.0
+        }
+      },
+      "surface_shell_closure": {
+        "tolerance_mm": 10.0,
+        "checked_surface_count": 6,
+        "skipped_surface_count": 0,
+        "passed": true,
+        "failed_surface_names": [],
+        "skipped_surface_names": [],
+        "reference_type_mismatch_surface_names": [],
+        "max_plane_gap_mm": 0.396,
+        "details_by_surface_name": {
+          "LOGIA_WALL_04": {
+            "surface_name": "LOGIA_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "north",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 10.766,
+            "expected_shell_fixed_coord_m": 10.766335,
+            "final_fixed_coord_m": 10.766,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32F0"
+            ],
+            "layer_record_handles": [
+              "32F0"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              10.766335
+            ]
+          },
+          "PKPB_WALL_09": {
+            "surface_name": "PKPB_WALL_09",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "south",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 180,
+            "source_fixed_coord_m": 2.426,
+            "expected_shell_fixed_coord_m": 2.426335,
+            "final_fixed_coord_m": 2.426,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32FC"
+            ],
+            "layer_record_handles": [
+              "32FC"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_ARABATIC_180",
+            "candidate_outer_face_fixed_coords_m": [
+              2.426335
+            ]
+          },
+          "PN01_WALL_05": {
+            "surface_name": "PN01_WALL_05",
+            "status": "passed",
+            "reason": "",
+            "axis": "horizontal",
+            "outward_side": "north",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 10.766,
+            "expected_shell_fixed_coord_m": 10.766335,
+            "final_fixed_coord_m": 10.766,
+            "source_to_expected_mm": 0.335,
+            "final_to_expected_mm": 0.335,
+            "candidate_handles_used": [
+              "32F0"
+            ],
+            "layer_record_handles": [
+              "32F0"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              10.766335
+            ]
+          },
+          "PN01_WALL_06": {
+            "surface_name": "PN01_WALL_06",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          },
+          "PN02_WALL_04": {
+            "surface_name": "PN02_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          },
+          "WC01_WALL_04": {
+            "surface_name": "WC01_WALL_04",
+            "status": "passed",
+            "reason": "",
+            "axis": "vertical",
+            "outward_side": "west",
+            "policy_reference_type": "zone_boundary_outer_face",
+            "expected_reference_type": "zone_boundary_outer_face",
+            "reference_type_matches_evidence": true,
+            "wall_thickness_mm": 250,
+            "source_fixed_coord_m": 1.585,
+            "expected_shell_fixed_coord_m": 1.584604,
+            "final_fixed_coord_m": 1.585,
+            "source_to_expected_mm": 0.396,
+            "final_to_expected_mm": 0.396,
+            "candidate_handles_used": [
+              "32F1"
+            ],
+            "layer_record_handles": [
+              "32F1"
+            ],
+            "layer_canonical": "EM_EXTERNAL_WALL_250",
+            "candidate_outer_face_fixed_coords_m": [
+              1.584604
+            ]
+          }
+        }
+      },
+      "external_wall_offset_correctness": {
+        "checked_wall_count": 6,
+        "passed": true,
+        "failed_wall_ids": [],
+        "max_offset_error_mm": 0.0
+      },
+      "interzone_wall_consistency": {
+        "checked_wall_count": 11,
+        "passed": true,
+        "failed_wall_ids": []
+      },
+      "opening_host_alignment": {
+        "checked_fenestration_count": 15,
+        "passed": true,
+        "failed_fenestration_names": [],
+        "max_plane_delta_mm": 0.0
+      }
+    }
+  },
+  "adiabatic_construction_summary": {
+    "strategy": "designbuilder_explicit_adiabatic_full_construction",
+    "checked_surface_count": 5,
+    "normalized_surface_count": 0,
+    "checked_surfaces": [
+      {
+        "surface_name": "LOGIA_WALL_03",
+        "construction_name": "IBST_W180_PL15_BR150_PL15"
+      },
+      {
+        "surface_name": "PKPB_WALL_10",
+        "construction_name": "IBST_W180_PL15_BR150_PL15"
+      },
+      {
+        "surface_name": "PN02_WALL_05",
+        "construction_name": "IBST_W180_PL15_BR150_PL15"
+      },
+      {
+        "surface_name": "WC02_WALL_03",
+        "construction_name": "IBST_W180_PL15_BR150_PL15"
+      },
+      {
+        "surface_name": "WC02_WALL_04",
+        "construction_name": "IBST_W180_PL15_BR150_PL15"
+      }
+    ],
+    "normalized_surfaces": []
+  },
+  "wall_construction_library": {
+    "available": true,
+    "catalog_mode": "standard",
+    "construction_source": "1_input/library/idf_import/catalogs/constructions/constructions_catalog.csv",
+    "material_source": "1_input/library/idf_import/catalogs/materials/materials_catalog.csv",
+    "resolver_rule_source": "1_input/library/idf_import/catalogs/resolvers/resolver_rules.csv",
+    "object_library_sources": {
+      "construction_catalog": "1_input/library/idf_import/catalogs/constructions/constructions_catalog.csv",
+      "materials_catalog": "1_input/library/idf_import/catalogs/materials/materials_catalog.csv",
+      "resolver_rules": "1_input/library/idf_import/catalogs/resolvers/resolver_rules.csv",
+      "legacy_construction_csv": "1_input/library/idf_import/legacy/walls/construction_input_3_brick_walls.csv",
+      "legacy_material_csv": "1_input/library/idf_import/legacy/materials/materials_for_construction_input_3_brick_walls.csv",
+      "object_construction_csv": "1_input/library/idf_import/objects/constructions/Construction.csv",
+      "object_material_csv": "1_input/library/idf_import/objects/materials/Material.csv",
+      "object_glazing_csv": "1_input/library/idf_import/objects/fenestration/WindowMaterial_Glazing.csv",
+      "object_gas_csv": "1_input/library/idf_import/objects/fenestration/WindowMaterial_Gas.csv",
+      "object_frame_csv": "1_input/library/idf_import/objects/fenestration/WindowProperty_FrameAndDivider.csv"
+    }
+  },
+  "export_origin_mode": "outer_block_min_corner_to_zero",
+  "export_origin_offset_m": [
+    1.585,
+    2.426,
+    0.0
+  ],
+  "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02.",
+  "zone_name_map": [
+    {
+      "source_zone_name": "LOGIA",
+      "csv_zone_name": "LOGIA",
+      "area_m2": 2.58,
+      "label_handle": "2EA3",
+      "anchor_xy_m": [
+        5.542,
+        7.778
+      ],
+      "box_width_m": 5.9,
+      "box_depth_m": 1.8,
+      "box_height_m": 3.3,
+      "zone_key": "LOGIA",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 2.58,
+      "footprint_area_m2": 3.763,
+      "footprint_area_delta_m2": 1.183,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          3.87,
+          7.215,
+          7.215,
+          8.34
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            5.455,
+            10.766
+          ],
+          [
+            8.8,
+            10.766
+          ],
+          [
+            8.8,
+            9.641
+          ],
+          [
+            5.455,
+            9.641
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32EB",
+        "boundary_handles": [
+          "32EB"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            3.87,
+            7.215,
+            7.215,
+            8.34
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              3.87,
+              8.34
+            ],
+            [
+              7.215,
+              8.34
+            ],
+            [
+              7.215,
+              7.215
+            ],
+            [
+              3.87,
+              7.215
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "raw_core_dimension_rectangle_local_m": [
+        3.925,
+        7.305,
+        6.925,
+        8.18
+      ],
+      "reconciled_core_rectangle_local_m": [
+        3.8,
+        7.305,
+        6.925,
+        8.18
+      ],
+      "expanded_room_rectangle_local_m": [
+        3.8,
+        7.305,
+        7.215,
+        8.34
+      ],
+      "selected_rectangles_local_m": [
+        [
+          3.87,
+          7.215,
+          7.215,
+          8.34
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.345,
+        "depth_m": 1.125
+      },
+      "selected_polygons_local_m": [
+        [
+          [
+            3.87,
+            8.34
+          ],
+          [
+            7.215,
+            8.34
+          ],
+          [
+            7.215,
+            7.215
+          ],
+          [
+            3.87,
+            7.215
+          ]
+        ]
+      ],
+      "internal_wall_count": 2,
+      "external_wall_count": 2,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "180": 1,
+        "250": 3
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    },
+    {
+      "source_zone_name": "PK + PB",
+      "csv_zone_name": "PKPB",
+      "area_m2": 20.0,
+      "label_handle": "2E99",
+      "anchor_xy_m": [
+        4.977,
+        3.608
+      ],
+      "box_width_m": 4.696,
+      "box_depth_m": 4.696,
+      "box_height_m": 3.3,
+      "zone_key": "PK_PB",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 20.0,
+      "footprint_area_m2": 22.049,
+      "footprint_area_delta_m2": 2.049,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          2.74,
+          3.33,
+          7.215,
+          4.89
+        ],
+        [
+          3.87,
+          0.0,
+          5.31,
+          2.02
+        ],
+        [
+          3.87,
+          2.02,
+          7.215,
+          3.33
+        ],
+        [
+          3.87,
+          4.89,
+          7.215,
+          7.215
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            8.8,
+            9.641
+          ],
+          [
+            8.8,
+            4.446
+          ],
+          [
+            6.895,
+            4.446
+          ],
+          [
+            6.895,
+            2.426
+          ],
+          [
+            5.455,
+            2.426
+          ],
+          [
+            5.455,
+            5.756
+          ],
+          [
+            4.325,
+            5.756
+          ],
+          [
+            4.325,
+            7.316
+          ],
+          [
+            5.455,
+            7.316
+          ],
+          [
+            5.455,
+            9.641
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32EF",
+        "boundary_handles": [
+          "32EF"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            2.74,
+            3.33,
+            7.215,
+            4.89
+          ],
+          [
+            3.87,
+            0.0,
+            5.31,
+            2.02
+          ],
+          [
+            3.87,
+            2.02,
+            7.215,
+            3.33
+          ],
+          [
+            3.87,
+            4.89,
+            7.215,
+            7.215
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              7.215,
+              7.215
+            ],
+            [
+              7.215,
+              2.02
+            ],
+            [
+              5.31,
+              2.02
+            ],
+            [
+              5.31,
+              0.0
+            ],
+            [
+              3.87,
+              0.0
+            ],
+            [
+              3.87,
+              3.33
+            ],
+            [
+              2.74,
+              3.33
+            ],
+            [
+              2.74,
+              4.89
+            ],
+            [
+              3.87,
+              4.89
+            ],
+            [
+              3.87,
+              7.215
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "selected_rectangles_local_m": [
+        [
+          2.74,
+          3.33,
+          7.215,
+          4.89
+        ],
+        [
+          3.87,
+          0.0,
+          5.31,
+          2.02
+        ],
+        [
+          3.87,
+          2.02,
+          7.215,
+          3.33
+        ],
+        [
+          3.87,
+          4.89,
+          7.215,
+          7.215
+        ]
+      ],
+      "selected_polygons_local_m": [
+        [
+          [
+            7.215,
+            7.215
+          ],
+          [
+            7.215,
+            2.02
+          ],
+          [
+            5.31,
+            2.02
+          ],
+          [
+            5.31,
+            0.0
+          ],
+          [
+            3.87,
+            0.0
+          ],
+          [
+            3.87,
+            3.33
+          ],
+          [
+            2.74,
+            3.33
+          ],
+          [
+            2.74,
+            4.89
+          ],
+          [
+            3.87,
+            4.89
+          ],
+          [
+            3.87,
+            7.215
+          ]
+        ]
+      ],
+      "growth_anchor_local_m": [
+        4.977,
+        3.608
+      ],
+      "allocated_fragment_count": 4,
+      "internal_wall_count": 8,
+      "external_wall_count": 2,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "140": 7,
+        "180": 2,
+        "250": 1
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    },
+    {
+      "source_zone_name": "PN 01",
+      "csv_zone_name": "PN01",
+      "area_m2": 11.0,
+      "label_handle": "2E9B",
+      "anchor_xy_m": [
+        1.935,
+        6.615
+      ],
+      "box_width_m": 3.654,
+      "box_depth_m": 3.654,
+      "box_height_m": 3.3,
+      "zone_key": "PN_01",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 11.0,
+      "footprint_area_m2": 13.351,
+      "footprint_area_delta_m2": 2.351,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          0.0,
+          4.89,
+          3.87,
+          8.34
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            1.585,
+            10.766
+          ],
+          [
+            5.455,
+            10.766
+          ],
+          [
+            5.455,
+            7.316
+          ],
+          [
+            1.585,
+            7.316
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32EA",
+        "boundary_handles": [
+          "32EA"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            0.0,
+            4.89,
+            3.87,
+            8.34
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              0.0,
+              8.34
+            ],
+            [
+              3.87,
+              8.34
+            ],
+            [
+              3.87,
+              4.89
+            ],
+            [
+              0.0,
+              4.89
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "raw_core_dimension_rectangle_local_m": [
+        0.205,
+        4.925,
+        3.675,
+        8.055
+      ],
+      "reconciled_core_rectangle_local_m": [
+        0.205,
+        4.855,
+        3.8,
+        8.055
+      ],
+      "expanded_room_rectangle_local_m": [
+        0.0,
+        4.855,
+        3.8,
+        8.34
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          4.89,
+          3.87,
+          8.34
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.87,
+        "depth_m": 3.45
+      },
+      "selected_polygons_local_m": [
+        [
+          [
+            0.0,
+            8.34
+          ],
+          [
+            3.87,
+            8.34
+          ],
+          [
+            3.87,
+            4.89
+          ],
+          [
+            0.0,
+            4.89
+          ]
+        ]
+      ],
+      "internal_wall_count": 4,
+      "external_wall_count": 2,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "140": 3,
+        "250": 3
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    },
+    {
+      "source_zone_name": "PN 02",
+      "csv_zone_name": "PN02",
+      "area_m2": 10.98,
+      "label_handle": "2E9D",
+      "anchor_xy_m": [
+        1.935,
+        1.665
+      ],
+      "box_width_m": 3.59,
+      "box_depth_m": 3.59,
+      "box_height_m": 3.3,
+      "zone_key": "PN_02",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 10.98,
+      "footprint_area_m2": 12.887,
+      "footprint_area_delta_m2": 1.907,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          0.0,
+          0.0,
+          3.87,
+          3.33
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            1.585,
+            5.756
+          ],
+          [
+            1.585,
+            2.426
+          ],
+          [
+            5.455,
+            2.426
+          ],
+          [
+            5.455,
+            5.756
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32ED",
+        "boundary_handles": [
+          "32ED"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            0.0,
+            0.0,
+            3.87,
+            3.33
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              0.0,
+              3.33
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              3.87,
+              0.0
+            ],
+            [
+              3.87,
+              3.33
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "raw_core_dimension_rectangle_local_m": [
+        0.125,
+        0.205,
+        3.675,
+        3.225
+      ],
+      "reconciled_core_rectangle_local_m": [
+        0.125,
+        0.205,
+        3.675,
+        3.295
+      ],
+      "expanded_room_rectangle_local_m": [
+        0.0,
+        0.0,
+        3.675,
+        3.295
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          0.0,
+          3.87,
+          3.33
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 3.87,
+        "depth_m": 3.33
+      },
+      "selected_polygons_local_m": [
+        [
+          [
+            0.0,
+            3.33
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            3.87,
+            0.0
+          ],
+          [
+            3.87,
+            3.33
+          ]
+        ]
+      ],
+      "internal_wall_count": 3,
+      "external_wall_count": 2,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "140": 3,
+        "180": 1,
+        "250": 1
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    },
+    {
+      "source_zone_name": "WC 01",
+      "csv_zone_name": "WC01",
+      "area_m2": 3.11,
+      "label_handle": "2E9F",
+      "anchor_xy_m": [
+        1.37,
+        4.11
+      ],
+      "box_width_m": 2.4,
+      "box_depth_m": 1.8,
+      "box_height_m": 3.3,
+      "zone_key": "WC_01",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 3.11,
+      "footprint_area_m2": 4.274,
+      "footprint_area_delta_m2": 1.164,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          0.0,
+          3.33,
+          2.74,
+          4.89
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            1.585,
+            7.316
+          ],
+          [
+            4.325,
+            7.316
+          ],
+          [
+            4.325,
+            5.756
+          ],
+          [
+            1.585,
+            5.756
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32EC",
+        "boundary_handles": [
+          "32EC"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            0.0,
+            3.33,
+            2.74,
+            4.89
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              0.0,
+              4.89
+            ],
+            [
+              2.74,
+              4.89
+            ],
+            [
+              2.74,
+              3.33
+            ],
+            [
+              0.0,
+              3.33
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "raw_core_dimension_rectangle_local_m": [
+        0.125,
+        3.365,
+        2.315,
+        4.785
+      ],
+      "reconciled_core_rectangle_local_m": [
+        0.125,
+        3.295,
+        2.315,
+        4.855
+      ],
+      "expanded_room_rectangle_local_m": [
+        0.0,
+        3.295,
+        2.315,
+        4.855
+      ],
+      "selected_rectangles_local_m": [
+        [
+          0.0,
+          3.33,
+          2.74,
+          4.89
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 2.74,
+        "depth_m": 1.56
+      },
+      "selected_polygons_local_m": [
+        [
+          [
+            0.0,
+            4.89
+          ],
+          [
+            2.74,
+            4.89
+          ],
+          [
+            2.74,
+            3.33
+          ],
+          [
+            0.0,
+            3.33
+          ]
+        ]
+      ],
+      "internal_wall_count": 3,
+      "external_wall_count": 1,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "140": 3,
+        "250": 1
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    },
+    {
+      "source_zone_name": "WC 02",
+      "csv_zone_name": "WC02",
+      "area_m2": 2.83,
+      "label_handle": "2EA1",
+      "anchor_xy_m": [
+        6.262,
+        1.01
+      ],
+      "box_width_m": 2.65,
+      "box_depth_m": 1.8,
+      "box_height_m": 3.3,
+      "zone_key": "WC_02",
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "geometry_source_kind": "normalized_dxf_extract",
+      "geometry_policy_mode": "backup_v2_single_block",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
+      "area_priority_mode": "remember_only",
+      "single_block_required": true,
+      "outer_block_rect_m": [
+        0.0,
+        0.0,
+        7.215,
+        8.34
+      ],
+      "outer_record_handle": "2528",
+      "outer_record_layer": "0",
+      "inferred_inner_bounds_local_m": {},
+      "target_area_m2": 2.83,
+      "footprint_area_m2": 3.848,
+      "footprint_area_delta_m2": 1.018,
+      "area_crosscheck_pass": false,
+      "area_crosscheck_required": false,
+      "footprint_rectangles_m": [
+        [
+          5.31,
+          0.0,
+          7.215,
+          2.02
+        ]
+      ],
+      "footprint_polygons_m": [
+        [
+          [
+            8.8,
+            2.426
+          ],
+          [
+            6.895,
+            2.426
+          ],
+          [
+            6.895,
+            4.446
+          ],
+          [
+            8.8,
+            4.446
+          ]
+        ]
+      ],
+      "layer_boundary_assignment": {
+        "boundary_handle": "32EE",
+        "boundary_handles": [
+          "32EE"
+        ],
+        "boundary_layer": "EM_ROOM_BOUNDARY",
+        "boundary_role": "room_boundary",
+        "boundary_confidence": "medium",
+        "boundary_closed_polyline": false,
+        "boundary_rectangles_local_m": [
+          [
+            5.31,
+            0.0,
+            7.215,
+            2.02
+          ]
+        ],
+        "boundary_polygons_local_m": [
+          [
+            [
+              7.215,
+              0.0
+            ],
+            [
+              5.31,
+              0.0
+            ],
+            [
+              5.31,
+              2.02
+            ],
+            [
+              7.215,
+              2.02
+            ]
+          ]
+        ],
+        "assignment_mode": "mapping_boundary_handles"
+      },
+      "raw_core_dimension_rectangle_local_m": [
+        5.38,
+        0.205,
+        7.05,
+        1.9
+      ],
+      "reconciled_core_rectangle_local_m": [
+        5.38,
+        0.205,
+        7.05,
+        1.9
+      ],
+      "expanded_room_rectangle_local_m": [
+        5.38,
+        0.0,
+        7.215,
+        1.9
+      ],
+      "selected_rectangles_local_m": [
+        [
+          5.31,
+          0.0,
+          7.215,
+          2.02
+        ]
+      ],
+      "clear_dimensions_m": {
+        "width_m": 1.905,
+        "depth_m": 2.02
+      },
+      "selected_polygons_local_m": [
+        [
+          [
+            7.215,
+            0.0
+          ],
+          [
+            5.31,
+            0.0
+          ],
+          [
+            5.31,
+            2.02
+          ],
+          [
+            7.215,
+            2.02
+          ]
+        ]
+      ],
+      "internal_wall_count": 2,
+      "external_wall_count": 2,
+      "adiabatic_wall_count": 0,
+      "wall_thickness_counts_mm": {
+        "140": 2,
+        "180": 2
+      },
+      "export_origin_mode": "outer_block_min_corner_to_zero",
+      "export_origin_offset_m": [
+        1.585,
+        2.426,
+        0.0
+      ],
+      "export_origin_reference": "Lower-left corner of the outer apartment block in plan; current Apartment A maps this to the non-adjacent lower-left corner of PN02."
+    }
+  ],
+  "opening_name_map": [
+    {
+      "opening_id": "OPENING_001",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_001_WINDOW",
+      "paired_fenestration_name": "",
+      "source_type_code": "SW",
+      "candidate_fenestration_type": "Window",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Window",
+      "idf_name_suffix": "",
+      "construction_name": "C_G_WINDOW_TEMP_008",
+      "nearest_zone_name": "WC 01",
+      "nearest_zone_csv_name": "WC01",
+      "size_text": "600X600",
+      "width_mm": 600,
+      "height_mm": 600,
+      "sill_height_m": 1.6,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2EE7",
+      "host_boundary_condition": "Outdoors",
+      "host_adjacent_zone_name": "",
+      "host_wall_physical_id": "WALL_020",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 250,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        0.0,
+        4.51
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "WC01_WALL_04",
+      "fenestration_vertices_m": {
+        "v1": [
+          0.0,
+          4.77,
+          1.64
+        ],
+        "v2": [
+          0.0,
+          4.77,
+          2.16
+        ],
+        "v3": [
+          0.0,
+          4.25,
+          2.16
+        ],
+        "v4": [
+          0.0,
+          4.25,
+          1.64
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "WC01"
+      ],
+      "host_selection_preferred_boundary_condition": "Outdoors",
+      "host_selection_candidate_surface_names": [
+        "WC01_WALL_04"
+      ],
+      "frame_width_m": 0.04,
+      "opening_total_width_m": 0.6,
+      "opening_glazing_width_m": 0.52,
+      "opening_total_height_m": 0.6,
+      "opening_glazing_height_m": 0.52,
+      "opening_total_bottom_z_m": 1.6
+    },
+    {
+      "opening_id": "OPENING_002",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_002_WINDOW",
+      "paired_fenestration_name": "",
+      "source_type_code": "SN",
+      "candidate_fenestration_type": "Window",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Window",
+      "idf_name_suffix": "",
+      "construction_name": "C_G_WINDOW_TEMP_008",
+      "nearest_zone_name": "PN 02",
+      "nearest_zone_csv_name": "PN02",
+      "size_text": "1400X1235",
+      "width_mm": 1400,
+      "height_mm": 1235,
+      "sill_height_m": 1.4,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2EF2",
+      "host_boundary_condition": "Outdoors",
+      "host_adjacent_zone_name": "",
+      "host_wall_physical_id": "WALL_018",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 250,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        0.0,
+        1.94
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "PN02_WALL_04",
+      "fenestration_vertices_m": {
+        "v1": [
+          0.0,
+          2.6,
+          1.44
+        ],
+        "v2": [
+          0.0,
+          2.6,
+          2.595
+        ],
+        "v3": [
+          0.0,
+          1.28,
+          2.595
+        ],
+        "v4": [
+          0.0,
+          1.28,
+          1.44
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PN02"
+      ],
+      "host_selection_preferred_boundary_condition": "Outdoors",
+      "host_selection_candidate_surface_names": [
+        "PN02_WALL_04"
+      ],
+      "frame_width_m": 0.04,
+      "opening_total_width_m": 1.4,
+      "opening_glazing_width_m": 1.32,
+      "opening_total_height_m": 1.235,
+      "opening_glazing_height_m": 1.155,
+      "opening_total_bottom_z_m": 1.4
+    },
+    {
+      "opening_id": "OPENING_003",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_003_DOOR",
+      "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_003_DOOR_ADJ",
+      "source_type_code": "DN1",
+      "candidate_fenestration_type": "Door",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Door",
+      "idf_name_suffix": "",
+      "construction_name": "D_BEDROOM_MDF_035",
+      "nearest_zone_name": "PK + PB",
+      "nearest_zone_csv_name": "PKPB",
+      "size_text": "850X2200",
+      "width_mm": 850,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2EFD",
+      "host_boundary_condition": "Surface",
+      "host_adjacent_zone_name": "PN01",
+      "host_wall_physical_id": "WALL_006",
+      "host_wall_family": "Partition",
+      "host_wall_total_thickness_mm": 140,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        3.32,
+        4.89
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "PKPB_WALL_03",
+      "fenestration_vertices_m": {
+        "v1": [
+          3.745,
+          4.89,
+          0.0
+        ],
+        "v2": [
+          3.745,
+          4.89,
+          2.2
+        ],
+        "v3": [
+          2.895,
+          4.89,
+          2.2
+        ],
+        "v4": [
+          2.895,
+          4.89,
+          0.0
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PKPB"
+      ],
+      "host_selection_preferred_boundary_condition": "Surface",
+      "host_selection_candidate_surface_names": [
+        "PKPB_WALL_03",
+        "PN01_WALL_03"
+      ],
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 0.85,
+      "opening_glazing_width_m": 0.85,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.2,
+      "opening_total_bottom_z_m": 0.0
+    },
+    {
+      "opening_id": "OPENING_004",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_004_DOOR",
+      "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_004_DOOR_ADJ",
+      "source_type_code": "DN1",
+      "candidate_fenestration_type": "Door",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Door",
+      "idf_name_suffix": "",
+      "construction_name": "D_BEDROOM_MDF_035",
+      "nearest_zone_name": "PK + PB",
+      "nearest_zone_csv_name": "PKPB",
+      "size_text": "850X2200",
+      "width_mm": 850,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F08",
+      "host_boundary_condition": "Surface",
+      "host_adjacent_zone_name": "PN02",
+      "host_wall_physical_id": "WALL_008",
+      "host_wall_family": "Partition",
+      "host_wall_total_thickness_mm": 140,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        3.32,
+        3.33
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "PKPB_WALL_05",
+      "fenestration_vertices_m": {
+        "v1": [
+          2.895,
+          3.33,
+          0.0
+        ],
+        "v2": [
+          2.895,
+          3.33,
+          2.2
+        ],
+        "v3": [
+          3.745,
+          3.33,
+          2.2
+        ],
+        "v4": [
+          3.745,
+          3.33,
+          0.0
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PN02"
+      ],
+      "host_selection_preferred_boundary_condition": "Surface",
+      "host_selection_candidate_surface_names": [
+        "PKPB_WALL_05",
+        "PN02_WALL_01"
+      ],
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 0.85,
+      "opening_glazing_width_m": 0.85,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.2,
+      "opening_total_bottom_z_m": 0.0
+    },
+    {
+      "opening_id": "OPENING_005",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_005_DOOR",
+      "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_005_DOOR_ADJ",
+      "source_type_code": "DWN",
+      "candidate_fenestration_type": "Door",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Door",
+      "idf_name_suffix": "",
+      "construction_name": "D_WC_UPVC_024",
+      "nearest_zone_name": "WC 02",
+      "nearest_zone_csv_name": "WC02",
+      "size_text": "750X2200",
+      "width_mm": 750,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F13",
+      "host_boundary_condition": "Surface",
+      "host_adjacent_zone_name": "PKPB",
+      "host_wall_physical_id": "WALL_010",
+      "host_wall_family": "Partition",
+      "host_wall_total_thickness_mm": 140,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        5.31,
+        1.515
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "WC02_WALL_01",
+      "fenestration_vertices_m": {
+        "v1": [
+          5.31,
+          1.89,
+          0.0
+        ],
+        "v2": [
+          5.31,
+          1.89,
+          2.2
+        ],
+        "v3": [
+          5.31,
+          1.14,
+          2.2
+        ],
+        "v4": [
+          5.31,
+          1.14,
+          0.0
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PKPB"
+      ],
+      "host_selection_preferred_boundary_condition": "Surface",
+      "host_selection_candidate_surface_names": [
+        "WC02_WALL_01",
+        "PKPB_WALL_07"
+      ],
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 0.75,
+      "opening_glazing_width_m": 0.75,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.2,
+      "opening_total_bottom_z_m": 0.0
+    },
+    {
+      "opening_id": "OPENING_006",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_006_WINDOW",
+      "paired_fenestration_name": "",
+      "source_type_code": "SN",
+      "candidate_fenestration_type": "Window",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Window",
+      "idf_name_suffix": "",
+      "construction_name": "C_G_WINDOW_TEMP_008",
+      "nearest_zone_name": "PN 01",
+      "nearest_zone_csv_name": "PN01",
+      "size_text": "1400X1235",
+      "width_mm": 1400,
+      "height_mm": 1235,
+      "sill_height_m": 1.4,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F21",
+      "host_boundary_condition": "Outdoors",
+      "host_adjacent_zone_name": "",
+      "host_wall_physical_id": "WALL_015",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 250,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        2.025,
+        8.34
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "PN01_WALL_05",
+      "fenestration_vertices_m": {
+        "v1": [
+          2.685,
+          8.34,
+          1.44
+        ],
+        "v2": [
+          2.685,
+          8.34,
+          2.595
+        ],
+        "v3": [
+          1.365,
+          8.34,
+          2.595
+        ],
+        "v4": [
+          1.365,
+          8.34,
+          1.44
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PN01"
+      ],
+      "host_selection_preferred_boundary_condition": "Outdoors",
+      "host_selection_candidate_surface_names": [
+        "PN01_WALL_05"
+      ],
+      "frame_width_m": 0.04,
+      "opening_total_width_m": 1.4,
+      "opening_glazing_width_m": 1.32,
+      "opening_total_height_m": 1.235,
+      "opening_glazing_height_m": 1.155,
+      "opening_total_bottom_z_m": 1.4
+    },
+    {
+      "opening_id": "OPENING_007",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_007_GLASSDOOR",
+      "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_007_GLASSDOOR_ADJ",
+      "source_type_code": "DN2",
+      "candidate_fenestration_type": "GlassDoor",
+      "idf_import_proxy": false,
+      "idf_surface_type": "GlassDoor",
+      "idf_name_suffix": "",
+      "construction_name": "C_G_LOGIA_TEMP_010",
+      "nearest_zone_name": "LOGIA",
+      "nearest_zone_csv_name": "LOGIA",
+      "size_text": "2000X2200",
+      "width_mm": 2000,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F2C",
+      "host_boundary_condition": "Surface",
+      "host_adjacent_zone_name": "PKPB",
+      "host_wall_physical_id": "WALL_001",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 250,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        5.29,
+        7.215
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "LOGIA_WALL_01",
+      "fenestration_vertices_m": {
+        "v1": [
+          4.33,
+          7.215,
+          0.04
+        ],
+        "v2": [
+          4.33,
+          7.215,
+          2.16
+        ],
+        "v3": [
+          6.25,
+          7.215,
+          2.16
+        ],
+        "v4": [
+          6.25,
+          7.215,
+          0.04
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "PKPB"
+      ],
+      "host_selection_preferred_boundary_condition": "Outdoors",
+      "host_selection_candidate_surface_names": [
+        "LOGIA_WALL_01",
+        "PKPB_WALL_01"
+      ],
+      "frame_width_m": 0.04,
+      "opening_total_width_m": 2.0,
+      "opening_glazing_width_m": 1.92,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.12,
+      "opening_total_bottom_z_m": 0.0
+    },
+    {
+      "opening_id": "OPENING_008",
+      "resolution_status": "resolved",
+      "needs_review": true,
+      "review_reasons": [
+        "hole_imported_as_window_proxy"
+      ],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_008_HOLE_AS_WINDOW",
+      "paired_fenestration_name": "",
+      "source_type_code": "LC1",
+      "candidate_fenestration_type": "Hole",
+      "idf_import_proxy": true,
+      "idf_surface_type": "Window",
+      "idf_name_suffix": "HOLE_AS_WINDOW",
+      "construction_name": "Perfectly Clear - 1002",
+      "nearest_zone_name": "LOGIA",
+      "nearest_zone_csv_name": "LOGIA",
+      "size_text": "3000X1250",
+      "width_mm": 3000,
+      "height_mm": 3150,
+      "sill_height_m": 0.15,
+      "size_resolution_method": "size_text_reparse_override_width_only_hole_no_height",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F37",
+      "host_boundary_condition": "Outdoors",
+      "host_adjacent_zone_name": "",
+      "host_wall_physical_id": "WALL_004",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 250,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        5.587,
+        8.34
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "LOGIA_WALL_04",
+      "fenestration_vertices_m": {
+        "v1": [
+          7.087,
+          8.34,
+          0.15
+        ],
+        "v2": [
+          7.087,
+          8.34,
+          3.3
+        ],
+        "v3": [
+          4.087,
+          8.34,
+          3.3
+        ],
+        "v4": [
+          4.087,
+          8.34,
+          0.15
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "LOGIA"
+      ],
+      "host_selection_preferred_boundary_condition": "Outdoors",
+      "host_selection_candidate_surface_names": [
+        "LOGIA_WALL_04"
+      ],
+      "hole_height_rule": "touch_ceiling",
+      "hole_top_z_m": 3.3,
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 3.0,
+      "opening_glazing_width_m": 3.0,
+      "opening_total_height_m": 3.15,
+      "opening_glazing_height_m": 3.15,
+      "opening_total_bottom_z_m": 0.15
+    },
+    {
+      "opening_id": "OPENING_009",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_009_DOOR",
+      "paired_fenestration_name": "APARTMENT_A_NEW_OPENING_009_DOOR_ADJ",
+      "source_type_code": "DWN",
+      "candidate_fenestration_type": "Door",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Door",
+      "idf_name_suffix": "",
+      "construction_name": "D_WC_UPVC_024",
+      "nearest_zone_name": "WC 01",
+      "nearest_zone_csv_name": "WC01",
+      "size_text": "750X2200",
+      "width_mm": 750,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F44",
+      "host_boundary_condition": "Surface",
+      "host_adjacent_zone_name": "PN01",
+      "host_wall_physical_id": "WALL_014",
+      "host_wall_family": "Partition",
+      "host_wall_total_thickness_mm": 140,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        2.235,
+        4.89
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "WC01_WALL_02",
+      "fenestration_vertices_m": {
+        "v1": [
+          2.61,
+          4.89,
+          0.0
+        ],
+        "v2": [
+          2.61,
+          4.89,
+          2.2
+        ],
+        "v3": [
+          1.86,
+          4.89,
+          2.2
+        ],
+        "v4": [
+          1.86,
+          4.89,
+          0.0
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [
+        "WC01"
+      ],
+      "host_selection_preferred_boundary_condition": "Surface",
+      "host_selection_candidate_surface_names": [
+        "WC01_WALL_02",
+        "PN01_WALL_04"
+      ],
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 0.75,
+      "opening_glazing_width_m": 0.75,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.2,
+      "opening_total_bottom_z_m": 0.0
+    },
+    {
+      "opening_id": "OPENING_010",
+      "resolution_status": "resolved",
+      "needs_review": false,
+      "review_reasons": [],
+      "unresolved_reason": "",
+      "fenestration_name": "APARTMENT_A_NEW_OPENING_010_DOOR",
+      "paired_fenestration_name": "",
+      "source_type_code": "DG",
+      "candidate_fenestration_type": "Door",
+      "idf_import_proxy": false,
+      "idf_surface_type": "Door",
+      "idf_name_suffix": "",
+      "construction_name": "D_MAIN_STEEL_0474",
+      "nearest_zone_name": "WC 02",
+      "nearest_zone_csv_name": "WC02",
+      "size_text": "1000X2200",
+      "width_mm": 1000,
+      "height_mm": 2200,
+      "sill_height_m": null,
+      "size_resolution_method": "size_text",
+      "mapping_confidence": "high",
+      "matched_symbol_insert_handle": "2F50",
+      "host_boundary_condition": "Outdoors",
+      "host_adjacent_zone_name": "",
+      "host_wall_physical_id": "WALL_012",
+      "host_wall_family": "Exterior",
+      "host_wall_total_thickness_mm": 180,
+      "geometry_mode": "dxf_inferred_s04_layer_boundary",
+      "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
+      "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
+      "placement_anchor_xy_m": [
+        4.69,
+        0.0
+      ],
+      "placement_anchor_source": "opening_layer_geometry",
+      "building_surface_name": "PKPB_WALL_09",
+      "fenestration_vertices_m": {
+        "v1": [
+          4.19,
+          0.0,
+          0.0
+        ],
+        "v2": [
+          4.19,
+          0.0,
+          2.2
+        ],
+        "v3": [
+          5.19,
+          0.0,
+          2.2
+        ],
+        "v4": [
+          5.19,
+          0.0,
+          0.0
+        ]
+      },
+      "host_selection_anchor_source": "opening_geometry",
+      "host_selection_containing_zones": [],
+      "host_selection_preferred_boundary_condition": "Surface",
+      "host_selection_candidate_surface_names": [
+        "PKPB_WALL_09"
+      ],
+      "frame_width_m": 0.0,
+      "opening_total_width_m": 1.0,
+      "opening_glazing_width_m": 1.0,
+      "opening_total_height_m": 2.2,
+      "opening_glazing_height_m": 2.2,
+      "opening_total_bottom_z_m": 0.0
+    }
+  ],
+  "manual_fill_required": [
+    "BuildingSurface_Detailed.csv and FenestrationSurface_Detailed.csv were inferred from the Apartment A raw DXF dimensions, outer block extents, and opening annotations, with interzone Surface adjacencies generated where zone boundaries align.",
+    "Internal doors now generate paired FenestrationSurface objects across adjacent zone walls; exterior openings still need a visual review in DesignBuilder.",
+    "Wall and opening library rows now load from 1_input/library/idf_import catalogs, with optional object CSV defaults for Material, Construction, Glazing, Gas, and Frame tables; unmatched wall types still fall back to DXF-derived constructions.",
+    "The intermediate Wall_Inventory.csv lists each physical wall with total thickness including finish layers, inferred core thickness, and exported line position so external wall CSV data can be mapped onto the generated building surfaces.",
+    "Final wall export planes now come from wall_resolution.json with explicit reference metadata, and hosted fenestration rows are shifted with those resolved wall planes before the rebuilt IDF is written.",
+    "The generated zone footprints are DXF-first rectilinear inferences partitioned from measured room cores and anchor-guided free cells; adiabatic wall segments are used where the drawing implies internal buffer space rather than modeled adjacent zones."
+  ],
+  "envelope_input": {
+    "source_dir": "1_input/Envelope_apartment_A",
+    "material_rows": 9,
+    "construction_rows": 11,
+    "simple_glazing_rows": 2
+  }
+}
