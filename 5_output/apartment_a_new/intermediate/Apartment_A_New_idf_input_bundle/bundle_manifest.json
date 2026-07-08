@@ -8,7 +8,6 @@
   "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
   "geometry_template_source": null,
   "geometry_policy": {
-    "policy_name": "Apartment A New DXF Geometry Policy",
     "policy_version": "1.0.0",
     "geometry_mode": "backup_v2_single_block",
     "ceiling_height_m": 3.3,
@@ -22,6 +21,15 @@
       "interzone_reference_type": "shared_zone_boundary_centerline",
       "single_zone_reference_type": "zone_boundary_inside_face"
     },
+    "geometry_priority_note": "Scaffolded from the generic DXF case template. Review geometry_mode, wall reference policy, and remembered targets before first production use.",
+    "baseline_backup": {
+      "archive_file": "",
+      "algorithm_name": "DXF-First V2"
+    },
+    "policy_name": "Apartment A New DXF Geometry Policy",
+    "zone_name_aliases": {},
+    "zone_merge_groups": [],
+    "remembered_zone_targets": {},
     "wall_boundary_overrides": [
       {
         "surface_name": "PKPB_WALL_09",
@@ -30,17 +38,9 @@
         "reason": "lower wall door OPENING_010 must export as a non-adiabatic exterior door"
       }
     ],
-    "geometry_priority_note": "Scaffolded from the generic DXF case template. Review geometry_mode, wall reference policy, and remembered targets before first production use.",
-    "baseline_backup": {
-      "archive_file": "",
-      "algorithm_name": "DXF-First V2"
-    },
-    "zone_name_aliases": {},
-    "zone_merge_groups": [],
-    "remembered_zone_targets": {},
     "ceiling_height_source": "human_input"
   },
-  "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+  "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
   "geometry_output_paths": {
     "geometry_payload": "5_output/apartment_a_new/intermediate/geometry/geometry_payload.json",
     "zone_rectangles": "5_output/apartment_a_new/intermediate/geometry/zone_rectangles.json",
@@ -1325,7 +1325,7 @@
     "available": true,
     "reference_policy": {
       "policy_name": "zone_boundary_wall_reference_v2",
-      "policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "external_reference_type": "zone_boundary_outer_face",
       "interzone_reference_type": "shared_zone_boundary_centerline",
       "single_zone_reference_type": "zone_boundary_inside_face"
@@ -2399,7 +2399,7 @@
     "available": true,
     "reference_policy": {
       "policy_name": "zone_boundary_wall_reference_v2",
-      "policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "external_reference_type": "zone_boundary_outer_face",
       "interzone_reference_type": "shared_zone_boundary_centerline",
       "single_zone_reference_type": "zone_boundary_inside_face"
@@ -3542,7 +3542,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [
@@ -3709,7 +3709,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [
@@ -3986,7 +3986,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [
@@ -4153,7 +4153,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [
@@ -4321,7 +4321,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [
@@ -4488,7 +4488,7 @@
       "geometry_upstream_source": "1_input/apartment_a_new/clean/txt_dxf/Apartment A.dxf",
       "geometry_source_kind": "normalized_dxf_extract",
       "geometry_policy_mode": "backup_v2_single_block",
-      "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+      "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
       "area_priority_mode": "remember_only",
       "single_block_required": true,
       "outer_block_rect_m": [

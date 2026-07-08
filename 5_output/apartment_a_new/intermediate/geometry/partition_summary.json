@@ -1,7 +1,7 @@
 {
   "geometry_mode": "dxf_inferred_s04_layer_boundary",
   "geometry_source": "5_output/apartment_a_new/normalized/dxf/Apartment_A_New_filtered_extract.txt",
-  "geometry_policy_source": "2_config/projects/apartment_a_new/geometry_policy.json",
+  "geometry_policy_source": "5_output/apartment_a_new/intermediate/config/geometry_policy_resolved.json",
   "outer_block_rect_m": [
     1.585,
     2.426,
