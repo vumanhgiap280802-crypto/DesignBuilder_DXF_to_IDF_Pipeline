@@ -10,7 +10,8 @@
 
 Working standard nay duoc rut ra tu flow dang chay cua case DXF active:
 
-`2_config/projects/noxh_apartment_a_clean/pipeline_case.json`
+`2_config/cases.json`
+-> `2_config/case_defaults.json`
 -> `3_scripts/pipeline/run_case_pipeline.py`
 -> `3_scripts/pipeline/apartment_a_pipeline.py`
 -> `3_scripts/parsers/dxf_raw_parser.py`

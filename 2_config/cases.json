@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "description": "Compact case registry. Shared defaults live in 2_config/case_defaults.json.",
+  "cases": {
+    "apartment_a_new": {
+      "case_id": "CH_A_2BR_S0",
+      "geometry_project_id": "apartment_a_new",
+      "model_id": "model_CAN_HO_A",
+      "case_name": "Apartment A New DXF",
+      "file_slug": "Apartment_A_New",
+      "dxf_filename": "Apartment A.dxf",
+      "object_output_prefix": "APARTMENT_A_NEW",
+      "geometry_policy": {
+        "policy_name": "Apartment A New DXF Geometry Policy",
+        "zone_name_aliases": {},
+        "zone_merge_groups": [],
+        "remembered_zone_targets": {},
+        "wall_boundary_overrides": [
+          {
+            "surface_name": "PKPB_WALL_09",
+            "outside_boundary_condition": "Outdoors",
+            "wall_role": "external_wall",
+            "reason": "lower wall door OPENING_010 must export as a non-adiabatic exterior door"
+          }
+        ]
+      }
+    },
+    "noxh_apartment_b_clean": {
+      "case_id": "noxh_apartment_b_clean",
+      "case_name": "NOXH Apartment B Clean DXF",
+      "file_slug": "NOXH_Apartment_B_clean",
+      "dxf_filename": "NOXH_Apartment_B_clean.dxf",
+      "object_output_prefix": "APARTMENT_B",
+      "naming": {
+        "canonical_room_code_rules": {
+          "aliases": {
+            "PKXPB": "PK_PB",
+            "LOGIA": "LOGIA"
+          },
+          "compact_numeric_patterns": [
+            "PN01 -> PN_01",
+            "PN 01 -> PN_01",
+            "PN_01 -> PN_01",
+            "WC01 -> WC_01",
+            "WC 01 -> WC_01",
+            "WC_01 -> WC_01"
+          ]
+        },
+        "room_anchor_patterns": [
+          "PK\\s*\\+\\s*PB.*19[,\\.]86\\s*m2",
+          "PN\\s*0?1.*10[,\\.]85\\s*m2",
+          "PN\\s*0?2.*10[,\\.]89\\s*m2",
+          "WC\\s*0?1.*3[,\\.]11\\s*m2",
+          "WC\\s*0?2.*2[,\\.]66\\s*m2",
+          "L.*GIA.*2[,\\.]56\\s*m2"
+        ],
+        "title_anchor_patterns": [
+          "CH[\\s\\-]?B"
+        ]
+      },
+      "geometry_policy": {
+        "policy_name": "NOXH Apartment B Clean Geometry Lock",
+        "require_single_block": false,
+        "wall_reference_policy": {
+          "external_reference_note": "NOXH_Apartment_B_clean should export external walls on the drawn apartment outer shell unless QA proves a different wall reference convention is needed."
+        },
+        "geometry_priority_note": "Seeded from the Apartment clean baseline and updated with Apartment B room areas read from the cleaned DXF labels. The single-block gate is disabled for the first production run because Apartment B did not satisfy the current connected-partition policy check.",
+        "remembered_zone_targets": {
+          "PK_PB": {
+            "area_m2": 19.86
+          },
+          "PN_01": {
+            "area_m2": 10.85
+          },
+          "PN_02": {
+            "area_m2": 10.89
+          },
+          "WC_01": {
+            "area_m2": 3.11
+          },
+          "WC_02": {
+            "area_m2": 2.66
+          },
+          "LOGIA": {
+            "area_m2": 2.56
+          }
+        }
+      }
+    },
+    "noxh_apartment_c_clean": {
+      "case_id": "noxh_apartment_c_clean",
+      "case_name": "NOXH Apartment C Clean DXF",
+      "file_slug": "NOXH_Apartment_C_clean",
+      "dxf_filename": "NOXH_Apartment_C_clean.dxf",
+      "object_output_prefix": "APARTMENT_C",
+      "naming": {
+        "room_anchor_patterns": [
+          "PK.*10[,\\.]92\\s*m2",
+          "PN.*7[,\\.]95\\s*m2",
+          "WC\\s*0?1.*2[,\\.]90\\s*m2",
+          "L.*GIA.*3[,\\.]58\\s*m2"
+        ],
+        "title_anchor_patterns": [
+          "CH[\\s\\-]?C"
+        ]
+      },
+      "geometry_policy": {
+        "policy_name": "NOXH Apartment C Clean DXF Geometry Policy",
+        "require_single_block": false,
+        "wall_reference_policy": {
+          "external_reference_note": "NOXH_Apartment_C_clean should export external walls on the drawn apartment outer shell unless QA proves a different wall reference convention is needed."
+        },
+        "geometry_priority_note": "Seeded for the Apartment C production run from room labels in NOXH_Apartment_C_clean.dxf. The single-block gate is disabled for first import output generation, matching the Apartment B production setup.",
+        "zone_name_aliases": {},
+        "zone_merge_groups": [],
+        "remembered_zone_targets": {
+          "PK": {
+            "area_m2": 10.92
+          },
+          "PB": {
+            "area_m2": 7.95
+          },
+          "PN": {
+            "area_m2": 7.95
+          },
+          "WC_01": {
+            "area_m2": 2.9
+          },
+          "LOGIA": {
+            "area_m2": 3.58
+          }
+        }
+      }
+    },
+    "noxh_apartment_d_clean": {
+      "case_id": "noxh_apartment_d_clean",
+      "case_name": "NOXH Apartment D Clean DXF",
+      "file_slug": "NOXH_Apartment_D_clean",
+      "dxf_filename": "NOXH_Apartment_D_clean.dxf",
+      "object_output_prefix": "APARTMENT_D",
+      "naming": {
+        "room_anchor_patterns": [
+          "PN\\s*0?1.*9[,\\.]59\\s*m2",
+          "PN\\s*0?2.*11[,\\.]61\\s*m2",
+          "PK\\s*\\+\\s*PB.*20[,\\.]92\\s*m2",
+          "WC\\s*0?1.*3[,\\.]14\\s*m2",
+          "WC\\s*0?2.*3[,\\.]72\\s*m2",
+          "L.*GIA.*2[,\\.]13\\s*m2"
+        ],
+        "title_anchor_patterns": [
+          "CH[\\s\\-]?D"
+        ]
+      },
+      "geometry_policy": {
+        "policy_name": "NOXH Apartment D Clean DXF Geometry Policy",
+        "zone_name_aliases": {},
+        "zone_merge_groups": [],
+        "remembered_zone_targets": {}
+      }
+    },
+    "noxh_apartment_e_clean": {
+      "case_id": "noxh_apartment_e_clean",
+      "case_name": "NOXH Apartment E Clean DXF",
+      "file_slug": "NOXH_Apartment_E_clean",
+      "dxf_filename": "NOXH_Apartment_E_clean.dxf",
+      "object_output_prefix": "APARTMENT_E",
+      "naming": {
+        "room_anchor_patterns": [
+          "PK\\s*\\+\\s*PB.*22[,\\.]09\\s*m2",
+          "PN\\s*0?1.*15[,\\.]42\\s*m2",
+          "PN\\s*0?2.*12[,\\.]88\\s*m2",
+          "WC\\s*0?1.*4[,\\.]3\\s*m2",
+          "WC\\s*0?2.*4[,\\.]01\\s*m2",
+          "L.*GIA.*3[,\\.]14\\s*m2",
+          "L.*GIA.*2[,\\.]62\\s*m2"
+        ],
+        "title_anchor_patterns": [
+          "CH[\\s\\-]?E"
+        ]
+      },
+      "geometry_policy": {
+        "policy_name": "NOXH Apartment E Clean DXF Geometry Policy",
+        "require_single_block": false,
+        "geometry_priority_note": "Seeded for the Apartment E production run from room labels in NOXH_Apartment_E_clean.dxf. The single-block gate is disabled for first import output generation because Apartment E did not satisfy the current connected-partition policy check.",
+        "zone_name_aliases": {},
+        "zone_merge_groups": [],
+        "remembered_zone_targets": {}
+      }
+    }
+  }
+}

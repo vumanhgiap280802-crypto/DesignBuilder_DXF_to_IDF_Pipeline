@@ -3,14 +3,15 @@
 ## Scope
 
 Tai lieu nay mo ta pipeline hien tai sau khi workspace chuyen sang layout theo `project_id`.
-Source of truth cho path contract nam trong `3_scripts/utils/path_resolver.py` va `2_config/projects/<project_id>/pipeline_case.json`.
+Source of truth cho case config nam trong `2_config/cases.json`, voi shared defaults trong `2_config/case_defaults.json`.
+Path contract runtime van duoc enforce boi `3_scripts/utils/path_resolver.py`.
 
 ## Entry Point
 
 - Entry point cap workspace la `3_scripts/pipeline/run_case_pipeline.py`.
-- Cach chay chinh: `python 3_scripts/pipeline/run_case_pipeline.py --project <project_id> --ceiling-height-m <height_m>`.
+- Cach chay chinh: `python 3_scripts/pipeline/run_case_pipeline.py --project <project_id>`.
 - Neu khong truyen `--project`, script se doc `default_project` tu `2_config/default_project.json`.
-- `--ceiling-height-m` la bat buoc khi dung hinh/IDF de chieu cao zone do con nguoi cung cap khi chay.
+- `--ceiling-height-m` chi dung de override chieu cao da khai bao trong registry/defaults.
 - `3_scripts/pipeline/apartment_a_pipeline.py::run_pipeline(...)` van la implementation tham chieu cho flow chinh.
 
 ## Main Flow
@@ -40,9 +41,8 @@ Theo layout moi, luong nay duoc scope theo mot project:
 - `1_input/<project_id>/clean/csv/`
 - `1_input/<project_id>/clean/idf/`
 - `1_input/<project_id>/clean/txt_dxf/`
-- `2_config/projects/<project_id>/pipeline_case.json`
-- `2_config/projects/<project_id>/naming_rules.json`
-- `2_config/projects/<project_id>/geometry_policy.json`
+- `2_config/cases.json`
+- `2_config/case_defaults.json`
 
 ## Output Chinh
 
@@ -72,12 +72,13 @@ Chi nhung artifact dung chung cho nhieu project moi nam trong `5_output/_shared/
 - Dau vao la CSV bundle cua mot project.
 - Dau ra la file `.idf` cuoi cung trong `5_output/<project_id>/idf/`.
 
-## Legacy Compatibility
+## Compatibility
 
 - Input legacy `1_input/raw/...`, `1_input/clean/...` van duoc fallback tam thoi neu project layout chua du.
 - Output legacy `5_output/normalized/...`, `5_output/intermediate/...`, `5_output/csv/...`, `5_output/idf/...`, `5_output/reports/...`, va `5_output/projects/...` van duoc read fallback tam thoi.
 - Moi fallback deu phat `DeprecationWarning`.
 - Moi write moi chi duoc ghi vao `1_input/<project_id>/...` hoac `5_output/<project_id>/...`.
+- Legacy per-case config `2_config/projects/<project_id>/pipeline_case.json` khong con la runtime config cua runner.
 
 ## XML / dsbXML / gbXML
 

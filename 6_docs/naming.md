@@ -1,11 +1,11 @@
 # Naming Standard
 
-Workspace source of truth cho S03 la code hien tai trong `run_case_pipeline.py`, `apartment_a_pipeline.py`, `mapping_builder.py`, `geometry_inference.py`, `surface_builder.py`, `wall_logic.py`, `fenestration_builder.py`, `bundle_writer.py`, va config `pipeline_case.json` + `naming_rules.json`.
+Workspace source of truth cho S03 la code hien tai trong `run_case_pipeline.py`, `apartment_a_pipeline.py`, `mapping_builder.py`, `geometry_inference.py`, `surface_builder.py`, `wall_logic.py`, `fenestration_builder.py`, `bundle_writer.py`, va config `2_config/cases.json` + `2_config/case_defaults.json`.
 
 ## 1. Case Naming
 
 - `case_id`: `noxh_apartment_a_clean`
-  Quy uoc la lower_snake_case. Day la khoa may-doc duoc dung trong `pipeline_case.json` va project scoping.
+  Quy uoc la lower_snake_case. Day la khoa may-doc duoc dung trong `2_config/cases.json` va project scoping.
 - `case_name`: `NOXH Apartment A Clean DXF`
   Quy uoc la human-readable title case.
 - `file_slug`: `NOXH_Apartment_A_clean`
@@ -143,7 +143,7 @@ Path contract cho intake:
 
 Operational rule:
 
-- `intake.source_ready_text_file`, `paths.dxf_input`, va `primary_input_patterns.ready_text_input` cua case moi phai tro cung mot file trong `clean/txt_dxf/`
+- `dxf_filename` hoac cap `raw_cad_filename`/`ready_text_filename` trong `2_config/cases.json` phai tro dung file trong layout input
 - Raw CAD giu vai tro archive nguon, khong phai parser input truc tiep
 - `raw/txt_dxf/` chi la nhanh fallback/doi chieu, khong phai operational input bat buoc
 
@@ -175,5 +175,5 @@ Operational standard cho multi-case vi vay la:
 1. Luu CAD goc vao `1_input/<case_id>/raw/cad/`
 2. Neu can giu text dump raw de doi chieu, dat vao `1_input/<case_id>/raw/txt_dxf/`
 3. Dat ban parser-readable text da chot de pipeline doc vao `1_input/<case_id>/clean/txt_dxf/`
-4. Chi tro `pipeline_case.json -> intake.source_ready_text_file` va `paths.dxf_input` vao ban trong `clean/txt_dxf/`
+4. Khai bao `dxf_filename` hoac `ready_text_filename` trong `2_config/cases.json` cho ban trong `clean/txt_dxf/`
 5. Khong khoa cung ten file; ten input hop le neu ca config va file thuc te khop nhau

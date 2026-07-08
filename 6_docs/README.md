@@ -80,7 +80,7 @@ python 3_scripts/tools/scaffold_dxf_case.py --project-id <project_id> --ceiling-
 
 Lenh nay se:
 
-- tao `2_config/projects/<project_id>/` tu template
+- them case vao `2_config/cases.json`
 - tao `1_input/<project_id>/raw/cad/`
 - tao `1_input/<project_id>/clean/txt_dxf/`
 - tu sinh `case_name`, `file_slug`, ten file input mac dinh, va `zone_output_prefix` tu `project_id`
@@ -96,7 +96,7 @@ Sau scaffold:
 1. Dat CAD goc vao `1_input/<project_id>/raw/cad/`.
 2. Dat parser-readable DXF text vao `1_input/<project_id>/clean/txt_dxf/`.
 3. Neu can project metadata rieng, dat them `1_input/<project_id>/project.json`.
-4. Chinh lai `naming_rules.json` va `geometry_policy.json` neu case moi khong trung quy uoc voi template.
+4. Chinh lai case entry trong `2_config/cases.json` neu naming, room anchors, alias, hoac geometry policy can rule rieng.
 
 Huong dan chi tiet nam trong `6_docs/dxf_case_setup.md`.
 
@@ -105,12 +105,12 @@ Huong dan chi tiet nam trong `6_docs/dxf_case_setup.md`.
 Lenh chinh:
 
 ```powershell
-python 3_scripts/pipeline/run_case_pipeline.py --project <project_id> --ceiling-height-m <height_m>
+python 3_scripts/pipeline/run_case_pipeline.py --project <project_id>
 ```
 
 Neu bo qua `--project`, workspace se doc `default_project` tu `2_config/default_project.json`.
-`--ceiling-height-m` la bat buoc khi dung hinh/IDF.
-Neu ca hai deu thieu, script se fail voi thong bao ro rang.
+`--ceiling-height-m` chi can khi muon override chieu cao da khai bao trong `2_config/cases.json` hoac `2_config/case_defaults.json`.
+Neu project khong co trong `2_config/cases.json`, script se fail voi thong bao ro rang.
 
 ## Migration tu layout cu
 

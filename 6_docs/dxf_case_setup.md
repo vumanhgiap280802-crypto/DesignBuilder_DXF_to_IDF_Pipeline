@@ -32,7 +32,9 @@ Lenh nay yeu cau nhap `--ceiling-height-m` de chieu cao zone do con nguoi xac nh
 - `case_name` tu `project_id`, vi du `sample_case` -> `Sample Case`
 - `file_slug` tu `project_id`, vi du `sample_case` -> `Sample_Case`
 - `source_cad_filename` va `ready_text_filename` mac dinh la `<project_id>.dxf`
-- `zone_output_prefix` mac dinh la `<PROJECT_ID>_`
+- `zone_output_prefix` mac dinh la rong de giu ten zone compact
+- `object_output_prefix` mac dinh la `<PROJECT_ID>`
+- mot case entry moi trong `2_config/cases.json`
 
 Neu can override, co the dung them:
 
@@ -56,7 +58,7 @@ Tuy chon:
 
 Rule quan trong:
 
-- `paths.dxf_input` va `intake.source_ready_text_file` phai tro cung mot file trong `clean/txt_dxf/`
+- `dxf_filename` hoac cap `raw_cad_filename`/`ready_text_filename` trong `2_config/cases.json` phai tro dung file trong layout input
 - `ready_text_filename` co the giu ten CAD goc, ten `.dxf`, hoac ten `.txt`; pipeline khong ep mot mau ten duy nhat
 
 ## Output layout
@@ -76,31 +78,31 @@ Case moi phai ghi vao:
 `5_output/_shared/` chi dung cho artifact dung chung, vi du sample IDF template.
 Shared input runtime khong dat trong `2_config/`; noi do chi giu manifest `2_config/library_paths.json`.
 
-## Template config
+## Compact config
 
-Template chung nam trong:
+Runtime config chinh nam trong:
 
-- `2_config/projects/_template_dxf_case/pipeline_case.template.json`
-- `2_config/projects/_template_dxf_case/naming_rules.template.json`
-- `2_config/projects/_template_dxf_case/geometry_policy.template.json`
+- `2_config/cases.json`
+- `2_config/case_defaults.json`
 
-Token can thay:
+Moi case entry toi thieu can co:
 
-- `__PROJECT_ID__`
-- `__CASE_NAME__`
-- `__FILE_SLUG__`
-- `__SOURCE_CAD_FILENAME__`
-- `__READY_TEXT_FILENAME__`
-- `__ZONE_OUTPUT_PREFIX__`
-- `__CEILING_HEIGHT_M__`
+- `case_id`
+- `case_name`
+- `file_slug`
+- `dxf_filename` hoac cap `raw_cad_filename`/`ready_text_filename`
+- `object_output_prefix`
+- `geometry_policy`
+
+Shared defaults nhu path patterns, naming defaults, layer profile, padding, va geometry defaults nam trong `2_config/case_defaults.json`.
 
 ## Cach tao case moi
 
 1. Chay `python 3_scripts/tools/scaffold_dxf_case.py --project-id <project_id> --ceiling-height-m <height_m>`
 2. Dat CAD goc vao `1_input/<project_id>/raw/cad/`
 3. Dat ready DXF text vao `1_input/<project_id>/clean/txt_dxf/`
-4. Kiem tra `room_anchor_patterns`, `title_anchor_patterns`, alias room code, va `zone_output_prefix`
-5. Chay `python 3_scripts/pipeline/run_case_pipeline.py --project <project_id> --ceiling-height-m <height_m>`
+4. Kiem tra case entry trong `2_config/cases.json`, gom `room_anchor_patterns`, `title_anchor_patterns`, alias room code, va `zone_output_prefix` neu can
+5. Chay `python 3_scripts/pipeline/run_case_pipeline.py --project <project_id>`
 
 ## Khong duoc lam
 

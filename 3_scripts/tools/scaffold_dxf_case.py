@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scaffold a new project-scoped DXF case from the shared template.
+Scaffold a new project-scoped DXF case in the compact case registry.
 """
 
 from __future__ import annotations
@@ -21,14 +21,9 @@ from utils.common import workspace_path  # noqa: E402
 
 GUARD = WorkspaceGuard(__file__)
 ROOT = GUARD.root
-TEMPLATE_ROOT = ROOT / "2_config" / "projects" / "_template_dxf_case"
+CASES_REGISTRY_PATH = ROOT / "2_config" / "cases.json"
 DEFAULT_PROJECT_FILE = ROOT / "2_config" / "default_project.json"
 PROJECT_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
-TEMPLATE_FILENAMES = (
-    "pipeline_case.template.json",
-    "naming_rules.template.json",
-    "geometry_policy.template.json",
-)
 
 
 @dataclass(frozen=True)
@@ -111,49 +106,24 @@ def build_context(args: argparse.Namespace) -> ScaffoldContext:
     )
 
 
-def assert_template_root() -> Path:
-    template_root = GUARD.assert_read_path(TEMPLATE_ROOT)
-    for filename in TEMPLATE_FILENAMES:
-        GUARD.assert_read_path(template_root / filename)
-    return template_root
-
-
-def case_config_root(project_id: str) -> Path:
-    return ROOT / "2_config" / "projects" / project_id
-
-
 def case_input_root(project_id: str) -> Path:
     return ROOT / "1_input" / project_id
 
 
 def assert_case_targets_available(project_id: str) -> None:
     occupied_paths: list[Path] = []
-    for candidate in (case_config_root(project_id), case_input_root(project_id)):
-        if candidate.exists():
-            occupied_paths.append(candidate)
+    input_root = case_input_root(project_id)
+    if input_root.exists():
+        occupied_paths.append(input_root)
+
+    registry = read_cases_registry()
+    cases = registry.get("cases", {})
+    if isinstance(cases, dict) and project_id in cases:
+        occupied_paths.append(CASES_REGISTRY_PATH)
+
     if occupied_paths:
         formatted = ", ".join(workspace_path(path) for path in occupied_paths)
         raise WorkspaceRuleError(f"Case scaffold target already exists for '{project_id}': {formatted}")
-
-
-def make_token_map(context: ScaffoldContext) -> dict[str, str]:
-    return {
-        "__PROJECT_ID__": context.project_id,
-        "__CASE_NAME__": context.case_name,
-        "__FILE_SLUG__": context.file_slug,
-        "__SOURCE_CAD_FILENAME__": context.source_cad_filename,
-        "__READY_TEXT_FILENAME__": context.ready_text_filename,
-        "__ZONE_OUTPUT_PREFIX__": context.zone_output_prefix,
-        "__OBJECT_OUTPUT_PREFIX__": context.object_output_prefix,
-        "__CEILING_HEIGHT_M__": f"{context.ceiling_height_m:.3f}",
-    }
-
-
-def render_template(path: Path, replacements: dict[str, str]) -> str:
-    rendered = GUARD.assert_read_path(path).read_text(encoding="utf-8")
-    for token, value in replacements.items():
-        rendered = rendered.replace(token, value)
-    return rendered
 
 
 def ensure_case_input_dirs(project_id: str, *, dry_run: bool) -> list[Path]:
@@ -172,16 +142,64 @@ def ensure_case_input_dirs(project_id: str, *, dry_run: bool) -> list[Path]:
     return targets
 
 
-def write_case_config(path: Path, content: str, *, dry_run: bool) -> None:
-    if dry_run:
-        return
-    GUARD.write_text(
-        path,
-        content,
-        allowed_roots=["2_config"],
-        allow_create=True,
-        allow_overwrite=False,
-    )
+def read_cases_registry() -> dict[str, object]:
+    if not CASES_REGISTRY_PATH.exists():
+        return {
+            "schema_version": 1,
+            "description": "Compact case registry. Shared defaults live in 2_config/case_defaults.json.",
+            "cases": {},
+        }
+    resolved = GUARD.assert_read_path(CASES_REGISTRY_PATH)
+    payload = json.loads(resolved.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise WorkspaceRuleError(f"Cases registry must be a JSON object: {workspace_path(resolved)}")
+    cases = payload.get("cases")
+    if not isinstance(cases, dict):
+        raise WorkspaceRuleError(f"Cases registry must contain a cases object: {workspace_path(resolved)}")
+    return payload
+
+
+def build_case_registry_entry(context: ScaffoldContext) -> dict[str, object]:
+    entry: dict[str, object] = {
+        "case_id": context.project_id,
+        "case_name": context.case_name,
+        "file_slug": context.file_slug,
+        "object_output_prefix": context.object_output_prefix,
+        "geometry_policy": {
+            "policy_name": f"{context.case_name} Geometry Policy",
+            "ceiling_height_m": round(context.ceiling_height_m, 3),
+            "zone_name_aliases": {},
+            "zone_merge_groups": [],
+            "remembered_zone_targets": {},
+        },
+    }
+    if context.source_cad_filename == context.ready_text_filename:
+        entry["dxf_filename"] = context.ready_text_filename
+    else:
+        entry["raw_cad_filename"] = context.source_cad_filename
+        entry["ready_text_filename"] = context.ready_text_filename
+    if context.zone_output_prefix:
+        entry["zone_output_prefix"] = context.zone_output_prefix
+    return entry
+
+
+def write_case_registry_entry(context: ScaffoldContext) -> Path:
+    registry = read_cases_registry()
+    cases = registry["cases"]
+    if not isinstance(cases, dict):
+        raise WorkspaceRuleError("Cases registry must contain a cases object.")
+    if context.project_id in cases:
+        raise WorkspaceRuleError(f"Case already exists in registry: {context.project_id}")
+    cases[context.project_id] = build_case_registry_entry(context)
+    if not context.dry_run:
+        GUARD.write_json(
+            CASES_REGISTRY_PATH,
+            registry,
+            allowed_roots=["2_config"],
+            allow_create=True,
+            allow_overwrite=True,
+        )
+    return CASES_REGISTRY_PATH
 
 
 def write_default_project(project_id: str, *, dry_run: bool) -> None:
@@ -197,17 +215,8 @@ def write_default_project(project_id: str, *, dry_run: bool) -> None:
 
 
 def scaffold_case(context: ScaffoldContext) -> None:
-    template_root = assert_template_root()
     assert_case_targets_available(context.project_id)
-    replacements = make_token_map(context)
-
-    written_files: list[Path] = []
-    for template_filename in TEMPLATE_FILENAMES:
-        template_path = template_root / template_filename
-        target_filename = template_filename.replace(".template", "")
-        target_path = case_config_root(context.project_id) / target_filename
-        write_case_config(target_path, render_template(template_path, replacements), dry_run=context.dry_run)
-        written_files.append(target_path)
+    registry_path = write_case_registry_entry(context)
 
     created_dirs = ensure_case_input_dirs(context.project_id, dry_run=context.dry_run)
 
@@ -224,8 +233,7 @@ def scaffold_case(context: ScaffoldContext) -> None:
     print(f"Zone output prefix: {context.zone_output_prefix}")
     print(f"Object output prefix: {context.object_output_prefix}")
     print(f"Ceiling height: {context.ceiling_height_m:.3f} m")
-    for path in written_files:
-        print(f"Config: {workspace_path(path)}")
+    print(f"Config registry: {workspace_path(registry_path)}")
     for path in created_dirs:
         print(f"Input dir: {workspace_path(path)}")
     if context.set_default:
@@ -234,7 +242,7 @@ def scaffold_case(context: ScaffoldContext) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Scaffold a new DXF case from the shared template.")
+    parser = argparse.ArgumentParser(description="Scaffold a new DXF case in 2_config/cases.json.")
     parser.add_argument("--project-id", required=True, help="Lower snake case project id, for example: sample_case")
     parser.add_argument("--case-name", default=None, help="Optional human-readable case name")
     parser.add_argument("--file-slug", default=None, help="Optional output slug, for example: Sample_Case")

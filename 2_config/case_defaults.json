@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "config_files": {
+    "dxf_layer_profile": "2_config/dxf_layer_profile_s04.json"
+  },
+  "options": {
+    "padding": 2500.0
+  },
+  "intake": {
+    "parser_input_standard": "parser_readable_dxf_text"
+  },
+  "naming": {
+    "zone_output_prefix": "",
+    "canonical_room_code_rules": {
+      "source_field": "candidate_zones[].zone_name",
+      "drop_prefix_before_colon": true,
+      "ascii_normalize": true,
+      "uppercase": true,
+      "replace_plus_with_underscore": true,
+      "collapse_non_alnum_to_underscore": true,
+      "aliases": {},
+      "compact_numeric_patterns": []
+    },
+    "zone_id_pattern": "{zone_output_prefix}{canonical_room_code}",
+    "surface_name_patterns": {
+      "floor": "{zone_id}_FLOOR_{seq:02d}",
+      "roof": "{zone_id}_ROOF_{seq:02d}",
+      "wall": "{zone_id}_WALL_{seq:02d}"
+    },
+    "wall_inventory_id_pattern": "WALL_{seq:03d}",
+    "opening_id_pattern": "OPENING_{seq:03d}",
+    "fenestration_name_pattern": "{zone_output_prefix_no_trailing_underscore}_{opening_id}_{surface_type_token}",
+    "paired_fenestration_suffix": "_ADJ",
+    "primary_output_patterns": {
+      "extract_output": "{file_slug}_filtered_extract.txt",
+      "schema_output": "{file_slug}_filtered_extract_schema.json",
+      "bundle_output_dir": "{file_slug}_idf_input_bundle",
+      "rebuilt_idf_output": "{file_slug}_generated_from_bundle.idf"
+    },
+    "room_anchor_patterns": [],
+    "title_anchor_patterns": []
+  },
+  "geometry_policy": {
+    "policy_version": "1.0.0",
+    "geometry_mode": "backup_v2_single_block",
+    "ceiling_height_m": 3.3,
+    "require_single_block": true,
+    "max_unallocated_area_m2": 0.001,
+    "area_priority_mode": "remember_only",
+    "wall_reference_policy": {
+      "policy_name": "zone_boundary_wall_reference_v2",
+      "external_reference_type": "zone_boundary_outer_face",
+      "external_reference_note": "Review this note before the first production run if the cleaned DXF needs a different wall reference convention.",
+      "interzone_reference_type": "shared_zone_boundary_centerline",
+      "single_zone_reference_type": "zone_boundary_inside_face"
+    },
+    "geometry_priority_note": "Scaffolded from the generic DXF case template. Review geometry_mode, wall reference policy, and remembered targets before first production use.",
+    "baseline_backup": {
+      "archive_file": "",
+      "algorithm_name": "DXF-First V2"
+    }
+  }
+}
